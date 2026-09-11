@@ -1,5 +1,5 @@
 {
-  "generated_days": 170,
+  "generated_days": 174,
   "phases": [
     {
       "id": "p0",
@@ -275,8 +275,8 @@
           "task": "کار با آرایه‌ها، توابع، و پایپ‌لاین دستورات (|, xargs, tee) را یاد بگیر. یک اسکریپت بنویس که یک لیست از دامنه را می‌گیرد و برایشان curl می‌زند و کد وضعیت HTTP را چاپ می‌کند — این پایهٔ اسکریپت‌های Recon آینده‌ات است.",
           "resources": [
             {
-              "t": "Bash Scripting Cheatsheet — devhints",
-              "u": "https://devhints.io/bash"
+              "t": "explainshell.com — تحلیل تعاملی هر دستور شل (رایگان)",
+              "u": "https://explainshell.com/"
             }
           ],
           "hours": 3,
@@ -329,10 +329,6 @@
             {
               "t": "TryHackMe — Pre Security Path (رایگان)",
               "u": "https://tryhackme.com/path/outline/presecurity"
-            },
-            {
-              "t": "راهنمای مصور TCP/IP (رایگان آنلاین)",
-              "u": "https://www.freecodecamp.org/news/an-introduction-to-computer-networking-864026ea0aae/"
             }
           ],
           "hours": 2,
@@ -491,10 +487,6 @@
             {
               "t": "Nmap — راهنمای رسمی (رایگان)",
               "u": "https://nmap.org/book/man.html"
-            },
-            {
-              "t": "scanme.nmap.org — هدف قانونی برای تمرین اسکن",
-              "u": "https://nmap.org/book/testing.html"
             }
           ],
           "hours": 2,
@@ -1180,7 +1172,7 @@
           "resources": [
             {
               "t": "PortSwigger Academy — Path Traversal",
-              "u": "https://portswigger.net/web-security/path-traversal"
+              "u": "https://portswigger.net/web-security/file-path-traversal"
             },
             {
               "t": "PayloadsAllTheThings — پیلود آماده برای این کلاس آسیب‌پذیری",
@@ -1724,7 +1716,7 @@
           "resources": [
             {
               "t": "PortSwigger Academy — OAuth Authentication",
-              "u": "https://portswigger.net/web-security/oauth-authentication"
+              "u": "https://portswigger.net/web-security/oauth"
             },
             {
               "t": "PayloadsAllTheThings — پیلود آماده برای این کلاس آسیب‌پذیری",
@@ -1741,7 +1733,7 @@
           "resources": [
             {
               "t": "PortSwigger Academy — OAuth Authentication",
-              "u": "https://portswigger.net/web-security/oauth-authentication"
+              "u": "https://portswigger.net/web-security/oauth"
             },
             {
               "t": "PayloadsAllTheThings — پیلود آماده برای این کلاس آسیب‌پذیری",
@@ -2028,6 +2020,62 @@
         },
         {
           "day": 125,
+          "title": "OverTheWire Natas — سطح ۰ تا ۷ (وارگیم اختصاصی وب)",
+          "task": "برخلاف Bandit که لینوکس‌محور بود، Natas مستقیماً روی آسیب‌پذیری‌های وب (View Source، PHP، کوکی، هدرها) تمرکز دارد. سطح‌های ۰ تا ۷ را با مرورگر و View-Source حل کن.",
+          "resources": [
+            {
+              "t": "OverTheWire Natas (رایگان)",
+              "u": "https://overthewire.org/wargames/natas/"
+            }
+          ],
+          "hours": 3,
+          "kind": "practice"
+        },
+        {
+          "day": 126,
+          "title": "OverTheWire Natas — سطح ۸ تا ۱۵",
+          "task": "سطح‌های میانی Natas را حل کن: بای‌پس مقایسهٔ نوع در PHP، تزریق دستور، و باگ‌های منطقی ساده در کد PHP.",
+          "resources": [
+            {
+              "t": "OverTheWire Natas (رایگان)",
+              "u": "https://overthewire.org/wargames/natas/"
+            }
+          ],
+          "hours": 3,
+          "kind": "practice"
+        },
+        {
+          "day": 127,
+          "title": "HackTheBox — ساخت حساب رایگان و Starting Point Tier 0",
+          "task": "در Hack The Box با حساب رایگان (Free tier، بدون نیاز به VIP) ثبت‌نام کن و ماشین‌های Tier 0 مسیر Starting Point را حل کن؛ هر ماشین یک راهنمای رسمی گام‌به‌گام رایگان دارد.",
+          "resources": [
+            {
+              "t": "Hack The Box — Starting Point (رایگان)",
+              "u": "https://app.hackthebox.com/starting-point"
+            },
+            {
+              "t": "راهنمای شروع Starting Point",
+              "u": "https://help.hackthebox.com/en/articles/6007919-introduction-to-starting-point"
+            }
+          ],
+          "hours": 3,
+          "kind": "practice"
+        },
+        {
+          "day": 128,
+          "title": "HackTheBox — Starting Point Tier 1",
+          "task": "به ماشین‌های Tier 1 برو؛ کمی پیچیده‌تر از Tier 0 هستند و مهارت شمارش سرویس (enumeration) و ترکیب چند آسیب‌پذیری را تقویت می‌کنند.",
+          "resources": [
+            {
+              "t": "Hack The Box — Starting Point (رایگان)",
+              "u": "https://app.hackthebox.com/starting-point"
+            }
+          ],
+          "hours": 3,
+          "kind": "practice"
+        },
+        {
+          "day": 129,
           "title": "مرور و جمع‌بندی فاز: پورتفولیوی حل‌شده‌ها",
           "task": "لیستی از تمام چالش‌ها/لب‌هایی که تا الان حل کردی (Bandit, PortSwigger, Hacker101, DVWA, PentesterLab, Gruyere) را در یک صفحهٔ «Portfolio» در Obsidian جمع کن — این سند پایهٔ رزومهٔ آینده‌ات است.",
           "resources": [
@@ -2049,7 +2097,7 @@
       "color": "#4d7c0f",
       "days": [
         {
-          "day": 126,
+          "day": 130,
           "title": "متدولوژی Jason Haddix — Bug Hunter's Methodology (نسخهٔ کامل)",
           "task": "ویدیوی کامل ۲ ساعتهٔ Jason Haddix را با یادداشت‌برداری کامل ببین؛ این یکی از معتبرترین متدولوژی‌های رایگان موجود در دنیای باگ‌بانتی است.",
           "resources": [
@@ -2062,7 +2110,7 @@
           "kind": "learn"
         },
         {
-          "day": 127,
+          "day": 131,
           "title": "Bug Hunter's Methodology v4 — Recon Edition",
           "task": "نسخهٔ تخصصی Recon این متدولوژی را ببین و لیست کامل ابزارهایی که معرفی می‌کند را در Obsidian یادداشت کن.",
           "resources": [
@@ -2075,7 +2123,7 @@
           "kind": "learn"
         },
         {
-          "day": 128,
+          "day": 132,
           "title": "Subdomain Enumeration — ابزارها",
           "task": "ابزارهای رایگان subfinder و amass را نصب کن و روی یک دامنهٔ دارای برنامهٔ باگ‌بانتی عمومی (طبق قوانین برنامه) اجرا کن؛ خروجی‌ها را مقایسه کن.",
           "resources": [
@@ -2092,7 +2140,7 @@
           "kind": "practice"
         },
         {
-          "day": 129,
+          "day": 133,
           "title": "پروب کردن زنده‌بودن هاست: httpx",
           "task": "httpx را نصب کن و لیست ساب‌دامین‌های قبلی را برایش پایپ کن تا مشخص شود کدام‌ها زنده‌اند، کد وضعیت و تکنولوژی هرکدام چیست.",
           "resources": [
@@ -2105,7 +2153,7 @@
           "kind": "practice"
         },
         {
-          "day": 130,
+          "day": 134,
           "title": "اسکن آسیب‌پذیری خودکار: nuclei",
           "task": "nuclei را نصب کن، template های عمومی رایگانش را آپدیت کن، و روی هدف‌های مجاز (طبق scope برنامه) اجرا کن؛ نتایج false-positive را یاد بگیر تشخیص بدهی.",
           "resources": [
@@ -2118,7 +2166,7 @@
           "kind": "practice"
         },
         {
-          "day": 131,
+          "day": 135,
           "title": "کشف محتوا و مسیر: ffuf و دیکشنری‌ها",
           "task": "ffuf را برای Directory/Content Discovery با wordlist های SecLists تمرین کن؛ فرق fuzzing پارامتر، مسیر، و ساب‌دامین را در عمل ببین.",
           "resources": [
@@ -2135,7 +2183,7 @@
           "kind": "practice"
         },
         {
-          "day": 132,
+          "day": 136,
           "title": "ابزارهای Tomnomnok و ترکیب پایپ‌لاین Recon",
           "task": "ابزارهای سبک و کاربردی tomnomnom (مثل waybackurls, gf, httprobe) را نصب کن و یک پایپ‌لاین ترکیبی بساز: subfinder | httpx | nuclei.",
           "resources": [
@@ -2152,7 +2200,7 @@
           "kind": "practice"
         },
         {
-          "day": 133,
+          "day": 137,
           "title": "Google Dorking و OSINT پیشرفته",
           "task": "تکنیک‌های Google Dork (site:, inurl:, filetype:) و OSINT برای پیدا کردن فایل‌های حساس افشاشده، پنل‌های ادمین، و ساب‌دامین‌های فراموش‌شده را یاد بگیر.",
           "resources": [
@@ -2165,7 +2213,7 @@
           "kind": "practice"
         },
         {
-          "day": 134,
+          "day": 138,
           "title": "شناسایی تکنولوژی و اثرانگشت‌گیری",
           "task": "ابزارهای Wappalyzer و whatweb را برای شناسایی فریم‌ورک، CMS و کتابخانه‌های استفاده‌شده در یک هدف تمرین کن؛ دانستن نسخهٔ دقیق فناوری مسیر مستقیم به CVEهای شناخته‌شده است.",
           "resources": [
@@ -2182,7 +2230,7 @@
           "kind": "practice"
         },
         {
-          "day": 135,
+          "day": 139,
           "title": "ساخت پایپ‌لاین Recon شخصی نسخهٔ نهایی",
           "task": "ابزار پایتون خودت از فاز ۳ را با ابزارهای جدید (subfinder, httpx, nuclei) ترکیب کن و یک اسکریپت Bash یا Python بساز که با یک دستور، کل مراحل Recon اولیه را روی یک دامنهٔ ورودی اجرا کند.",
           "resources": [
@@ -2195,7 +2243,7 @@
           "kind": "milestone"
         },
         {
-          "day": 136,
+          "day": 140,
           "title": "انتخاب اولین برنامهٔ باگ‌بانتی هدف",
           "task": "بر اساس Scope، حجم رقابت و نوع اپلیکیشن، یک برنامهٔ باگ‌بانتی واقعی (روی HackerOne/Bugcrowd) یا یک VDP انتخاب کن که قصد داری در فازهای بعد رویش تمرکز کنی. قوانین Scope و Rules of Engagement را کامل بخوان.",
           "resources": [
@@ -2212,7 +2260,7 @@
           "kind": "review"
         },
         {
-          "day": 137,
+          "day": 141,
           "title": "اولین دور Recon کامل روی هدف واقعی",
           "task": "پایپ‌لاین Recon خودت را روی برنامهٔ هدف انتخابی اجرا کن (فقط در محدودهٔ Scope مجاز). نتایج را در Obsidian دسته‌بندی کن: ساب‌دامین‌ها، تکنولوژی‌ها، اندپوینت‌های API، و نقاط ورودی مشکوک.",
           "resources": [
@@ -2234,7 +2282,7 @@
       "color": "#9333ea",
       "days": [
         {
-          "day": 138,
+          "day": 142,
           "title": "معرفی OWASP MASVS/MASTG",
           "task": "استاندارد OWASP Mobile Application Security (MASVS) و راهنمای تست آن (MASTG) را به‌عنوان نقشهٔ راه امنیت موبایل مرور کن.",
           "resources": [
@@ -2247,7 +2295,7 @@
           "kind": "learn"
         },
         {
-          "day": 139,
+          "day": 143,
           "title": "راه‌اندازی محیط تست اندروید",
           "task": "Android Studio و یک AVD (شبیه‌ساز اندروید) رایگان را نصب کن، ADB را یاد بگیر، و یک اپ آسیب‌پذیر تمرینی (AndroGoat) را روی شبیه‌ساز نصب کن.",
           "resources": [
@@ -2264,7 +2312,7 @@
           "kind": "practice"
         },
         {
-          "day": 140,
+          "day": 144,
           "title": "رهگیری ترافیک اپ موبایل با Burp",
           "task": "Burp Suite را به‌عنوان پروکسی روی شبیه‌ساز اندروید تنظیم کن، گواهی CA را نصب کن، و ترافیک اپ AndroGoat را رهگیری کن — همان تکنیکی که برای تست هر اپ موبایل واقعی به کار می‌بری.",
           "resources": [
@@ -2277,7 +2325,7 @@
           "kind": "practice"
         },
         {
-          "day": 141,
+          "day": 145,
           "title": "دیکامپایل و تحلیل استاتیک اپ اندروید",
           "task": "با jadx یک فایل APK را دیکامپایل کن و به‌دنبال سکرت‌های هاردکد شده (API Key، آدرس سرور، پسورد) در کد بگرد.",
           "resources": [
@@ -2290,13 +2338,13 @@
           "kind": "practice"
         },
         {
-          "day": 142,
+          "day": 146,
           "title": "Insecure Data Storage و SSL Pinning Bypass",
           "task": "بررسی کن اپ چه داده‌ای را ناامن ذخیره می‌کند (SharedPreferences، دیتابیس محلی)، و مفهوم SSL Pinning و روش‌های رایگان bypass آن (Frida/Objection) را یاد بگیر.",
           "resources": [
             {
               "t": "OWASP MASTG — Testing Network Communication",
-              "u": "https://mas.owasp.org/MASTG/tests/android/MASVS-NETWORK/"
+              "u": "https://github.com/OWASP/mastg/blob/master/Document/0x05g-Testing-Network-Communication.md"
             },
             {
               "t": "Objection (رایگان)",
@@ -2307,20 +2355,20 @@
           "kind": "practice"
         },
         {
-          "day": 143,
+          "day": 147,
           "title": "OWASP API Security Top 10",
           "task": "لیست ۲۰۲۳ OWASP API Security Top 10 را کامل بخوان — نقشهٔ راه اختصاصی آسیب‌پذیری‌های API که امروز در باگ‌بانتی بسیار پرارزش است.",
           "resources": [
             {
-              "t": "OWASP API Security Top 10 (رایگان)",
-              "u": "https://owasp.org/API-Security/editions/2023/en/0x00-header/"
+              "t": "OWASP API Security Project (رایگان)",
+              "u": "https://owasp.org/www-project-api-security/"
             }
           ],
           "hours": 2,
           "kind": "learn"
         },
         {
-          "day": 144,
+          "day": 148,
           "title": "BOLA/IDOR در APIها",
           "task": "Broken Object Level Authorization (BOLA) — رایج‌ترین باگ API در دنیای واقعی — را با لب‌های عملی PortSwigger تمرین کن.",
           "resources": [
@@ -2333,7 +2381,7 @@
           "kind": "practice"
         },
         {
-          "day": 145,
+          "day": 149,
           "title": "GraphQL Security عمیق",
           "task": "Introspection query، حملات Batching، و IDOR در GraphQL را با لب‌های رایگان پورت‌سویگر عمیق‌تر تمرین کن.",
           "resources": [
@@ -2346,20 +2394,20 @@
           "kind": "practice"
         },
         {
-          "day": 146,
+          "day": 150,
           "title": "APIsec University — دوره‌های رایگان API Security",
           "task": "دوره‌های رایگان APIsec University را ببین، خصوصاً دورهٔ مقدماتی API Penetration Testing.",
           "resources": [
             {
               "t": "APIsec University (رایگان با ثبت‌نام)",
-              "u": "https://www.apisecuniversity.com/courses"
+              "u": "https://www.apisecuniversity.com/"
             }
           ],
           "hours": 2,
           "kind": "learn"
         },
         {
-          "day": 147,
+          "day": 151,
           "title": "پروژهٔ فاز: تست کامل یک API عمومی رایگان",
           "task": "با Postman یا Burp یک API عمومی تست (مثل یک اپ نمونهٔ OWASP juice-shop) را کامل بررسی کن: تمام اندپوینت‌ها را کشف کن، احراز هویت را بشکن، و به‌دنبال BOLA بگرد.",
           "resources": [
@@ -2381,16 +2429,16 @@
       "color": "#b45309",
       "days": [
         {
-          "day": 148,
+          "day": 152,
           "title": "آناتومی یک گزارش حرفه‌ای باگ‌بانتی",
           "task": "ساختار استاندارد یک گزارش خوب (Title, Summary, Steps to Reproduce, Impact, Remediation, PoC) را از راهنمای HackerOne یاد بگیر و یک تمپلیت شخصی در Obsidian بساز.",
           "resources": [
             {
-              "t": "HackerOne — راهنمای نوشتن گزارش خوب (رایگان)",
-              "u": "https://docs.hackerone.com/en/articles/8419605-writing-a-quality-report"
+              "t": "HackerOne — Quality Reports (رایگان)",
+              "u": "https://docs.hackerone.com/en/articles/8475116-quality-reports"
             },
             {
-              "t": "کتاب رایگان الکترونیکی نمونه — Bugcrowd Vulnerability Rating Taxonomy",
+              "t": "Bugcrowd Vulnerability Rating Taxonomy",
               "u": "https://bugcrowd.com/vulnerability-rating-taxonomy"
             }
           ],
@@ -2398,7 +2446,7 @@
           "kind": "learn"
         },
         {
-          "day": 149,
+          "day": 153,
           "title": "مطالعهٔ عمیق ۱۰ گزارش افشاشدهٔ برتر",
           "task": "۱۰ گزارش با بالاترین امتیاز از HackerOne Hacktivity بخوان و برای هرکدام تحلیل کن: چطور باگ پیدا شد؟ چرا impact بالا بود؟ گزارش چطور نوشته شده بود؟",
           "resources": [
@@ -2415,7 +2463,7 @@
           "kind": "learn"
         },
         {
-          "day": 150,
+          "day": 154,
           "title": "شکار روز ۱: تست احراز هویت و کنترل دسترسی روی هدف",
           "task": "روی برنامهٔ هدفی که در فاز ۷ انتخاب کردی، تمرکز کامل روی احراز هویت، مدیریت سشن و IDOR بگذار. هر مسیر مشکوک را در Obsidian ثبت کن حتی اگر مطمئن نیستی باگ است.",
           "resources": [
@@ -2428,7 +2476,7 @@
           "kind": "practice"
         },
         {
-          "day": 151,
+          "day": 155,
           "title": "شکار روز ۲: تست ورودی‌ها برای XSS و Injection",
           "task": "تمام فیلدهای ورودی، پارامترهای URL، و هدرهای قابل‌کنترل هدف را برای XSS و انواع Injection با Burp Intruder فاز کن.",
           "resources": [
@@ -2441,7 +2489,7 @@
           "kind": "practice"
         },
         {
-          "day": 152,
+          "day": 156,
           "title": "شکار روز ۳: تست منطق کسب‌وکار (Business Logic)",
           "task": "فرایندهای چندمرحله‌ای هدف (پرداخت، تخفیف، دعوت دوستان، ارتقای پلن) را برای باگ‌های منطقی تست کن — این‌ها را هیچ اسکنری پیدا نمی‌کند و اغلب پاداش بالایی دارند.",
           "resources": [
@@ -2454,7 +2502,7 @@
           "kind": "practice"
         },
         {
-          "day": 153,
+          "day": 157,
           "title": "شکار روز ۴: بررسی اندپوینت‌های API و موبایل مرتبط",
           "task": "اگر هدف اپ موبایل یا API عمومی دارد، مهارت‌های فاز ۸ را روی آن پیاده کن؛ اگر ندارد، روی سطح حمله‌ای که در Recon فاز ۷ کشف کردی عمیق‌تر شو.",
           "resources": [
@@ -2467,7 +2515,7 @@
           "kind": "practice"
         },
         {
-          "day": 154,
+          "day": 158,
           "title": "نوشتن اولین گزارش کامل (حتی اگر یک VDP ساده باشد)",
           "task": "هرچیزی که تا الان پیدا کردی — حتی یک باگ کم‌ریسک — را با فرمت حرفه‌ای که در روز اول این فاز ساختی گزارش کن. یک PoC واضح (اسکرین‌شات یا ویدیوی کوتاه) اضافه کن.",
           "resources": [
@@ -2480,20 +2528,20 @@
           "kind": "milestone"
         },
         {
-          "day": 155,
+          "day": 159,
           "title": "یادگیری از رد شدن گزارش (Duplicate/Not Applicable)",
           "task": "دلایل رایج رد شدن گزارش‌ها (Duplicate, Informative, N/A, Out of Scope) را از مستندات HackerOne بخوان تا با ذهنیت درست به Triage نگاه کنی و ناامید نشوی.",
           "resources": [
             {
-              "t": "HackerOne — Disclosure Guidelines",
-              "u": "https://docs.hackerone.com/en/articles/8494697-disclosure-guidelines"
+              "t": "HackerOne — Report States (Duplicate/Not Applicable/Informative)",
+              "u": "https://docs.hackerone.com/en/articles/8475030-report-states"
             }
           ],
           "hours": 1,
           "kind": "learn"
         },
         {
-          "day": 156,
+          "day": 160,
           "title": "شکار روز ۵: تمرکز روی یک کلاس آسیب‌پذیری تخصصی",
           "task": "یکی از کلاس‌های کم‌رقابت‌تر (Race Condition، SSRF، یا Request Smuggling) را که در فاز ۵ یاد گرفتی، به‌طور اختصاصی روی هدف تست کن.",
           "resources": [
@@ -2506,7 +2554,7 @@
           "kind": "practice"
         },
         {
-          "day": 157,
+          "day": 161,
           "title": "گسترش دامنهٔ شکار: انتخاب هدف دوم و سوم",
           "task": "دو برنامهٔ باگ‌بانتی دیگر (ترجیحاً با تکنولوژی متفاوت از هدف اول) انتخاب کن تا سرعت Recon و تست‌ات را افزایش دهی و تنوع تجربه کسب کنی.",
           "resources": [
@@ -2519,20 +2567,20 @@
           "kind": "practice"
         },
         {
-          "day": 158,
+          "day": 162,
           "title": "شکار مستمر و ساخت عادت روزانه",
           "task": "یک بلوک زمانی ثابت روزانه یا هفتگی برای شکار مستمر تعیین کن. هر یافته (باگ باشد یا نباشد) را در Obsidian با برچسب (Confirmed/Duplicate/Triaged/Rejected) ثبت کن تا آمار پیشرفتت مشخص باشد.",
           "resources": [
             {
-              "t": "قالب رایگان ردیابی باگ‌بانتی (Notion Template نمونه)",
-              "u": "https://www.notion.so/templates/bug-bounty-tracker"
+              "t": "Obsidian (رایگان) — برای ساخت جدول ردیابی شخصی",
+              "u": "https://obsidian.md/"
             }
           ],
           "hours": 3,
           "kind": "practice"
         },
         {
-          "day": 159,
+          "day": 163,
           "title": "ساخت رزومه و پروفایل عمومی هانتر",
           "task": "یک رزومهٔ کوتاه امنیتی و یک پروفایل GitHub با ابزارهای Recon شخصی‌ات که در طول مسیر نوشتی بساز و عمومی کن — این پورتفولیو در آینده مستقیماً روی فرصت‌های شغلی اثر می‌گذارد.",
           "resources": [
@@ -2554,7 +2602,7 @@
       "color": "#1e293b",
       "days": [
         {
-          "day": 160,
+          "day": 164,
           "title": "HTTP/2 و HTTP/3 از دید امنیتی",
           "task": "تفاوت‌های HTTP/2 با HTTP/1.1 و پیامدهای امنیتی‌اش (خصوصاً برای Request Smuggling) را از تحقیق James Kettle بخوان.",
           "resources": [
@@ -2567,7 +2615,7 @@
           "kind": "learn"
         },
         {
-          "day": 161,
+          "day": 165,
           "title": "HTTP Desync Attacks و Web Cache Poisoning — تحقیقات اصلی",
           "task": "دو تحقیق پایه‌ای James Kettle دربارهٔ Request Smuggling و Cache Poisoning را کامل بخوان — این‌ها مرجع اصلی صنعت در این حوزه‌اند.",
           "resources": [
@@ -2584,20 +2632,24 @@
           "kind": "learn"
         },
         {
-          "day": 162,
+          "day": 166,
           "title": "پارسر دیفرنشیال: تحقیق Orange Tsai",
           "task": "ارائهٔ معروف Orange Tsai دربارهٔ «Breaking Parser Logic» و نمونهٔ Nginx off-by-slash را ببین/بخوان — نمونهٔ کامل از تفکر خلاقانه در پیدا کردن باگ‌های نو.",
           "resources": [
             {
-              "t": "Orange Tsai — Breaking Parser Logic (اسلایدهای رایگان)",
-              "u": "https://www.blackhat.com/docs/us-18/Thursday/us-18-Orange-Tsai-Breaking-Parser-Logic-Take-Your-Path-Normalization-Off-And-Pop-0-Days-Out-2.pdf"
+              "t": "Orange Tsai — اسلایدهای Breaking Parser Logic (رایگان، GitHub)",
+              "u": "https://github.com/orangetw/My-Presentation-Slides/blob/main/data/2018-Breaking-Parser-Logic-Take-Your-Path-Normalization-Off-And-Pop-0days-Out.pdf"
+            },
+            {
+              "t": "ویدیوی کامل ارائه در DEF CON 26 (رایگان)",
+              "u": "https://www.youtube.com/watch?v=28xWcRegncw"
             }
           ],
           "hours": 2,
           "kind": "learn"
         },
         {
-          "day": 163,
+          "day": 167,
           "title": "Reverse Proxy و Weird Proxies",
           "task": "تحقیق «weird_proxies» Aleksei Tiurin دربارهٔ رفتارهای غیرمنتظرهٔ پروکسی‌های معکوس را مرور کن — منبع الهام برای کشف باگ‌های سفارشی در معماری‌های پیچیده.",
           "resources": [
@@ -2610,7 +2662,7 @@
           "kind": "learn"
         },
         {
-          "day": 164,
+          "day": 168,
           "title": "OAuth 2.0 عمیق: Getting Started with OAuth 2.0",
           "task": "مفاهیم عمیق‌تر OAuth (Authorization Code Flow, PKCE, state parameter) را مرور کن تا باگ‌های پیچیده‌تر OAuth را هم تشخیص بدهی.",
           "resources": [
@@ -2623,7 +2675,7 @@
           "kind": "learn"
         },
         {
-          "day": 165,
+          "day": 169,
           "title": "ساخت اپ آسیب‌پذیر شخصی با یک فریم‌ورک",
           "task": "با Django یا Laravel (هر دو رایگان) یک اپ کوچک بساز و عمداً چند آسیب‌پذیری در آن قرار بده — ساختن یک آسیب‌پذیری، فهم عمیق‌تری از exploit کردنش به تو می‌دهد.",
           "resources": [
@@ -2640,7 +2692,7 @@
           "kind": "practice"
         },
         {
-          "day": 166,
+          "day": 170,
           "title": "Web LLM Attacks — عمیق‌تر",
           "task": "لب‌های Web LLM Attacks پورت‌سویگر را که تازه معرفی شده دوباره مرور کن و مقالات جدید دربارهٔ Prompt Injection را دنبال کن — این حوزه به‌سرعت در حال رشد است.",
           "resources": [
@@ -2653,7 +2705,7 @@
           "kind": "learn"
         },
         {
-          "day": 167,
+          "day": 171,
           "title": "شرکت در یک CTF واقعی",
           "task": "در یک مسابقهٔ CTF رایگان و عمومی (از طریق CTFtime) ثبت‌نام کن و حداقل چند ساعت با یک تیم یا به‌تنهایی روی چالش‌های وب کار کن.",
           "resources": [
@@ -2670,7 +2722,7 @@
           "kind": "practice"
         },
         {
-          "day": 168,
+          "day": 172,
           "title": "دنبال کردن اخبار روز امنیت وب",
           "task": "یک لیست منبع خبری روزانه بساز (توییتر/ایکس محققان برتر، خبرنامه‌های رایگان مثل tl;dr sec) و آن را به یک عادت روزانهٔ ۱۵ دقیقه‌ای تبدیل کن.",
           "resources": [
@@ -2687,7 +2739,7 @@
           "kind": "learn"
         },
         {
-          "day": 169,
+          "day": 173,
           "title": "بازبینی و آپدیت متدولوژی شخصی نهایی",
           "task": "کل سند Methodology در Obsidian که از روز اول ساختی را بازبینی و بازنویسی کن. این سند حالا باید یک متدولوژی شکار کاملاً شخصی‌سازی‌شده باشد که هر بار شکار می‌کنی از آن پیروی می‌کنی.",
           "resources": [
@@ -2700,7 +2752,7 @@
           "kind": "review"
         },
         {
-          "day": 170,
+          "day": 174,
           "title": "جمع‌بندی نهایی نقشه‌راه و برنامهٔ ۶ ماه آینده",
           "task": "یک سند نهایی بنویس: چه چیزهایی یاد گرفتی، در کدام کلاس آسیب‌پذیری قوی‌تری، و برنامهٔ ۶ ماه بعدی‌ات (تخصص در یک حوزه، شرکت در برنامه‌های Private، یا مسیر شغلی AppSec) چیست. این نقطهٔ پایان نیست — این نقطهٔ شروع شکار حرفه‌ای توست.",
           "resources": [

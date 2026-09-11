@@ -139,7 +139,7 @@ d(p1, "Bash Scripting — مبانی",
 
 d(p1, "Bash Scripting — پیشرفته برای اتوماسیون هک",
   "کار با آرایه‌ها، توابع، و پایپ‌لاین دستورات (|, xargs, tee) را یاد بگیر. یک اسکریپت بنویس که یک لیست از دامنه را می‌گیرد و برایشان curl می‌زند و کد وضعیت HTTP را چاپ می‌کند — این پایهٔ اسکریپت‌های Recon آینده‌ات است.",
-  [R("Bash Scripting Cheatsheet — devhints", "https://devhints.io/bash")],
+  [R("explainshell.com — تحلیل تعاملی هر دستور شل (رایگان)", "https://explainshell.com/")],
   hours=3, kind="practice")
 
 d(p1, "TryHackMe: Linux Fundamentals 2 و 3 (رایگان)",
@@ -160,8 +160,7 @@ p2 = phase("p2", "شبکه و پروتکل HTTP", "وب روی HTTP اجرا م�
 
 d(p2, "مدل OSI و TCP/IP",
   "لایه‌های OSI و TCP/IP، تفاوت TCP و UDP، و مفهوم پورت را یاد بگیر. جدول ۷ لایهٔ OSI را از حفظ در Obsidian بنویس.",
-  [R("TryHackMe — Pre Security Path (رایگان)", "https://tryhackme.com/path/outline/presecurity"),
-   R("راهنمای مصور TCP/IP (رایگان آنلاین)", "https://www.freecodecamp.org/news/an-introduction-to-computer-networking-864026ea0aae/")],
+  [R("TryHackMe — Pre Security Path (رایگان)", "https://tryhackme.com/path/outline/presecurity")],
   hours=2, kind="learn")
 
 d(p2, "DNS از صفر",
@@ -218,8 +217,7 @@ d(p2, "Wireshark و تحلیل ترافیک شبکه",
 
 d(p2, "Nmap: اسکن پورت و سرویس",
   "اسکن پایه با nmap (-sV, -sC, -p-) روی یک هدف مجاز (مثل scanme.nmap.org) را تمرین کن و خروجی را تفسیر کن.",
-  [R("Nmap — راهنمای رسمی (رایگان)", "https://nmap.org/book/man.html"),
-   R("scanme.nmap.org — هدف قانونی برای تمرین اسکن", "https://nmap.org/book/testing.html")],
+  [R("Nmap — راهنمای رسمی (رایگان)", "https://nmap.org/book/man.html")],
   hours=2, kind="practice")
 
 d(p2, "TryHackMe: Web Fundamentals — How the Web Works",
@@ -379,7 +377,7 @@ swigger_topics = [
     ("Clickjacking", "clickjacking", 1, "حملات لایه‌بندی UI و بای‌پس‌های X-Frame-Options/CSP."),
     ("Authentication", "authentication", 3, "باگ‌های لاگین، ریست پسورد، 2FA bypass، و رمزهای قابل حدس‌زدن."),
     ("Access Control (IDOR/Privilege Escalation)", "access-control", 3, "یکی از پرسودترین کلاس‌ها در باگ‌بانتی؛ IDOR و Broken Access Control را عمیق کار کن."),
-    ("Path Traversal", "path-traversal", 1, "دسترسی به فایل‌های خارج از دایرکتوری وب‌روت."),
+    ("Path Traversal", "file-path-traversal", 1, "دسترسی به فایل‌های خارج از دایرکتوری وب‌روت."),
     ("Command Injection", "os-command-injection", 1, "اجرای دستور سیستم‌عامل از طریق ورودی کاربر."),
     ("Business Logic Vulnerabilities", "logic-flaws", 2, "باگ‌هایی که هیچ اسکنری پیدا نمی‌کند؛ فقط با فکر انسانی کشف می‌شوند."),
     ("Information Disclosure", "information-disclosure", 1, "افشای اطلاعات حساس از طریق پیام خطا، کامنت کد، یا فایل پشتیبان."),
@@ -398,7 +396,7 @@ swigger_topics = [
     ("Web Cache Poisoning", "web-cache-poisoning", 2, "مسموم‌سازی کش برای تحویل محتوای مخرب به کاربران دیگر."),
     ("HTTP Host Header Attacks", "host-header", 1, "دستکاری هدر Host برای پویزنینگ کش، ریست پسورد مخرب، و روتینگ اشتباه."),
     ("HTTP Request Smuggling", "request-smuggling", 3, "یکی از پیچیده‌ترین و باارزش‌ترین کلاس‌های امروز؛ اختلاف تفسیر HTTP بین پروکسی و سرور."),
-    ("OAuth Authentication", "oauth-authentication", 2, "باگ‌های رایج در پیاده‌سازی OAuth 2.0 و سرقت اکانت."),
+    ("OAuth Authentication", "oauth", 2, "باگ‌های رایج در پیاده‌سازی OAuth 2.0 و سرقت اکانت."),
     ("JWT Attacks", "jwt", 2, "دستکاری الگوریتم، کلید ضعیف، و بای‌پس امضای JSON Web Token."),
     ("Prototype Pollution", "prototype-pollution", 2, "آلوده‌سازی پروتوتایپ در جاوااسکریپت، سمت کلاینت و سمت سرور (Node.js)."),
     ("Web LLM Attacks", "llm-attacks", 1, "کلاس نوظهور: Prompt Injection و آسیب‌پذیری اپلیکیشن‌های مبتنی بر LLM."),
@@ -485,6 +483,27 @@ d(p6, "کانال یوتیوب NahamSec — ویدیوهای شکار زنده (
   "چند ویدیوی «Live Hacking» رایگان NahamSec را ببین تا فرایند فکری واقعی یک هانتر حرفه‌ای هنگام شکار روی برنامهٔ واقعی را از نزدیک ببینی.",
   [R("کانال یوتیوب NahamSec", "https://www.youtube.com/@NahamSec")],
   hours=2, kind="learn")
+
+d(p6, "OverTheWire Natas — سطح ۰ تا ۷ (وارگیم اختصاصی وب)",
+  "برخلاف Bandit که لینوکس‌محور بود، Natas مستقیماً روی آسیب‌پذیری‌های وب (View Source، PHP، کوکی، هدرها) تمرکز دارد. سطح‌های ۰ تا ۷ را با مرورگر و View-Source حل کن.",
+  [R("OverTheWire Natas (رایگان)", "https://overthewire.org/wargames/natas/")],
+  hours=3, kind="practice")
+
+d(p6, "OverTheWire Natas — سطح ۸ تا ۱۵",
+  "سطح‌های میانی Natas را حل کن: بای‌پس مقایسهٔ نوع در PHP، تزریق دستور، و باگ‌های منطقی ساده در کد PHP.",
+  [R("OverTheWire Natas (رایگان)", "https://overthewire.org/wargames/natas/")],
+  hours=3, kind="practice")
+
+d(p6, "HackTheBox — ساخت حساب رایگان و Starting Point Tier 0",
+  "در Hack The Box با حساب رایگان (Free tier، بدون نیاز به VIP) ثبت‌نام کن و ماشین‌های Tier 0 مسیر Starting Point را حل کن؛ هر ماشین یک راهنمای رسمی گام‌به‌گام رایگان دارد.",
+  [R("Hack The Box — Starting Point (رایگان)", "https://app.hackthebox.com/starting-point"),
+   R("راهنمای شروع Starting Point", "https://help.hackthebox.com/en/articles/6007919-introduction-to-starting-point")],
+  hours=3, kind="practice")
+
+d(p6, "HackTheBox — Starting Point Tier 1",
+  "به ماشین‌های Tier 1 برو؛ کمی پیچیده‌تر از Tier 0 هستند و مهارت شمارش سرویس (enumeration) و ترکیب چند آسیب‌پذیری را تقویت می‌کنند.",
+  [R("Hack The Box — Starting Point (رایگان)", "https://app.hackthebox.com/starting-point")],
+  hours=3, kind="practice")
 
 d(p6, "مرور و جمع‌بندی فاز: پورتفولیوی حل‌شده‌ها",
   "لیستی از تمام چالش‌ها/لب‌هایی که تا الان حل کردی (Bandit, PortSwigger, Hacker101, DVWA, PentesterLab, Gruyere) را در یک صفحهٔ «Portfolio» در Obsidian جمع کن — این سند پایهٔ رزومهٔ آینده‌ات است.",
@@ -589,13 +608,13 @@ d(p8, "دیکامپایل و تحلیل استاتیک اپ اندروید",
 
 d(p8, "Insecure Data Storage و SSL Pinning Bypass",
   "بررسی کن اپ چه داده‌ای را ناامن ذخیره می‌کند (SharedPreferences، دیتابیس محلی)، و مفهوم SSL Pinning و روش‌های رایگان bypass آن (Frida/Objection) را یاد بگیر.",
-  [R("OWASP MASTG — Testing Network Communication", "https://mas.owasp.org/MASTG/tests/android/MASVS-NETWORK/"),
+  [R("OWASP MASTG — Testing Network Communication", "https://github.com/OWASP/mastg/blob/master/Document/0x05g-Testing-Network-Communication.md"),
    R("Objection (رایگان)", "https://github.com/sensepost/objection")],
   hours=3, kind="practice")
 
 d(p8, "OWASP API Security Top 10",
   "لیست ۲۰۲۳ OWASP API Security Top 10 را کامل بخوان — نقشهٔ راه اختصاصی آسیب‌پذیری‌های API که امروز در باگ‌بانتی بسیار پرارزش است.",
-  [R("OWASP API Security Top 10 (رایگان)", "https://owasp.org/API-Security/editions/2023/en/0x00-header/")],
+  [R("OWASP API Security Project (رایگان)", "https://owasp.org/www-project-api-security/")],
   hours=2, kind="learn")
 
 d(p8, "BOLA/IDOR در APIها",
@@ -610,7 +629,7 @@ d(p8, "GraphQL Security عمیق",
 
 d(p8, "APIsec University — دوره‌های رایگان API Security",
   "دوره‌های رایگان APIsec University را ببین، خصوصاً دورهٔ مقدماتی API Penetration Testing.",
-  [R("APIsec University (رایگان با ثبت‌نام)", "https://www.apisecuniversity.com/courses")],
+  [R("APIsec University (رایگان با ثبت‌نام)", "https://www.apisecuniversity.com/")],
   hours=2, kind="learn")
 
 d(p8, "پروژهٔ فاز: تست کامل یک API عمومی رایگان",
@@ -625,8 +644,8 @@ p9 = phase("p9", "شکار واقعی و گزارش‌نویسی حرفه‌ای
 
 d(p9, "آناتومی یک گزارش حرفه‌ای باگ‌بانتی",
   "ساختار استاندارد یک گزارش خوب (Title, Summary, Steps to Reproduce, Impact, Remediation, PoC) را از راهنمای HackerOne یاد بگیر و یک تمپلیت شخصی در Obsidian بساز.",
-  [R("HackerOne — راهنمای نوشتن گزارش خوب (رایگان)", "https://docs.hackerone.com/en/articles/8419605-writing-a-quality-report"),
-   R("کتاب رایگان الکترونیکی نمونه — Bugcrowd Vulnerability Rating Taxonomy", "https://bugcrowd.com/vulnerability-rating-taxonomy")],
+  [R("HackerOne — Quality Reports (رایگان)", "https://docs.hackerone.com/en/articles/8475116-quality-reports"),
+   R("Bugcrowd Vulnerability Rating Taxonomy", "https://bugcrowd.com/vulnerability-rating-taxonomy")],
   hours=2, kind="learn")
 
 d(p9, "مطالعهٔ عمیق ۱۰ گزارش افشاشدهٔ برتر",
@@ -662,7 +681,7 @@ d(p9, "نوشتن اولین گزارش کامل (حتی اگر یک VDP ساد�
 
 d(p9, "یادگیری از رد شدن گزارش (Duplicate/Not Applicable)",
   "دلایل رایج رد شدن گزارش‌ها (Duplicate, Informative, N/A, Out of Scope) را از مستندات HackerOne بخوان تا با ذهنیت درست به Triage نگاه کنی و ناامید نشوی.",
-  [R("HackerOne — Disclosure Guidelines", "https://docs.hackerone.com/en/articles/8494697-disclosure-guidelines")],
+  [R("HackerOne — Report States (Duplicate/Not Applicable/Informative)", "https://docs.hackerone.com/en/articles/8475030-report-states")],
   hours=1, kind="learn")
 
 d(p9, "شکار روز ۵: تمرکز روی یک کلاس آسیب‌پذیری تخصصی",
@@ -677,7 +696,7 @@ d(p9, "گسترش دامنهٔ شکار: انتخاب هدف دوم و سوم",
 
 d(p9, "شکار مستمر و ساخت عادت روزانه",
   "یک بلوک زمانی ثابت روزانه یا هفتگی برای شکار مستمر تعیین کن. هر یافته (باگ باشد یا نباشد) را در Obsidian با برچسب (Confirmed/Duplicate/Triaged/Rejected) ثبت کن تا آمار پیشرفتت مشخص باشد.",
-  [R("قالب رایگان ردیابی باگ‌بانتی (Notion Template نمونه)", "https://www.notion.so/templates/bug-bounty-tracker")],
+  [R("Obsidian (رایگان) — برای ساخت جدول ردیابی شخصی", "https://obsidian.md/")],
   hours=3, kind="practice")
 
 d(p9, "ساخت رزومه و پروفایل عمومی هانتر",
@@ -703,7 +722,8 @@ d(p10, "HTTP Desync Attacks و Web Cache Poisoning — تحقیقات اصلی",
 
 d(p10, "پارسر دیفرنشیال: تحقیق Orange Tsai",
   "ارائهٔ معروف Orange Tsai دربارهٔ «Breaking Parser Logic» و نمونهٔ Nginx off-by-slash را ببین/بخوان — نمونهٔ کامل از تفکر خلاقانه در پیدا کردن باگ‌های نو.",
-  [R("Orange Tsai — Breaking Parser Logic (اسلایدهای رایگان)", "https://www.blackhat.com/docs/us-18/Thursday/us-18-Orange-Tsai-Breaking-Parser-Logic-Take-Your-Path-Normalization-Off-And-Pop-0-Days-Out-2.pdf")],
+  [R("Orange Tsai — اسلایدهای Breaking Parser Logic (رایگان، GitHub)", "https://github.com/orangetw/My-Presentation-Slides/blob/main/data/2018-Breaking-Parser-Logic-Take-Your-Path-Normalization-Off-And-Pop-0days-Out.pdf"),
+   R("ویدیوی کامل ارائه در DEF CON 26 (رایگان)", "https://www.youtube.com/watch?v=28xWcRegncw")],
   hours=2, kind="learn")
 
 d(p10, "Reverse Proxy و Weird Proxies",
