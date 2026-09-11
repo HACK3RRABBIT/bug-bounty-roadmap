@@ -437,10 +437,10 @@ d(p6, "بلاگ و شبکه‌های Voorivex Team را زیر و رو کن",
    R("ایکس یاشار شاهین‌زاده", "https://x.com/yshahinzadeh")],
   hours=2, kind="learn")
 
-d(p6, "بررسی آکادمی Voorivex برای دوره‌های رایگان/تخفیف‌دار جدید",
-  "به سایت آکادمی Voorivex سر بزن، دوره‌های فعلی (مثل OWASP Zero) را ببین و اگر بخش رایگان یا کد تخفیف دانشجویی دارد ثبت‌نام کن؛ در غیر این‌صورت محتوای رایگان یوتیوبشان را دنبال کن.",
-  [R("آکادمی Voorivex", "https://voorivex.academy/"),
-   R("کانال یوتیوب Voorivex", "https://www.youtube.com/@Voorivex")],
+d(p6, "آشنایی با ساختار دوره‌های آکادمی Voorivex (بدون نیاز به پرداخت)",
+  "دوره‌های رسمی آکادمی Voorivex (مثل OWASP ZeroX) کلاس‌های زنده و پولی هستند، نه رایگان — پس نیازی به ثبت‌نام و پرداخت نیست. فقط صفحهٔ دوره‌ها را ببین تا با سرفصل‌ها و سطح‌بندی‌شان آشنا شوی (برای الهام گرفتن از ساختار)، و به‌جایش وقتت را صرف محتوای کاملاً رایگان همین بنیان‌گذاران در یوتیوب و بلاگ کن که در روزهای دیگر این نقشه‌راه آمده.",
+  [R("صفحهٔ دوره‌های آکادمی Voorivex (فقط برای آشنایی با سرفصل‌ها)", "https://voorivex.academy/"),
+   R("کانال یوتیوب Voorivex (کاملاً رایگان)", "https://www.youtube.com/@Voorivex")],
   hours=1, kind="learn")
 
 d(p6, "Hacker101 CTF — ثبت‌نام و اولین چالش",
@@ -466,7 +466,7 @@ d(p6, "Google XSS Game و Google Gruyere",
 
 d(p6, "PentesterLab — Web for Pentester (رایگان)",
   "لب رایگان «Web for Pentester» پنترستر‌لب را دانلود و روی ماشین مجازی اجرا کن؛ مجموعه‌ای متمرکز از آسیب‌پذیری‌های کلاسیک وب.",
-  [R("PentesterLab — Web for Pentester (رایگان)", "https://pentesterlab.com/exercises/web_for_pentester")],
+  [R("PentesterLab — Web for Pentester (رایگان)", "https://pentesterlab.com/exercises/web-for-pentester")],
   hours=3, kind="practice")
 
 d(p6, "Bugcrowd University — ویدیوها و لب‌ها",
