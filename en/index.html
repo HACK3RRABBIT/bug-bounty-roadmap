@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Complete Bug Bounty Roadmap | Zero to Professional</title>
+<meta name="description" content="A day-by-day, 100% free roadmap for learning bug bounty hunting from zero to professional — built on Voorivex, Yashar Shahinzadeh, PortSwigger Academy, Hacker101, and the world's best free resources.">
+<link rel="icon" type="image/svg+xml" href="../assets/logo.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0e14;
+    --bg-elev:#11151f;
+    --bg-elev-2:#161b28;
+    --border:#232a3b;
+    --border-soft:#1a2030;
+    --text:#e7ebf3;
+    --text-dim:#9aa4b8;
+    --text-faint:#5f6a82;
+    --accent:#22d3ee;
+    --accent-2:#a78bfa;
+    --green:#34d399;
+    --amber:#fbbf24;
+    --red:#f87171;
+    --radius:14px;
+    --maxw:1180px;
+    font-size:16px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(1200px 600px at 85% -10%, rgba(34,211,238,.08), transparent 60%),
+      radial-gradient(1000px 500px at -10% 10%, rgba(167,139,250,.08), transparent 60%),
+      var(--bg);
+    color:var(--text);
+    font-family:'Inter','Segoe UI',system-ui,sans-serif;
+    line-height:1.75;
+    padding-inline:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .wrap{max-width:var(--maxw);margin:0 auto;}
+  code, .mono{font-family:'JetBrains Mono', monospace; direction:ltr; unicode-bidi:embed;}
+
+  /* ---------- TOPBAR ---------- */
+  .topbar{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-top:18px;
+  }
+  .brand{display:flex;align-items:center;gap:9px;color:var(--text);font-weight:700;font-size:.95rem;}
+  .brand:hover{text-decoration:none;}
+  .brand-logo{width:28px;height:28px;filter:drop-shadow(0 0 6px rgba(34,211,238,.35));}
+  .topbar-actions{display:flex;align-items:center;gap:8px;position:relative;}
+  .icon-btn{
+    background:var(--bg-elev);border:1px solid var(--border);color:var(--text-dim);
+    width:38px;height:38px;border-radius:10px;cursor:pointer;font-size:.95rem;position:relative;
+    display:flex;align-items:center;justify-content:center;font-family:inherit;font-weight:700;
+  }
+  .icon-btn:hover{border-color:var(--accent);color:var(--text);}
+  .dot{position:absolute;top:6px;left:6px;width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 2px var(--bg-elev);}
+  .notif-panel{
+    position:absolute;top:46px;left:0;width:320px;max-width:80vw;max-height:420px;overflow-y:auto;
+    background:var(--bg-elev-2);border:1px solid var(--border);border-radius:12px;padding:6px;
+    box-shadow:0 12px 32px rgba(0,0,0,.5);z-index:80;
+  }
+  .notif-item{padding:12px 12px;border-radius:8px;border-bottom:1px solid var(--border-soft);}
+  .notif-item:last-child{border-bottom:none;}
+  .notif-item .nt-date{font-size:.7rem;color:var(--text-faint);font-family:'JetBrains Mono',monospace;}
+  .notif-item .nt-title{font-size:.85rem;font-weight:700;color:var(--text);margin:3px 0 4px;}
+  .notif-item .nt-body{font-size:.78rem;color:var(--text-dim);line-height:1.7;}
+
+  /* typing / glow accents */
+  .type-cursor::after{
+    content:'▌';color:var(--accent);animation:blink 1s step-end infinite;font-weight:400;
+  }
+  @keyframes blink{50%{opacity:0;}}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:36px 0 28px;text-align:center;}
+  .hero .kicker{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:.85rem;color:var(--accent);
+    background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.25);
+    padding:6px 16px;border-radius:999px;margin-bottom:22px;font-weight:600;
+  }
+  .hero h1{
+    font-family:'Share Tech Mono', monospace;
+    font-size:clamp(1.7rem, 4.6vw, 3rem);
+    font-weight:400;margin:0 0 16px;
+    letter-spacing:-.01em;
+    background:linear-gradient(90deg,#e7ebf3, #22d3ee 60%, #a78bfa);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero p.lead{
+    max-width:760px;margin:0 auto;color:var(--text-dim);
+    font-size:clamp(1rem,2vw,1.2rem);
+  }
+  .hero .badges{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:26px;}
+  .pill{
+    background:var(--bg-elev);border:1px solid var(--border);
+    padding:8px 16px;border-radius:999px;font-size:.85rem;color:var(--text-dim);
+    display:flex;align-items:center;gap:6px;
+  }
+  .pill b{color:var(--text);font-weight:700;}
+
+  .stats{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+    gap:12px;margin:34px 0;
+  }
+  .stat{
+    background:var(--bg-elev);border:1px solid var(--border);border-radius:var(--radius);
+    padding:18px 10px;text-align:center;
+  }
+  .stat .num{font-size:1.8rem;font-weight:800;color:var(--accent);}
+  .stat .lbl{font-size:.8rem;color:var(--text-dim);margin-top:4px;}
+
+  /* ---------- SOURCES STRIP ---------- */
+  .sources{
+    background:var(--bg-elev);border:1px solid var(--border);border-radius:var(--radius);
+    padding:20px 22px;margin-bottom:34px;
+  }
+  .sources h3{margin:0 0 12px;font-size:1rem;color:var(--text);}
+  .sources .grid{display:flex;flex-wrap:wrap;gap:8px;}
+  .sources .grid a{
+    font-size:.82rem;background:var(--bg-elev-2);border:1px solid var(--border-soft);
+    padding:6px 12px;border-radius:999px;color:var(--text-dim);
+  }
+  .sources .grid a:hover{color:var(--accent);border-color:var(--accent);text-decoration:none;}
+
+  /* ---------- CONTROLS ---------- */
+  .controls{
+    position:sticky;top:0;z-index:50;
+    background:rgba(11,14,20,.88);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+    padding:14px 0;margin-bottom:22px;
+  }
+  .controls .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+  .search{
+    flex:1;min-width:220px;
+    background:var(--bg-elev);border:1px solid var(--border);border-radius:10px;
+    padding:11px 16px;color:var(--text);font-family:inherit;font-size:.95rem;
+  }
+  .search:focus{outline:none;border-color:var(--accent);}
+  .filter-btn{
+    background:var(--bg-elev);border:1px solid var(--border);color:var(--text-dim);
+    padding:10px 14px;border-radius:10px;font-size:.85rem;cursor:pointer;font-family:inherit;
+    transition:all .15s;
+  }
+  .filter-btn:hover{border-color:var(--accent);color:var(--text);}
+  .filter-btn.active{background:var(--accent);color:#03181c;border-color:var(--accent);font-weight:700;}
+  .progress-overall{display:flex;align-items:center;gap:10px;min-width:180px;}
+  .progress-bar-track{flex:1;height:8px;background:var(--bg-elev-2);border-radius:99px;overflow:hidden;border:1px solid var(--border-soft);}
+  .progress-bar-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--green));border-radius:99px;transition:width .3s;}
+  .progress-pct{font-size:.8rem;color:var(--text-dim);white-space:nowrap;font-family:'JetBrains Mono',monospace;}
+
+  /* ---------- PHASE NAV ---------- */
+  .phase-nav{display:flex;gap:8px;overflow-x:auto;padding-bottom:2px;margin-top:12px;}
+  .phase-nav a{
+    flex:none;font-size:.78rem;color:var(--text-dim);background:var(--bg-elev);
+    border:1px solid var(--border);padding:7px 12px;border-radius:999px;white-space:nowrap;
+  }
+  .phase-nav a:hover{color:var(--text);text-decoration:none;border-color:var(--accent);}
+
+  /* ---------- PHASE SECTIONS ---------- */
+  .phase{margin:44px 0;scroll-margin-top:150px;}
+  .phase-head{
+    display:flex;align-items:center;gap:14px;margin-bottom:6px;
+    padding-inline-start:16px;border-inline-start:4px solid var(--phase-color, var(--accent));
+  }
+  .phase-icon{font-size:1.8rem;}
+  .phase-head h2{margin:0;font-size:1.4rem;font-weight:800;}
+  .phase-head .sub{color:var(--text-dim);font-size:.88rem;margin-top:2px;}
+  .phase-meta{
+    padding-inline-start:16px;display:flex;gap:14px;align-items:center;margin:10px 0 20px;flex-wrap:wrap;
+  }
+  .phase-progress{display:flex;align-items:center;gap:8px;flex:1;min-width:150px;max-width:280px;}
+  .phase-progress .track{flex:1;height:6px;background:var(--bg-elev-2);border-radius:99px;overflow:hidden;}
+  .phase-progress .fill{height:100%;background:var(--phase-color,var(--accent));border-radius:99px;}
+  .phase-count{font-size:.78rem;color:var(--text-faint);font-family:'JetBrains Mono',monospace;}
+
+  .days{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:14px;}
+
+  /* ---------- DAY CARD ---------- */
+  .day{
+    background:var(--bg-elev);border:1px solid var(--border);border-radius:var(--radius);
+    padding:18px 18px 16px;position:relative;transition:border-color .15s, transform .15s;
+    display:flex;flex-direction:column;gap:10px;
+  }
+  .day:hover{border-color:var(--phase-color,var(--accent));}
+  .day.done{opacity:.55;}
+  .day.done .day-title{text-decoration:line-through;text-decoration-color:var(--green);}
+  .day-top{display:flex;align-items:center;justify-content:space-between;gap:8px;}
+  .day-num{
+    font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--phase-color,var(--accent));
+    font-weight:700;background:color-mix(in srgb, var(--phase-color, var(--accent)) 15%, transparent);
+    padding:3px 9px;border-radius:6px;
+  }
+  .kind-tag{font-size:.68rem;padding:3px 9px;border-radius:6px;font-weight:700;letter-spacing:.02em;}
+  .kind-learn{background:rgba(167,139,250,.15);color:#c4b5fd;}
+  .kind-practice{background:rgba(34,211,238,.15);color:#67e8f9;}
+  .kind-review{background:rgba(251,191,36,.15);color:#fcd34d;}
+  .kind-milestone{background:rgba(52,211,153,.18);color:#6ee7b7;}
+  .day-title{font-size:1rem;font-weight:700;margin:0;color:var(--text);}
+  .day-task{font-size:.87rem;color:var(--text-dim);flex:1;}
+  .day-res{display:flex;flex-direction:column;gap:5px;margin-top:2px;}
+  .day-res a{
+    font-size:.79rem;color:var(--text-dim);background:var(--bg-elev-2);
+    border:1px solid var(--border-soft);border-radius:8px;padding:7px 10px;
+    display:flex;align-items:center;gap:6px;
+  }
+  .day-res a:hover{color:var(--accent);border-color:var(--accent);text-decoration:none;}
+  .day-res a::before{content:'↗';font-size:.75rem;opacity:.6;}
+  .day-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:4px;}
+  .hours{font-size:.75rem;color:var(--text-faint);font-family:'JetBrains Mono',monospace;}
+  .check{
+    display:flex;align-items:center;gap:6px;cursor:pointer;font-size:.78rem;color:var(--text-dim);
+    user-select:none;
+  }
+  .check input{width:16px;height:16px;accent-color:var(--green);cursor:pointer;}
+
+  /* ---------- HEATMAP ---------- */
+  .heatmap-scroll{overflow-x:auto; padding-bottom:4px;}
+  .heatmap-grid{
+    display:grid; grid-auto-flow:column; grid-template-rows:repeat(7, 12px);
+    gap:3px; direction:ltr; width:max-content;
+  }
+  .hm-cell{
+    width:12px; height:12px; border-radius:3px; background:var(--bg-elev-2); border:1px solid var(--border-soft);
+    display:inline-block;
+  }
+  .hm-cell[data-level="1"]{background:#0e4b52; border-color:#116470;}
+  .hm-cell[data-level="2"]{background:#0c7086; border-color:#0891a8;}
+  .hm-cell[data-level="3"]{background:#0ea5c4; border-color:#22d3ee;}
+  .hm-cell[data-level="4"]{background:#22d3ee; border-color:#67e8f9; box-shadow:0 0 6px rgba(34,211,238,.6);}
+  .heatmap-legend{display:flex; align-items:center; gap:5px; margin-top:10px; font-size:.72rem; color:var(--text-faint);}
+  .heatmap-legend .hm-cell{width:11px;height:11px;}
+
+  /* ---------- TIME TRACK on day card ---------- */
+  .timetrack{display:flex; align-items:center; gap:6px; margin-top:2px;}
+  .timetrack button{
+    background:var(--bg-elev-2); border:1px solid var(--border-soft); color:var(--text-faint);
+    font-size:.72rem; border-radius:7px; padding:5px 9px; cursor:pointer; font-family:inherit;
+  }
+  .timetrack button:hover{color:var(--accent); border-color:var(--accent);}
+  .timetrack .logged{font-size:.72rem; color:var(--text-faint); font-family:'JetBrains Mono',monospace;}
+  .timetrack-form{display:none; align-items:center; gap:6px; margin-top:6px;}
+  .timetrack-form.open{display:flex;}
+  .timetrack-form input{
+    width:64px; background:var(--bg); border:1px solid var(--border); color:var(--text);
+    border-radius:7px; padding:5px 8px; font-family:'JetBrains Mono',monospace; font-size:.78rem;
+  }
+  .timetrack-form button{
+    background:var(--accent); color:#03181c; border:none; font-weight:700; border-radius:7px;
+    padding:5px 12px; font-size:.75rem; cursor:pointer;
+  }
+
+  .hidden{display:none !important;}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    margin-top:70px;padding:36px 0 50px;border-top:1px solid var(--border);
+    color:var(--text-dim);font-size:.85rem;text-align:center;
+  }
+  footer a{color:var(--text-dim);}
+  footer a:hover{color:var(--accent);}
+  footer .credit-row{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-bottom:14px;}
+  .reset-btn{
+    background:transparent;border:1px solid var(--border);color:var(--text-faint);
+    padding:6px 14px;border-radius:8px;font-size:.75rem;cursor:pointer;font-family:inherit;
+  }
+  .reset-btn:hover{border-color:var(--red);color:var(--red);}
+
+  .top-btn{
+    position:fixed;bottom:22px;left:22px;background:var(--bg-elev);border:1px solid var(--border);
+    color:var(--text-dim);width:44px;height:44px;border-radius:50%;display:flex;align-items:center;
+    justify-content:center;cursor:pointer;font-size:1.1rem;box-shadow:0 6px 18px rgba(0,0,0,.35);
+    opacity:0;pointer-events:none;transition:opacity .2s;z-index:60;
+  }
+  .top-btn.show{opacity:1;pointer-events:auto;}
+
+  .empty-state{text-align:center;padding:60px 20px;color:var(--text-faint);}
+
+  @media (max-width:640px){
+    .hero{padding:40px 0 20px;}
+    .controls .row{flex-direction:column;align-items:stretch;}
+    .progress-overall{order:3;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="topbar">
+    <a href="./" class="brand"><img src="../assets/logo.svg" alt="logo" class="brand-logo"><span>Bug Bounty Roadmap</span></a>
+    <div class="topbar-actions">
+      <button id="lang-toggle" class="icon-btn" title="نسخهٔ فارسی">FA</button>
+      <button id="notif-btn" class="icon-btn" title="Updates">🔔<span id="notif-dot" class="dot hidden"></span></button>
+      <div id="notif-panel" class="notif-panel hidden"></div>
+    </div>
+  </div>
+
+  <section class="hero">
+    <span class="kicker">🐞 an unofficial, open-source community roadmap</span>
+    <h1><span class="type-cursor">Complete Bug Bounty Roadmap</span><br>Zero to Professional</h1>
+    <p class="lead">
+      A precise, day-by-day, completely free program for a complete beginner who wants to
+      become a professional bug bounty hunter — built from the free teachings of
+      <b>Yashar Shahinzadeh</b> and <b>Voorivex</b>, <b>PortSwigger</b> Academy,
+      <b>Hacker101</b>, and the best free resources in the world. Nothing here is paywalled.
+    </p>
+    <div class="badges">
+      <span class="pill">💯 <b>100% Free</b></span>
+      <span class="pill">🌐 <b>Global free resources</b></span>
+      <span class="pill">📅 <b id="stat-days-badge">—</b> days planned</span>
+      <span class="pill">✅ Progress tracking on this page</span>
+    </div>
+  </section>
+
+  <div class="stats" id="stats"></div>
+
+  <div class="sources">
+    <h3>🔗 Primary sources of this roadmap</h3>
+    <div class="grid">
+      <a href="https://www.youtube.com/@Voorivex" target="_blank" rel="noopener">Voorivex YouTube channel</a>
+      <a href="https://www.youtube.com/watch?v=_UxO2qKvCEQ" target="_blank" rel="noopener">Yashar Shahinzadeh's roadmap video</a>
+      <a href="https://memoryleaks.ir/how-to-become-a-hacker/" target="_blank" rel="noopener">memoryleaks.ir blog</a>
+      <a href="https://x.com/yshahinzadeh" target="_blank" rel="noopener">Yashar Shahinzadeh on X</a>
+      <a href="https://blog.voorivex.team/bug-bounty-roadmap-from-scratch" target="_blank" rel="noopener">Voorivex Team blog</a>
+      <a href="https://voorivex.academy/" target="_blank" rel="noopener">Voorivex Academy</a>
+      <a href="https://portswigger.net/web-security/all-topics" target="_blank" rel="noopener">PortSwigger Web Security Academy</a>
+      <a href="https://www.hacker101.com/" target="_blank" rel="noopener">Hacker101 (HackerOne)</a>
+      <a href="https://overthewire.org/wargames/bandit/" target="_blank" rel="noopener">OverTheWire Bandit</a>
+      <a href="https://github.com/nahamsec/Resources-for-Beginner-Bug-Bounty-Hunters" target="_blank" rel="noopener">NahamSec Resources</a>
+      <a href="https://www.youtube.com/@RanaKhalil101" target="_blank" rel="noopener">Rana Khalil</a>
+      <a href="https://tryhackme.com/" target="_blank" rel="noopener">TryHackMe</a>
+    </div>
+  </div>
+
+  <div class="sources" style="margin-bottom:22px;">
+    <h3>🧭 How do I use this roadmap?</h3>
+    <div style="color:var(--text-dim); font-size:.88rem; display:grid; gap:8px;">
+      <div>• <b style="color:var(--text)">Keep moving, don't rush:</b> it's fine if a "day" takes longer than one real day — order matters more than speed. Falling behind schedule is not failure.</div>
+      <div>• <b style="color:var(--text)">Day-type color coding:</b> <span class="kind-tag kind-learn" style="margin-inline-end:4px">Learn</span>a new concept,
+        <span class="kind-tag kind-practice" style="margin-inline-end:4px">Hands-on</span>get your hands on the keyboard,
+        <span class="kind-tag kind-review" style="margin-inline-end:4px">Review</span>consolidate, no new resource,
+        <span class="kind-tag kind-milestone">Milestone</span>a big checkpoint to gauge real progress.</div>
+      <div>• <b style="color:var(--text)">Documentation beats speed:</b> keep an Obsidian or Notion vault next to you the whole way and log every insight — this habit is a professional hunter's single most valuable asset.</div>
+      <div>• <b style="color:var(--text)">Always stay legal:</b> only practice within the authorized scope of bug bounty programs, VDPs, or purpose-built training environments (PortSwigger Academy, Hacker101, DVWA).</div>
+    </div>
+  </div>
+
+  <div class="sources" id="heatmap-section" style="margin-bottom:22px;">
+    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; margin-bottom:14px;">
+      <h3 style="margin:0;">📊 My Activity Graph</h3>
+      <div style="font-size:.78rem; color:var(--text-faint); font-family:'JetBrains Mono',monospace;" id="heatmap-summary">—</div>
+    </div>
+    <div class="heatmap-scroll"><div class="heatmap-grid" id="heatmap-grid"></div></div>
+    <div class="heatmap-legend">
+      <span>Less</span>
+      <span class="hm-cell" data-level="0"></span>
+      <span class="hm-cell" data-level="1"></span>
+      <span class="hm-cell" data-level="2"></span>
+      <span class="hm-cell" data-level="3"></span>
+      <span class="hm-cell" data-level="4"></span>
+      <span>More</span>
+      <span style="margin-inline-start:auto; color:var(--text-faint);">Data is stored only in this browser</span>
+    </div>
+  </div>
+
+  <div class="controls">
+    <div class="row">
+      <input class="search" id="search" type="text" placeholder="🔍 Search titles, descriptions, or resources...">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="todo">Remaining</button>
+      <button class="filter-btn" data-filter="done">Done</button>
+      <div class="progress-overall">
+        <div class="progress-bar-track"><div class="progress-bar-fill" id="overall-fill" style="width:0%"></div></div>
+        <span class="progress-pct" id="overall-pct">0%</span>
+      </div>
+    </div>
+    <div class="phase-nav" id="phase-nav"></div>
+  </div>
+
+  <main id="content"></main>
+
+  <footer>
+    <div class="credit-row">
+      <span>Built with <a href="https://claude.com/claude-code" target="_blank" rel="noopener">Claude Code</a>, based on research into reputable security-education resources</span>
+    </div>
+    <div class="credit-row">
+      <a href="https://github.com/hack3rrabbit/bug-bounty-roadmap" target="_blank" rel="noopener">Source code on GitHub</a>
+      <span>·</span>
+      <span>Your progress is stored only in this browser (localStorage)</span>
+      <span>·</span>
+      <button class="reset-btn" id="reset-progress">Reset progress</button>
+    </div>
+    <div>This is an unofficial, community-built project with no official affiliation to Voorivex or Yashar Shahinzadeh — built purely to curate the best free resources. <a href="../">فارسی</a></div>
+  </footer>
+
+</div>
+
+<button class="top-btn" id="top-btn" title="Back to top">↑</button>
+
+<script>
+const KIND_LABEL = { learn:'Learn', practice:'Hands-on', review:'Review', milestone:'Milestone' };
+const STORAGE_KEY = 'bbr_progress_v1';
+
+let ROADMAP = null;
+let progress = {};
+
+function loadProgress(){
+  try{ progress = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); }catch(e){ progress = {}; }
+}
+function saveProgress(){
+  try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(progress)); }catch(e){}
+}
+
+function allDays(){
+  return ROADMAP.phases.flatMap(p => p.days.map(d => ({...d, phaseId:p.id, phaseColor:p.color, phaseTitle:p.title})));
+}
+
+function renderStats(){
+  const totalDays = ROADMAP.generated_days;
+  const totalHours = allDays().reduce((s,d)=>s+d.hours,0);
+  const totalResources = new Set(allDays().flatMap(d=>d.resources.map(r=>r.u))).size;
+  document.getElementById('stat-days-badge').textContent = totalDays.toLocaleString('en-US');
+  const statsEl = document.getElementById('stats');
+  const items = [
+    [totalDays, 'training days'],
+    [ROADMAP.phases.length, 'main phases'],
+    [totalResources, 'unique free resources'],
+    [Math.round(totalHours), 'hours of content'],
+    [Math.round(totalDays/6*7/30*10)/10, 'calendar months (6 study days/wk)'],
+  ];
+  statsEl.innerHTML = items.map(([n,l])=>`<div class="stat"><div class="num">${n}</div><div class="lbl">${l}</div></div>`).join('');
+}
+
+function faNum(n){ return String(n); } // no digit localization needed in English
+
+function renderPhaseNav(){
+  const nav = document.getElementById('phase-nav');
+  nav.innerHTML = ROADMAP.phases.map(p=>`<a href="#${p.id}">${p.icon} ${p.title}</a>`).join('');
+}
+
+function dayCard(day){
+  const isDone = !!progress[day.day];
+  const loggedMin = dayTime[day.day] || 0;
+  const resHtml = day.resources.map(r=>`<a href="${r.u}" target="_blank" rel="noopener">${r.t}</a>`).join('');
+  return `
+  <div class="day ${isDone?'done':''}" data-day="${day.day}" data-kind="${day.kind}" data-phase="${day.phaseId}"
+       style="--phase-color:${day.phaseColor}"
+       data-search="${(day.title+' '+day.task+' '+day.resources.map(r=>r.t).join(' ')).toLowerCase()}">
+    <div class="day-top">
+      <span class="day-num">Day ${faNum(day.day)}</span>
+      <span class="kind-tag kind-${day.kind}">${KIND_LABEL[day.kind]}</span>
+    </div>
+    <h3 class="day-title">${day.title}</h3>
+    <p class="day-task">${day.task}</p>
+    <div class="day-res">${resHtml}</div>
+    <div class="day-bottom">
+      <span class="hours">⏱ ${faNum(day.hours)}h estimated</span>
+      <label class="check">
+        <input type="checkbox" ${isDone?'checked':''} onchange="toggleDay(${day.day}, this.checked)">
+        Done
+      </label>
+    </div>
+    <div class="timetrack">
+      <button type="button" onclick="toggleTimeForm(${day.day})">⏱ Log study time</button>
+      <span class="logged" id="logged-${day.day}">${loggedMin>0 ? '('+faNum(Math.round(loggedMin/60*10)/10)+'h logged)' : ''}</span>
+    </div>
+    <div class="timetrack-form" id="tf-${day.day}">
+      <input type="number" min="1" max="600" placeholder="minutes" id="tf-input-${day.day}">
+      <button type="button" onclick="submitTimeLog(${day.day})">Save</button>
+    </div>
+  </div>`;
+}
+
+function renderContent(){
+  const content = document.getElementById('content');
+  content.innerHTML = ROADMAP.phases.map(p=>{
+    const doneCount = p.days.filter(d=>progress[d.day]).length;
+    const pct = Math.round(doneCount/p.days.length*100);
+    return `
+    <section class="phase" id="${p.id}" style="--phase-color:${p.color}">
+      <div class="phase-head">
+        <span class="phase-icon">${p.icon}</span>
+        <div>
+          <h2>${p.title}</h2>
+          <div class="sub">${p.subtitle}</div>
+        </div>
+      </div>
+      <div class="phase-meta">
+        <div class="phase-progress"><div class="track"><div class="fill" style="width:${pct}%"></div></div></div>
+        <span class="phase-count">${faNum(doneCount)}/${faNum(p.days.length)} days</span>
+      </div>
+      <div class="days">${p.days.map(dayCard).join('')}</div>
+    </section>`;
+  }).join('') + `<div class="empty-state hidden" id="empty-state">Nothing matches this filter/search 🕵️</div>`;
+}
+
+function updateOverallProgress(){
+  const days = allDays();
+  const done = days.filter(d=>progress[d.day]).length;
+  const pct = days.length ? Math.round(done/days.length*100) : 0;
+  document.getElementById('overall-fill').style.width = pct+'%';
+  document.getElementById('overall-pct').textContent = faNum(pct)+'% ('+faNum(done)+'/'+faNum(days.length)+')';
+}
+
+window.toggleDay = function(dayNum, checked){
+  if(checked) progress[dayNum] = true; else delete progress[dayNum];
+  saveProgress();
+  const card = document.querySelector(`.day[data-day="${dayNum}"]`);
+  if(card) card.classList.toggle('done', checked);
+  updateOverallProgress();
+  renderPhaseProgressBars();
+  // The first time a day is checked, its estimated hours are auto-logged to today
+  if(checked && !dayTime[dayNum]){
+    const day = allDays().find(x=>x.day===dayNum);
+    if(day) addTimeLog(dayNum, Math.round(day.hours*60));
+  }
+}
+
+/* ---------------- Time tracking + activity heatmap ---------------- */
+const TIMELOG_KEY = 'bbr_timelog_v1';   // { 'YYYY-MM-DD': minutes }
+const DAYTIME_KEY = 'bbr_daytime_v1';   // { dayNum: minutes }
+let timelog = {}, dayTime = {};
+
+function loadTimeData(){
+  try{ timelog = JSON.parse(localStorage.getItem(TIMELOG_KEY) || '{}'); }catch(e){ timelog = {}; }
+  try{ dayTime = JSON.parse(localStorage.getItem(DAYTIME_KEY) || '{}'); }catch(e){ dayTime = {}; }
+}
+function saveTimeData(){
+  try{
+    localStorage.setItem(TIMELOG_KEY, JSON.stringify(timelog));
+    localStorage.setItem(DAYTIME_KEY, JSON.stringify(dayTime));
+  }catch(e){}
+}
+function todayStr(){
+  const d = new Date();
+  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+}
+function addTimeLog(dayNum, minutes){
+  if(!minutes || minutes<=0) return;
+  const t = todayStr();
+  timelog[t] = (timelog[t]||0) + minutes;
+  dayTime[dayNum] = (dayTime[dayNum]||0) + minutes;
+  saveTimeData();
+  renderHeatmap();
+  const badge = document.getElementById('logged-'+dayNum);
+  if(badge) badge.textContent = '('+faNum(Math.round(dayTime[dayNum]/60*10)/10)+'h logged)';
+}
+window.toggleTimeForm = function(dayNum){
+  const f = document.getElementById('tf-'+dayNum);
+  if(f) f.classList.toggle('open');
+}
+window.submitTimeLog = function(dayNum){
+  const input = document.getElementById('tf-input-'+dayNum);
+  const minutes = parseInt(input.value, 10);
+  if(minutes>0){
+    addTimeLog(dayNum, minutes);
+    input.value='';
+    document.getElementById('tf-'+dayNum).classList.remove('open');
+  }
+}
+
+function renderHeatmap(){
+  const grid = document.getElementById('heatmap-grid');
+  if(!grid) return;
+  const WEEKS = 20, DAYS = WEEKS*7;
+  const today = new Date();
+  today.setHours(0,0,0,0);
+  const start = new Date(today);
+  start.setDate(start.getDate() - (DAYS-1) - today.getDay());
+  let cells = '';
+  let totalMinutes = 0, activeDays = 0;
+  const cursor = new Date(start);
+  for(let i=0;i<WEEKS*7+7;i++){
+    const key = cursor.getFullYear()+'-'+String(cursor.getMonth()+1).padStart(2,'0')+'-'+String(cursor.getDate()).padStart(2,'0');
+    const mins = timelog[key] || 0;
+    let level = 0;
+    if(mins>0) level=1;
+    if(mins>=30) level=2;
+    if(mins>=90) level=3;
+    if(mins>=180) level=4;
+    const future = cursor > today;
+    if(mins>0){ totalMinutes += mins; activeDays++; }
+    cells += `<span class="hm-cell" data-level="${future?'':level}" title="${key} — ${mins>0? Math.round(mins/60*10)/10+' hours':'no activity'}" style="${future?'visibility:hidden':''}"></span>`;
+    cursor.setDate(cursor.getDate()+1);
+  }
+  grid.innerHTML = cells;
+  const summary = document.getElementById('heatmap-summary');
+  if(summary){
+    summary.textContent = `${faNum(activeDays)} active days · ${faNum(Math.round(totalMinutes/60*10)/10)}h logged in the last ${faNum(WEEKS)} weeks`;
+  }
+}
+
+function renderPhaseProgressBars(){
+  ROADMAP.phases.forEach(p=>{
+    const doneCount = p.days.filter(d=>progress[d.day]).length;
+    const pct = Math.round(doneCount/p.days.length*100);
+    const section = document.getElementById(p.id);
+    if(!section) return;
+    section.querySelector('.phase-progress .fill').style.width = pct+'%';
+    section.querySelector('.phase-count').textContent = `${faNum(doneCount)}/${faNum(p.days.length)} days`;
+  });
+}
+
+let currentFilter = 'all';
+function applyFilters(){
+  const q = document.getElementById('search').value.trim().toLowerCase();
+  const cards = document.querySelectorAll('.day');
+  let visibleCount = 0;
+  cards.forEach(c=>{
+    const isDone = !!progress[c.dataset.day];
+    let show = true;
+    if(currentFilter==='done' && !isDone) show = false;
+    if(currentFilter==='todo' && isDone) show = false;
+    if(q && !c.dataset.search.includes(q)) show = false;
+    c.classList.toggle('hidden', !show);
+    if(show) visibleCount++;
+  });
+  // hide empty phase sections
+  document.querySelectorAll('.phase').forEach(sec=>{
+    const anyVisible = [...sec.querySelectorAll('.day')].some(c=>!c.classList.contains('hidden'));
+    sec.classList.toggle('hidden', !anyVisible);
+  });
+  document.getElementById('empty-state').classList.toggle('hidden', visibleCount>0);
+}
+
+function initControls(){
+  document.getElementById('search').addEventListener('input', applyFilters);
+  document.querySelectorAll('.filter-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      currentFilter = btn.dataset.filter;
+      applyFilters();
+    });
+  });
+  document.getElementById('reset-progress').addEventListener('click', ()=>{
+    if(confirm('Are you sure you want to clear all your progress? This cannot be undone.')){
+      progress = {};
+      saveProgress();
+      renderContent();
+      updateOverallProgress();
+    }
+  });
+  const topBtn = document.getElementById('top-btn');
+  window.addEventListener('scroll', ()=>{
+    topBtn.classList.toggle('show', window.scrollY > 600);
+  });
+  topBtn.addEventListener('click', ()=>window.scrollTo({top:0, behavior:'smooth'}));
+  document.getElementById('lang-toggle').addEventListener('click', ()=>{ window.location.href = '../'; });
+}
+
+/* ---------------- Notifications / changelog ---------------- */
+const SEEN_KEY = 'bbr_last_seen_update_v1';
+function initNotifications(){
+  fetch('../data/changelog.json').then(r=>r.json()).then(items=>{
+    const lastSeen = parseInt(localStorage.getItem(SEEN_KEY) || '0', 10);
+    const unread = items.filter(it=>it.id > lastSeen).length;
+    document.getElementById('notif-dot').classList.toggle('hidden', unread===0);
+    const panel = document.getElementById('notif-panel');
+    panel.innerHTML = items.map(it=>`
+      <div class="notif-item">
+        <div class="nt-date">${it.date}</div>
+        <div class="nt-title">${it.title_en}</div>
+        <div class="nt-body">${it.body_en}</div>
+      </div>`).join('');
+    const btn = document.getElementById('notif-btn');
+    btn.addEventListener('click', ()=>{
+      panel.classList.toggle('hidden');
+      if(!panel.classList.contains('hidden') && items.length){
+        localStorage.setItem(SEEN_KEY, String(Math.max(...items.map(i=>i.id))));
+        document.getElementById('notif-dot').classList.add('hidden');
+      }
+    });
+    document.addEventListener('click', (e)=>{
+      if(!panel.contains(e.target) && e.target!==btn){ panel.classList.add('hidden'); }
+    });
+  }).catch(()=>{});
+}
+
+fetch('../data/roadmap.en.json')
+  .then(r=>r.json())
+  .then(data=>{
+    ROADMAP = data;
+    loadProgress();
+    loadTimeData();
+    renderStats();
+    renderPhaseNav();
+    renderContent();
+    updateOverallProgress();
+    renderHeatmap();
+    initControls();
+    initNotifications();
+  })
+  .catch(err=>{
+    document.getElementById('content').innerHTML = '<p style="text-align:center;color:var(--red)">Failed to load roadmap data. Please refresh the page.</p>';
+    console.error(err);
+  });
+</script>
+
+</body>
+</html>
