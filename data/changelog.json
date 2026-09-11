@@ -1,5 +1,21 @@
 [
   {
+    "id": 7,
+    "date": "2026-09-11",
+    "title_fa": "اپ محلی کاربردی: ثبت‌نام، دیتابیس، نقش کاربری",
+    "body_fa": "یک نسخهٔ اپ کاربردی واقعی (Flask + SQLite) در پوشهٔ app/ اضافه شد: ثبت‌نام/ورود، نقش‌های user/admin، هر فاز به‌صورت صفحهٔ جداگانه، پنل مدیریت (ارسال اعلان، حالت نگهداری، مدیریت کاربران)، و نمودار فعالیت سمت سرور. روی پورت 9876 اجرا می‌شود.",
+    "title_en": "Functional local app: registration, database, user roles",
+    "body_en": "Added a real functional app (Flask + SQLite) under app/: registration/login, user/admin roles, each phase as its own page, an admin panel (post notifications, maintenance mode, user management), and a server-side activity heatmap. Runs on port 9876."
+  },
+  {
+    "id": 6,
+    "date": "2026-09-11",
+    "title_fa": "نسخهٔ کامل انگلیسی + لوگوی اختصاصی",
+    "body_fa": "نسخهٔ کامل انگلیسی نقشه‌راه در مسیر /en/ منتشر شد، با همان ساختار ۱۲ فازی و ۱۴۱ روزه. یک لوگوی اختصاصی (سپر + باگ) طراحی و به‌عنوان favicon سایت استفاده شد.",
+    "title_en": "Full English version + dedicated logo",
+    "body_en": "Published a complete English version of the roadmap at /en/, with the exact same 12-phase, 141-day structure. Designed a dedicated shield+bug logo and set it as the site's favicon."
+  },
+  {
     "id": 5,
     "date": "2026-09-11",
     "title_fa": "فاز هوش مصنوعی + زمان‌بندی واقعی + نمودار فعالیت",
