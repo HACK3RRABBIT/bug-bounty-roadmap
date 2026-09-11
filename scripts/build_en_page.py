@@ -29,16 +29,15 @@ REPLACEMENTS = [
      "font-family:'Inter','Segoe UI',system-ui,sans-serif;"),
     ("family=Vazirmatn:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Share+Tech+Mono&display=swap",
      "family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Share+Tech+Mono&display=swap"),
-    # hero h1 gets terminal font for hacker feel
-    (".hero h1{\n    font-size:clamp(2rem, 5vw, 3.3rem);\n    font-weight:900;margin:0 0 16px;\n    letter-spacing:-.02em;",
-     ".hero h1{\n    font-family:'Share Tech Mono', monospace;\n    font-size:clamp(1.7rem, 4.6vw, 3rem);\n    font-weight:400;margin:0 0 16px;\n    letter-spacing:-.01em;"),
     # topbar / notif
+    ('<a href="v2/" class="icon-btn" title="نسخهٔ جدید با انیمیشن">✨ جدید</a>',
+     '<a href="../v2/" class="icon-btn" title="New animated design">✨ New</a>'),
     ('title="تازه‌ها"', 'title="Updates"'),
     # hero
     ('<span class="kicker">🐞 نقشه‌راه غیررسمی و متن‌باز جامعهٔ فارسی‌زبان</span>',
      '<span class="kicker">🐞 an unofficial, open-source community roadmap</span>'),
-    ('<h1><span class="type-cursor">نقشه‌راه کامل باگ‌بانتی</span><br>از صفر تا حرفه‌ای</h1>',
-     '<h1><span class="type-cursor">Complete Bug Bounty Roadmap</span><br>Zero to Professional</h1>'),
+    ('<h1>نقشه‌راه کامل باگ‌بانتی<br><span class="accent">از صفر تا حرفه‌ای</span></h1>',
+     '<h1>Complete Bug Bounty Roadmap<br><span class="accent">Zero to Professional</span></h1>'),
     ("""    <p class="lead">
       یک برنامهٔ روز‌به‌روز، دقیق و کاملاً رایگان برای کسی که هیچ پیش‌زمینه‌ای ندارد و می‌خواهد
       به یک باگ‌بانتی‌هانتر حرفه‌ای تبدیل شود — برگرفته از آموزش‌های
@@ -156,14 +155,14 @@ REPLACEMENTS = [
     ("function faNum(n){ return String(n).replace(/[0-9]/g, x=>'۰۱۲۳۴۵۶۷۸۹'[x]); }",
      "function faNum(n){ return String(n); } // no digit localization needed in English"),
     ('<span class="day-num">روز ${faNum(day.day)}</span>', '<span class="day-num">Day ${faNum(day.day)}</span>'),
-    ("<span class=\"hours\">⏱ ${faNum(day.hours)} ساعت تخمینی</span>",
-     "<span class=\"hours\">⏱ ${faNum(day.hours)}h estimated</span>"),
+    ("<span class=\"hours\">${faNum(day.hours)} ساعت تخمینی</span>",
+     "<span class=\"hours\">${faNum(day.hours)}h estimated</span>"),
     ("""        <input type="checkbox" ${isDone?'checked':''} onchange="toggleDay(${day.day}, this.checked)">
         انجام شد""",
      """        <input type="checkbox" ${isDone?'checked':''} onchange="toggleDay(${day.day}, this.checked)">
         Done"""),
-    ('<button type="button" onclick="toggleTimeForm(${day.day})">⏱ ثبت زمان مطالعه</button>',
-     '<button type="button" onclick="toggleTimeForm(${day.day})">⏱ Log study time</button>'),
+    ('<button type="button" onclick="toggleTimeForm(${day.day})">ثبت زمان مطالعه</button>',
+     '<button type="button" onclick="toggleTimeForm(${day.day})">Log study time</button>'),
     ("${loggedMin>0 ? '('+faNum(Math.round(loggedMin/60*10)/10)+' ساعت ثبت‌شده)' : ''}",
      "${loggedMin>0 ? '('+faNum(Math.round(loggedMin/60*10)/10)+'h logged)' : ''}"),
     ('<input type="number" min="1" max="600" placeholder="دقیقه" id="tf-input-${day.day}">',
