@@ -5,3 +5,4 @@ __pycache__/
 app/.venv/
 app/bugbounty.db
 app/__pycache__/
+web/.wrangler/

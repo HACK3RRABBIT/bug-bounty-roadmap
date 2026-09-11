@@ -1,0 +1,2410 @@
+{
+  "generated_days": 141,
+  "phases": [
+    {
+      "id": "p0",
+      "title": "Getting Started: Mindset & Environment",
+      "subtitle": "Before your first command, know why you're doing this and what you're doing it with",
+      "icon": "🚀",
+      "color": "#7c3aed",
+      "days": [
+        {
+          "title": "Why bug bounty? The real path into this career",
+          "task": "Read Yashar Shahinzadeh's full post 'How to Become a Hacker'. Start a Notion/Obsidian vault and write down your real motivation for this path — you'll revisit and update this document throughout the whole roadmap.",
+          "resources": [
+            {
+              "t": "Yashar Shahinzadeh's blog — How to Become a Hacker",
+              "u": "https://memoryleaks.ir/how-to-become-a-hacker/"
+            },
+            {
+              "t": "Voorivex Team — Bug Bounty Roadmap from Scratch",
+              "u": "https://blog.voorivex.team/bug-bounty-roadmap-from-scratch"
+            }
+          ],
+          "hours": 2,
+          "kind": "learn",
+          "day": 1
+        },
+        {
+          "title": "Watch Yashar Shahinzadeh's roadmap video",
+          "task": "Watch the full roadmap video and take notes. Turn every recommendation into a checklist item in your personal doc.",
+          "resources": [
+            {
+              "t": "Roadmap video — Yashar Shahinzadeh (Voorivex YouTube)",
+              "u": "https://www.youtube.com/watch?v=_UxO2qKvCEQ"
+            },
+            {
+              "t": "Voorivex YouTube channel",
+              "u": "https://www.youtube.com/@Voorivex"
+            }
+          ],
+          "hours": 1,
+          "kind": "learn",
+          "day": 2
+        },
+        {
+          "title": "Set up a Linux VM and hacking environment",
+          "task": "Install VirtualBox/VMware and spin up Kali Linux or Parrot OS in a VM. Take an initial snapshot so you can always roll back a broken environment.",
+          "resources": [
+            {
+              "t": "Download Kali Linux",
+              "u": "https://www.kali.org/get-kali/"
+            },
+            {
+              "t": "VirtualBox (free)",
+              "u": "https://www.virtualbox.org/"
+            },
+            {
+              "t": "Kali in VirtualBox install guide",
+              "u": "https://www.kali.org/docs/virtualization/install-virtualbox-guest-vm/"
+            }
+          ],
+          "hours": 2,
+          "kind": "practice",
+          "day": 3
+        },
+        {
+          "title": "Create profiles on bug bounty platforms",
+          "task": "Sign up on HackerOne and Bugcrowd, browse Hacktivity on both to see the format of public reports and what gets accepted. Read at least 5 real disclosed reports end to end.",
+          "resources": [
+            {
+              "t": "HackerOne Hacktivity",
+              "u": "https://hackerone.com/hacktivity"
+            },
+            {
+              "t": "Bugcrowd Crowdstream",
+              "u": "https://bugcrowd.com/crowdstream"
+            },
+            {
+              "t": "Awesome Bugbounty Writeups",
+              "u": "https://github.com/devanshbatham/Awesome-Bugbounty-Writeups"
+            }
+          ],
+          "hours": 2,
+          "kind": "practice",
+          "day": 4
+        },
+        {
+          "title": "Documentation tooling and your personal methodology",
+          "task": "Build an Obsidian (or Notion) vault with folders: Methodology, CVE/Writeups, Targets, Reports. Start logging everything you learn from today — this habit is the single most valuable asset of a professional hunter.",
+          "resources": [
+            {
+              "t": "Obsidian (free)",
+              "u": "https://obsidian.md/"
+            },
+            {
+              "t": "Voorivex — building a personal methodology",
+              "u": "https://blog.voorivex.team/bug-bounty-roadmap-from-scratch"
+            }
+          ],
+          "hours": 1,
+          "kind": "learn",
+          "day": 5
+        }
+      ]
+    },
+    {
+      "id": "p1",
+      "title": "Linux & the Command Line",
+      "subtitle": "Without terminal fluency you can't run any hacking tool correctly",
+      "icon": "🐧",
+      "color": "#059669",
+      "days": [
+        {
+          "title": "Linux basics: filesystem and core commands + OverTheWire Bandit — levels 0-2",
+          "task": "(1) Practice the 'Linux Basics' chapter: ls, cd, pwd, cat, cp, mv, rm, mkdir, man. Use man/--help instead of Google for every command. (2) SSH into the Bandit server (level0/level0, password: bandit0) and solve the first three levels. Learn to find hidden files, oddly named files, and command output.",
+          "resources": [
+            {
+              "t": "Linux Journey — Grasshopper",
+              "u": "https://linuxjourney.com/lesson/the-shell"
+            },
+            {
+              "t": "TryHackMe — Linux Fundamentals Part 1 (free)",
+              "u": "https://tryhackme.com/room/linuxfundamentalspart1"
+            },
+            {
+              "t": "OverTheWire Bandit",
+              "u": "https://overthewire.org/wargames/bandit/"
+            },
+            {
+              "t": "Bandit Level 0",
+              "u": "https://overthewire.org/wargames/bandit/bandit0.html"
+            }
+          ],
+          "hours": 4,
+          "kind": "practice",
+          "day": 6
+        },
+        {
+          "title": "Bandit — levels 3-6",
+          "task": "Practice hidden files, recursive search with find, and filtering by type/size/permission. Combine find and grep.",
+          "resources": [
+            {
+              "t": "Bandit Level 3",
+              "u": "https://overthewire.org/wargames/bandit/bandit3.html"
+            }
+          ],
+          "hours": 2,
+          "kind": "practice",
+          "day": 7
+        },
+        {
+          "title": "Bandit — levels 7-10 + Permissions, ownership and environment variables",
+          "task": "(1) Practice advanced grep, archive handling (tar/gzip/bzip2), and Base64/binary files. (2) Learn rwx, numeric/symbolic chmod, chown, and environment variables (PATH, env), then solve Bandit levels 11-14.",
+          "resources": [
+            {
+              "t": "Bandit Level 7",
+              "u": "https://overthewire.org/wargames/bandit/bandit7.html"
+            },
+            {
+              "t": "Bandit Level 11",
+              "u": "https://overthewire.org/wargames/bandit/bandit11.html"
+            }
+          ],
+          "hours": 4,
+          "kind": "practice",
+          "day": 8
+        },
+        {
+          "title": "SSH keys, ports and processes",
+          "task": "Generate an SSH key with ssh-keygen, connect with a private key, inspect running processes (ps, netstat/ss). Solve Bandit levels 15-18.",
+          "resources": [
+            {
+              "t": "Bandit Level 15",
+              "u": "https://overthewire.org/wargames/bandit/bandit15.html"
+            }
+          ],
+          "hours": 2,
+          "kind": "practice",
+          "day": 9
+        },
+        {
+          "title": "Cron jobs, setuid, and simple scripting",
+          "task": "Understand cron, setuid binaries, and how a binary can run as a different user. Solve Bandit levels 19-23.",
+          "resources": [
+            {
+              "t": "Bandit Level 19",
+              "u": "https://overthewire.org/wargames/bandit/bandit19.html"
+            }
+          ],
+          "hours": 2,
+          "kind": "practice",
+          "day": 10
+        },
+        {
+          "title": "Netcat and basic network communication + Git from a security angle + unusual binaries",
+          "task": "(1) Practice nc: opening a listening port, sending/receiving data, simulating a simple client-server. Solve Bandit levels 24-27. (2) Learn Git history, exposed .git/ repos, and recovering data from old commits — directly useful for finding exposed .git/ in bug bounty. Solve Bandit levels 28-31.",
+          "resources": [
+            {
+              "t": "Bandit Level 24",
+              "u": "https://overthewire.org/wargames/bandit/bandit24.html"
+            },
+            {
+              "t": "Netcat guide",
+              "u": "https://linuxjourney.com/lesson/netcat-nc-command"
+            },
+            {
+              "t": "Bandit Level 28",
+              "u": "https://overthewire.org/wargames/bandit/bandit28.html"
+            }
+          ],
+          "hours": 4,
+          "kind": "practice",
+          "day": 11
+        },
+        {
+          "title": "Bandit — levels 32-33 + wrap-up",
+          "task": "Finish the remaining Bandit levels. Write a summary page in Obsidian: which Linux commands you learned and when you'd use them.",
+          "resources": [
+            {
+              "t": "Bandit Level 32",
+              "u": "https://overthewire.org/wargames/bandit/bandit32.html"
+            }
+          ],
+          "hours": 2,
+          "kind": "review",
+          "day": 12
+        },
+        {
+          "title": "Bash scripting basics + Bash scripting — advanced automation",
+          "task": "(1) Practice variables, loops (for/while), conditionals (if) and arguments. Write three small scripts: count files, ping a list of IPs, parse a text file. (2) Learn arrays, functions, and pipelines (|, xargs, tee). Write a script that reads a domain list and curls each one, printing HTTP status codes — the seed of your future recon scripts.",
+          "resources": [
+            {
+              "t": "Bash Scripting — free GitHub guide",
+              "u": "https://github.com/Idnan/bash-guide"
+            },
+            {
+              "t": "Learn Shell — interactive & free",
+              "u": "https://www.learnshell.org/"
+            },
+            {
+              "t": "explainshell.com — interactive command breakdowns (free)",
+              "u": "https://explainshell.com/"
+            }
+          ],
+          "hours": 6,
+          "kind": "practice",
+          "day": 13
+        },
+        {
+          "title": "TryHackMe: Linux Fundamentals 2 and 3 (free)",
+          "task": "Finish the next two Linux Fundamentals rooms: package management (apt), services (systemctl), and a text editor (nano/vim).",
+          "resources": [
+            {
+              "t": "Linux Fundamentals Part 2",
+              "u": "https://tryhackme.com/room/linuxfundamentalspart2"
+            },
+            {
+              "t": "Linux Fundamentals Part 3",
+              "u": "https://tryhackme.com/room/linuxfundamentalspart3"
+            }
+          ],
+          "hours": 3,
+          "kind": "practice",
+          "day": 14
+        },
+        {
+          "title": "Review and self-test: Linux",
+          "task": "Without notes, write down 10 important Linux commands from memory and explain their use. Revisit any topic you get stuck on.",
+          "resources": [
+            {
+              "t": "Linux Journey — full review",
+              "u": "https://linuxjourney.com/"
+            }
+          ],
+          "hours": 1,
+          "kind": "review",
+          "day": 15
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Networking & the HTTP Protocol",
+      "subtitle": "The web runs on HTTP; if you don't understand HTTP, you can't understand any web vulnerability",
+      "icon": "🌐",
+      "color": "#2563eb",
+      "days": [
+        {
+          "title": "OSI and TCP/IP models + DNS from scratch",
+          "task": "(1) Learn the OSI/TCP-IP layers, TCP vs UDP, and the concept of a port. Write the 7 OSI layers from memory in Obsidian. (2) Learn how DNS works, record types (A, AAAA, CNAME, MX, TXT, NS), and dig/nslookup — test them on real domains.",
+          "resources": [
+            {
+              "t": "TryHackMe — Pre Security Path (free)",
+              "u": "https://tryhackme.com/path/outline/presecurity"
+            },
+            {
+              "t": "Cloudflare — What is DNS (free)",
+              "u": "https://www.cloudflare.com/learning/dns/what-is-dns/"
+            },
+            {
+              "t": "TryHackMe — DNS in Detail",
+              "u": "https://tryhackme.com/room/dnsindetail"
+            }
+          ],
+          "hours": 4,
+          "kind": "learn",
+          "day": 16
+        },
+        {
+          "title": "HTTP from scratch — methods and status codes",
+          "task": "Read MDN in full on GET/POST/PUT/DELETE/PATCH/OPTIONS/HEAD, request/response structure, and status codes (2xx-5xx).",
+          "resources": [
+            {
+              "t": "MDN — HTTP Overview (free)",
+              "u": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview"
+            },
+            {
+              "t": "MDN — HTTP Status Codes",
+              "u": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status"
+            }
+          ],
+          "hours": 2,
+          "kind": "learn",
+          "day": 17
+        },
+        {
+          "title": "HTTP headers and cookies",
+          "task": "Learn the important security headers (Cookie, Set-Cookie, Authorization, Content-Type, Host, Referer, Origin, CSP, HSTS). Open a real site with Burp or DevTools and identify every header of one request.",
+          "resources": [
+            {
+              "t": "MDN — HTTP Headers",
+              "u": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers"
+            },
+            {
+              "t": "MDN — HTTP Cookies",
+              "u": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies"
+            }
+          ],
+          "hours": 2,
+          "kind": "learn",
+          "day": 18
+        },
+        {
+          "title": "Install and set up Burp Suite Community + Hands-on Burp Suite: Proxy and Repeater",
+          "task": "(1) Install Burp Suite Community (free), point your browser's proxy at it, install its CA certificate, and intercept your first HTTPS traffic. (2) Practice the Proxy and Repeater tabs against a test site (e.g. PortSwigger labs): intercept a request, send to Repeater, modify parameters, resend.",
+          "resources": [
+            {
+              "t": "Download Burp Suite Community (free)",
+              "u": "https://portswigger.net/burp/communitydownload"
+            },
+            {
+              "t": "PortSwigger — setting up Burp with Firefox",
+              "u": "https://portswigger.net/burp/documentation/desktop/getting-started"
+            },
+            {
+              "t": "PortSwigger Academy — Burp Suite Essentials",
+              "u": "https://portswigger.net/web-security/learning-path"
+            }
+          ],
+          "hours": 4,
+          "kind": "practice",
+          "day": 19
+        },
+        {
+          "title": "HTTPS/TLS in plain terms",
+          "task": "Understand the TLS handshake, digital certificates, and why HTTPS blocks naive interception (conceptual level, not the math).",
+          "resources": [
+            {
+              "t": "Cloudflare — What is TLS (free)",
+              "u": "https://www.cloudflare.com/learning/ssl/transport-layer-security-tls/"
+            }
+          ],
+          "hours": 1,
+          "kind": "learn",
+          "day": 20
+        },
+        {
+          "title": "REST APIs and JSON",
+          "task": "Learn APIs, REST, and JSON. Use Burp against a free public API (e.g. JSONPlaceholder) and rebuild GET/POST requests in Repeater.",
+          "resources": [
+            {
+              "t": "JSONPlaceholder — free test API",
+              "u": "https://jsonplaceholder.typicode.com/"
+            },
+            {
+              "t": "MDN — Working with JSON",
+              "u": "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON"
+            }
+          ],
+          "hours": 2,
+          "kind": "practice",
+          "day": 21
+        },
+        {
+          "title": "Web servers: Apache and Nginx + Wireshark and network traffic analysis",
+          "task": "(1) Learn the difference between Apache and Nginx, virtual hosts, reverse proxies, and basic config files — essential later for SSRF and request smuggling. (2) Install Wireshark and capture your own browser traffic. Find and inspect HTTP and DNS packets in it.",
+          "resources": [
+            {
+              "t": "DigitalOcean — free Apache vs Nginx comparison",
+              "u": "https://www.digitalocean.com/community/tutorials/apache-vs-nginx-practical-considerations"
+            },
+            {
+              "t": "Nginx — official docs (free)",
+              "u": "https://nginx.org/en/docs/"
+            },
+            {
+              "t": "Download Wireshark (free)",
+              "u": "https://www.wireshark.org/download.html"
+            },
+            {
+              "t": "TryHackMe — Wireshark: The Basics",
+              "u": "https://tryhackme.com/room/wiresharkthebasics"
+            }
+          ],
+          "hours": 4,
+          "kind": "practice",
+          "day": 22
+        },
+        {
+          "title": "Nmap: port and service scanning",
+          "task": "Practice a basic nmap scan (-sV, -sC, -p-) against a legal target (e.g. scanme.nmap.org) and interpret the output.",
+          "resources": [
+            {
+              "t": "Nmap — official reference guide (free)",
+              "u": "https://nmap.org/book/man.html"
+            }
+          ],
+          "hours": 2,
+          "kind": "practice",
+          "day": 23
+        },
+        {
+          "title": "TryHackMe: Web Fundamentals — How the Web Works",
+          "task": "Finish the starter room of the Web Fundamentals path: browsers, servers, and the full lifecycle of a web request, from a security lens.",
+          "resources": [
+            {
+              "t": "TryHackMe — How Websites Work (free)",
+              "u": "https://tryhackme.com/room/howwebsiteswork"
+            }
+          ],
+          "hours": 2,
+          "kind": "practice",
+          "day": 24
+        },
+        {
+          "title": "Mini project: map a full HTTP request",
+          "task": "Draw a diagram (paper or Excalidraw) of the full path from a user's click to the response rendering: DNS → TCP handshake → TLS → HTTP request → server → response → browser render.",
+          "resources": [
+            {
+              "t": "Excalidraw (free, online)",
+              "u": "https://excalidraw.com/"
+            }
+          ],
+          "hours": 2,
+          "kind": "review",
+          "day": 25
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Programming for Hackers",
+      "subtitle": "Python for scripting/automation, JavaScript for understanding and exploiting the client side",
+      "icon": "🐍",
+      "color": "#d97706",
+      "days": [
+        {
+          "title": "Python: variables, data types, conditionals + Python: loops and functions",
+          "task": "(1) Read chapters 1-3 of the free book Automate the Boring Stuff and code the exercises. (2) Practice for/while loops and writing functions. Build a script that reads a word list and performs a simple operation on each (e.g. building input permutations).",
+          "resources": [
+            {
+              "t": "Automate the Boring Stuff with Python (free full book)",
+              "u": "https://automatetheboringstuff.com/"
+            },
+            {
+              "t": "Python for Everybody — py4e (free)",
+              "u": "https://www.py4e.com/"
+            },
+            {
+              "t": "Automate the Boring Stuff — functions chapter",
+              "u": "https://automatetheboringstuff.com/2e/chapter3/"
+            }
+          ],
+          "hours": 6,
+          "kind": "practice",
+          "day": 26
+        },
+        {
+          "title": "Python: lists, dictionaries, and file I/O",
+          "task": "Learn lists, dicts, and reading/writing text files. Write a script that reads a wordlist from a file and removes duplicate lines.",
+          "resources": [
+            {
+              "t": "Automate the Boring Stuff — files chapter",
+              "u": "https://automatetheboringstuff.com/2e/chapter9/"
+            }
+          ],
+          "hours": 3,
+          "kind": "practice",
+          "day": 27
+        },
+        {
+          "title": "Python: the requests library",
+          "task": "Send a GET and a POST to a real API with requests, set custom headers/cookies, and parse the JSON response.",
+          "resources": [
+            {
+              "t": "requests docs (free)",
+              "u": "https://requests.readthedocs.io/en/latest/user/quickstart/"
+            }
+          ],
+          "hours": 3,
+          "kind": "practice",
+          "day": 28
+        },
+        {
+          "title": "Python project: simple subdomain scanner + Python project: broken/open link checker",
+          "task": "(1) Using requests and a small wordlist, write a script that checks a handful of common subdomains (www, api, dev, staging) on a test domain and prints each one's HTTP status. (2) Extend the previous script to run concurrently (threading or concurrent.futures) for speed — the foundation of your future recon tools.",
+          "resources": [
+            {
+              "t": "SecLists — ready-made recon wordlists (free)",
+              "u": "https://github.com/danielmiessler/SecLists"
+            },
+            {
+              "t": "Python concurrent.futures — official docs",
+              "u": "https://docs.python.org/3/library/concurrent.futures.html"
+            }
+          ],
+          "hours": 6,
+          "kind": "practice",
+          "day": 29
+        },
+        {
+          "title": "JavaScript: language basics",
+          "task": "Learn variables (let/const), functions, conditionals, and loops — all client-side web logic is written in this language.",
+          "resources": [
+            {
+              "t": "javascript.info — first steps (free)",
+              "u": "https://javascript.info/first-steps"
+            }
+          ],
+          "hours": 3,
+          "kind": "learn",
+          "day": 30
+        },
+        {
+          "title": "JavaScript: the DOM and events",
+          "task": "Learn DOM manipulation, event listeners, and innerHTML — this is exactly where XSS understanding begins.",
+          "resources": [
+            {
+              "t": "javascript.info — Document (free)",
+              "u": "https://javascript.info/document"
+            },
+            {
+              "t": "MDN — Introduction to the DOM",
+              "u": "https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction"
+            }
+          ],
+          "hours": 3,
+          "kind": "learn",
+          "day": 31
+        },
+        {
+          "title": "JavaScript: Same-Origin Policy and Fetch/AJAX + SQL from scratch",
+          "task": "(1) Learn Origin, the Same-Origin Policy, and how fetch/XMLHttpRequest work — the direct foundation of CORS and CSRF. (2) Learn SELECT, WHERE, JOIN, UNION, and comments in SQL with a free practice database — an absolute prerequisite for SQL injection.",
+          "resources": [
+            {
+              "t": "MDN — Same-origin policy",
+              "u": "https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy"
+            },
+            {
+              "t": "javascript.info — Fetch",
+              "u": "https://javascript.info/fetch"
+            },
+            {
+              "t": "SQLBolt — interactive & free",
+              "u": "https://sqlbolt.com/"
+            },
+            {
+              "t": "W3Schools SQL Tutorial (free)",
+              "u": "https://www.w3schools.com/sql/"
+            }
+          ],
+          "hours": 6,
+          "kind": "learn",
+          "day": 32
+        },
+        {
+          "title": "Git and GitHub for hackers",
+          "task": "Learn clone, commit, branch, and — more importantly — how to search public commit history for leaked secrets (API keys, passwords).",
+          "resources": [
+            {
+              "t": "Official Git book (free)",
+              "u": "https://git-scm.com/book/en/v2"
+            },
+            {
+              "t": "TruffleHog — find secrets in git (free)",
+              "u": "https://github.com/trufflesecurity/trufflehog"
+            }
+          ],
+          "hours": 2,
+          "kind": "learn",
+          "day": 33
+        },
+        {
+          "title": "Phase capstone: personal recon tool v1",
+          "task": "Combine everything from this phase into the first version of your personal recon tool: take a domain, check a few common subdomains, save output to CSV. You'll keep developing this tool throughout the roadmap.",
+          "resources": [
+            {
+              "t": "Build your own GitHub repo for it",
+              "u": "https://github.com/"
+            }
+          ],
+          "hours": 3,
+          "kind": "milestone",
+          "day": 34
+        },
+        {
+          "title": "Programming phase review",
+          "task": "Without looking at old code, write a fresh Python script that takes a URL, checks its HTTP status, and prints the response headers. Revisit any topic you get stuck on.",
+          "resources": [
+            {
+              "t": "Python Docs (free)",
+              "u": "https://docs.python.org/3/"
+            }
+          ],
+          "hours": 2,
+          "kind": "review",
+          "day": 35
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Web Security Fundamentals & Burp Suite",
+      "subtitle": "Before hunting, master the map of vulnerabilities and your core tool",
+      "icon": "🛠️",
+      "color": "#dc2626",
+      "days": [
+        {
+          "title": "OWASP Top 10 — full list + Modern web application architecture",
+          "task": "(1) Read the full 2021 OWASP Top 10 and write a one-line explanation of each in your own words in Obsidian — this framework is the reference point for the rest of the roadmap. (2) Understand the difference between traditional server-rendered apps and SPAs (React/Vue/Angular), and the role of APIs in modern architecture — the attack surface differs for each.",
+          "resources": [
+            {
+              "t": "OWASP Top 10 (free, official)",
+              "u": "https://owasp.org/www-project-top-ten/"
+            },
+            {
+              "t": "MDN — SPA glossary (free)",
+              "u": "https://developer.mozilla.org/en-US/docs/Glossary/SPA"
+            }
+          ],
+          "hours": 4,
+          "kind": "learn",
+          "day": 36
+        },
+        {
+          "title": "Burp Suite: Intruder and basic fuzzing",
+          "task": "Work through the Intruder tab against a practice target (DVWA or PortSwigger labs): Sniper, payload types, and analyzing results by response length.",
+          "resources": [
+            {
+              "t": "PortSwigger — Burp Intruder documentation",
+              "u": "https://portswigger.net/burp/documentation/desktop/tools/intruder"
+            }
+          ],
+          "hours": 2,
+          "kind": "practice",
+          "day": 37
+        },
+        {
+          "title": "Set up DVWA for local practice",
+          "task": "Spin up DVWA (Damn Vulnerable Web Application) on your VM with XAMPP/Docker — a fully legal local environment for practicing techniques.",
+          "resources": [
+            {
+              "t": "DVWA (free, GitHub)",
+              "u": "https://github.com/digininja/DVWA"
+            },
+            {
+              "t": "Running DVWA with Docker (free)",
+              "u": "https://github.com/digininja/DVWA#docker"
+            }
+          ],
+          "hours": 2,
+          "kind": "practice",
+          "day": 38
+        },
+        {
+          "title": "Burp Suite: Decoder, Comparer and Extensions",
+          "task": "Learn Decoder for Base64/URL-encoding, practice Comparer for diffing two responses, and install a few free extensions from the BApp Store (e.g. Logger++).",
+          "resources": [
+            {
+              "t": "PortSwigger BApp Store (free)",
+              "u": "https://portswigger.net/bappstore"
+            }
+          ],
+          "hours": 2,
+          "kind": "practice",
+          "day": 39
+        },
+        {
+          "title": "General web pentest methodology + Start Yashar Shahinzadeh's free Maktabkhooneh course",
+          "task": "(1) Learn the full cycle of a web security assessment (Recon → Mapping → Testing → Exploitation → Reporting) from Bugcrowd University's free materials. (2) Find Yashar Shahinzadeh's free 'Application Security from Scratch' course on Maktabkhooneh, enroll for free, and start watching.",
+          "resources": [
+            {
+              "t": "Bugcrowd University — free (GitHub)",
+              "u": "https://github.com/bugcrowd/bugcrowd_university"
+            },
+            {
+              "t": "Search the course on Maktabkhooneh",
+              "u": "https://maktabkhooneh.org/search/?q=%D8%A7%D9%85%D9%86%DB%8C%D8%AA+%D8%A7%D9%BE%D9%84%DB%8C%DA%A9%DB%8C%D8%B4%D9%86+%D8%A7%D8%B2+%D8%B5%D9%81%D8%B1"
+            },
+            {
+              "t": "His X/Twitter for new course announcements",
+              "u": "https://x.com/yshahinzadeh"
+            }
+          ],
+          "hours": 4,
+          "kind": "learn",
+          "day": 40
+        },
+        {
+          "title": "Start PortSwigger Web Security Academy — Essential Skills",
+          "task": "Before diving into vulnerability classes, finish the Essential Skills section of PortSwigger Academy to learn how the labs and platform work.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — Essential Skills",
+              "u": "https://portswigger.net/web-security/essential-skills"
+            }
+          ],
+          "hours": 2,
+          "kind": "practice",
+          "day": 41
+        },
+        {
+          "title": "Sign up for Hacker101 and start the videos",
+          "task": "Sign up for Hacker101 (completely free, built by HackerOne) and watch the first introductory videos. You'll continue this alongside PortSwigger throughout the roadmap.",
+          "resources": [
+            {
+              "t": "Hacker101 (free)",
+              "u": "https://www.hacker101.com/"
+            },
+            {
+              "t": "Hacker101 — videos section",
+              "u": "https://www.hacker101.com/videos"
+            }
+          ],
+          "hours": 2,
+          "kind": "learn",
+          "day": 42
+        },
+        {
+          "title": "Review: full mind map of your progress so far",
+          "task": "Draw a mind map of everything you've learned so far: Linux, networking, programming, tools. This is your foundation before entering the vulnerabilities phase.",
+          "resources": [
+            {
+              "t": "XMind (free)",
+              "u": "https://xmind.app/"
+            }
+          ],
+          "hours": 1,
+          "kind": "review",
+          "day": 43
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Core Web Vulnerabilities (PortSwigger Academy)",
+      "subtitle": "The heart of this roadmap: theory + free PortSwigger labs for every vulnerability class",
+      "icon": "🎯",
+      "color": "#be123c",
+      "days": [
+        {
+          "title": "SQL Injection — part 1 of 2",
+          "task": "The king of server-side vulnerabilities; solve all 18 labs carefully, from UNION-based to time-delay blind. Today, solve roughly 9 labs from 'SQL Injection' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — SQL Injection",
+              "u": "https://portswigger.net/web-security/sql-injection"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 6.0,
+          "kind": "practice",
+          "day": 44
+        },
+        {
+          "title": "SQL Injection — part 2 of 2",
+          "task": "The king of server-side vulnerabilities; solve all 18 labs carefully, from UNION-based to time-delay blind. Today, solve roughly 9 labs from 'SQL Injection' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — SQL Injection",
+              "u": "https://portswigger.net/web-security/sql-injection"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 6.0,
+          "kind": "practice",
+          "day": 45
+        },
+        {
+          "title": "Cross-Site Scripting (XSS) — part 1 of 3",
+          "task": "The most common bug in bug bounty programs; work through Reflected, Stored and DOM-based across all 30 labs. Today, solve roughly 10 labs from 'Cross-Site Scripting (XSS)' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — Cross-Site Scripting (XSS)",
+              "u": "https://portswigger.net/web-security/cross-site-scripting"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 6.5,
+          "kind": "practice",
+          "day": 46
+        },
+        {
+          "title": "Cross-Site Scripting (XSS) — part 2 of 3",
+          "task": "The most common bug in bug bounty programs; work through Reflected, Stored and DOM-based across all 30 labs. Today, solve roughly 10 labs from 'Cross-Site Scripting (XSS)' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — Cross-Site Scripting (XSS)",
+              "u": "https://portswigger.net/web-security/cross-site-scripting"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 6.5,
+          "kind": "practice",
+          "day": 47
+        },
+        {
+          "title": "Cross-Site Scripting (XSS) — part 3 of 3",
+          "task": "The most common bug in bug bounty programs; work through Reflected, Stored and DOM-based across all 30 labs. Today, solve roughly 10 labs from 'Cross-Site Scripting (XSS)' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — Cross-Site Scripting (XSS)",
+              "u": "https://portswigger.net/web-security/cross-site-scripting"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 6.5,
+          "kind": "practice",
+          "day": 48
+        },
+        {
+          "title": "Cross-Site Request Forgery (CSRF)",
+          "task": "Fully understand CSRF tokens, SameSite cookies, and common bypasses. Today, solve roughly 12 labs from 'Cross-Site Request Forgery (CSRF)' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — Cross-Site Request Forgery (CSRF)",
+              "u": "https://portswigger.net/web-security/csrf"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 5.0,
+          "kind": "practice",
+          "day": 49
+        },
+        {
+          "title": "Cross-Origin Resource Sharing (CORS)",
+          "task": "Misconfigured CORS and data theft via a malicious origin. Today, solve roughly 3 labs from 'Cross-Origin Resource Sharing (CORS)' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — Cross-Origin Resource Sharing (CORS)",
+              "u": "https://portswigger.net/web-security/cors"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 2.5,
+          "kind": "practice",
+          "day": 50
+        },
+        {
+          "title": "Clickjacking",
+          "task": "UI-redress attacks and X-Frame-Options/CSP bypasses. Today, solve roughly 5 labs from 'Clickjacking' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — Clickjacking",
+              "u": "https://portswigger.net/web-security/clickjacking"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 3.0,
+          "kind": "practice",
+          "day": 51
+        },
+        {
+          "title": "Authentication — part 1 of 2",
+          "task": "Login bugs, password reset flaws, 2FA bypass, and guessable credentials. Today, solve roughly 7 labs from 'Authentication' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — Authentication",
+              "u": "https://portswigger.net/web-security/authentication"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 5.5,
+          "kind": "practice",
+          "day": 52
+        },
+        {
+          "title": "Authentication — part 2 of 2",
+          "task": "Login bugs, password reset flaws, 2FA bypass, and guessable credentials. Today, solve roughly 7 labs from 'Authentication' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — Authentication",
+              "u": "https://portswigger.net/web-security/authentication"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 5.5,
+          "kind": "practice",
+          "day": 53
+        },
+        {
+          "title": "Access Control (IDOR/Privilege Escalation) — part 1 of 2",
+          "task": "One of the most profitable classes in bug bounty; go deep on IDOR and Broken Access Control. Today, solve roughly 6 labs from 'Access Control (IDOR/Privilege Escalation)' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — Access Control (IDOR/Privilege Escalation)",
+              "u": "https://portswigger.net/web-security/access-control"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 5.0,
+          "kind": "practice",
+          "day": 54
+        },
+        {
+          "title": "Access Control (IDOR/Privilege Escalation) — part 2 of 2",
+          "task": "One of the most profitable classes in bug bounty; go deep on IDOR and Broken Access Control. Today, solve roughly 6 labs from 'Access Control (IDOR/Privilege Escalation)' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — Access Control (IDOR/Privilege Escalation)",
+              "u": "https://portswigger.net/web-security/access-control"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 5.0,
+          "kind": "practice",
+          "day": 55
+        },
+        {
+          "title": "Path Traversal",
+          "task": "Accessing files outside the web root directory. Today, solve roughly 6 labs from 'Path Traversal' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — Path Traversal",
+              "u": "https://portswigger.net/web-security/file-path-traversal"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 4.0,
+          "kind": "practice",
+          "day": 56
+        },
+        {
+          "title": "Command Injection",
+          "task": "Executing OS commands via user input. Today, solve roughly 5 labs from 'Command Injection' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — Command Injection",
+              "u": "https://portswigger.net/web-security/os-command-injection"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 3.5,
+          "kind": "practice",
+          "day": 57
+        },
+        {
+          "title": "Business Logic Vulnerabilities — part 1 of 2",
+          "task": "Bugs no scanner will ever find — discovered only through slow, human thinking. Today, solve roughly 6 labs from 'Business Logic Vulnerabilities' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — Business Logic Vulnerabilities",
+              "u": "https://portswigger.net/web-security/logic-flaws"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 4.5,
+          "kind": "practice",
+          "day": 58
+        },
+        {
+          "title": "Business Logic Vulnerabilities — part 2 of 2",
+          "task": "Bugs no scanner will ever find — discovered only through slow, human thinking. Today, solve roughly 6 labs from 'Business Logic Vulnerabilities' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — Business Logic Vulnerabilities",
+              "u": "https://portswigger.net/web-security/logic-flaws"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 4.5,
+          "kind": "practice",
+          "day": 59
+        },
+        {
+          "title": "Information Disclosure",
+          "task": "Leaking sensitive data via error messages, code comments, or backup files. Today, solve roughly 5 labs from 'Information Disclosure' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — Information Disclosure",
+              "u": "https://portswigger.net/web-security/information-disclosure"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 3.0,
+          "kind": "practice",
+          "day": 60
+        },
+        {
+          "title": "File Upload Vulnerabilities",
+          "task": "Web shell upload, extension/MIME-type filter bypasses. Today, solve roughly 7 labs from 'File Upload Vulnerabilities' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — File Upload Vulnerabilities",
+              "u": "https://portswigger.net/web-security/file-upload"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 4.5,
+          "kind": "practice",
+          "day": 61
+        },
+        {
+          "title": "Race Conditions — part 1 of 2",
+          "task": "Exploiting concurrent request timing; hot, low-competition, and slow to learn. Today, solve roughly 3 labs from 'Race Conditions' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — Race Conditions",
+              "u": "https://portswigger.net/web-security/race-conditions"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 3.5,
+          "kind": "practice",
+          "day": 62
+        },
+        {
+          "title": "Race Conditions — part 2 of 2",
+          "task": "Exploiting concurrent request timing; hot, low-competition, and slow to learn. Today, solve roughly 3 labs from 'Race Conditions' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — Race Conditions",
+              "u": "https://portswigger.net/web-security/race-conditions"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 3.5,
+          "kind": "practice",
+          "day": 63
+        },
+        {
+          "title": "Server-Side Request Forgery (SSRF)",
+          "task": "Making the server send a request to a destination of your choosing; often the way into an internal/cloud network. Today, solve roughly 7 labs from 'Server-Side Request Forgery (SSRF)' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — Server-Side Request Forgery (SSRF)",
+              "u": "https://portswigger.net/web-security/ssrf"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 4.5,
+          "kind": "practice",
+          "day": 64
+        },
+        {
+          "title": "XXE Injection",
+          "task": "XML External Entity vulnerabilities and reading server files through them. Today, solve roughly 9 labs from 'XXE Injection' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — XXE Injection",
+              "u": "https://portswigger.net/web-security/xxe"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 5.5,
+          "kind": "practice",
+          "day": 65
+        },
+        {
+          "title": "NoSQL Injection",
+          "task": "Injection into NoSQL databases like MongoDB. Today, solve roughly 4 labs from 'NoSQL Injection' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — NoSQL Injection",
+              "u": "https://portswigger.net/web-security/nosql-injection"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 3.0,
+          "kind": "practice",
+          "day": 66
+        },
+        {
+          "title": "API Testing",
+          "task": "REST API testing methodology; discovering hidden endpoints. Today, solve roughly 5 labs from 'API Testing' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — API Testing",
+              "u": "https://portswigger.net/web-security/api-testing"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 3.5,
+          "kind": "practice",
+          "day": 67
+        },
+        {
+          "title": "Web Cache Deception",
+          "task": "Tricking a cache into storing a private page publicly. Today, solve roughly 5 labs from 'Web Cache Deception' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — Web Cache Deception",
+              "u": "https://portswigger.net/web-security/web-cache-deception"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 3.5,
+          "kind": "practice",
+          "day": 68
+        },
+        {
+          "title": "WebSockets",
+          "task": "WebSocket security and CSRF-equivalent attacks over WS. Today, solve roughly 3 labs from 'WebSockets' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — WebSockets",
+              "u": "https://portswigger.net/web-security/websockets"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 2.5,
+          "kind": "practice",
+          "day": 69
+        },
+        {
+          "title": "DOM-based vulnerabilities",
+          "task": "Dangerous sources and sinks in client-side JavaScript. Today, solve roughly 7 labs from 'DOM-based vulnerabilities' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — DOM-based vulnerabilities",
+              "u": "https://portswigger.net/web-security/dom-based"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 4.5,
+          "kind": "practice",
+          "day": 70
+        },
+        {
+          "title": "Insecure Deserialization — part 1 of 2",
+          "task": "Exploiting deserialization of untrusted data in PHP/Java/.NET/Python. Today, solve roughly 5 labs from 'Insecure Deserialization' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — Insecure Deserialization",
+              "u": "https://portswigger.net/web-security/deserialization"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 4.5,
+          "kind": "practice",
+          "day": 71
+        },
+        {
+          "title": "Insecure Deserialization — part 2 of 2",
+          "task": "Exploiting deserialization of untrusted data in PHP/Java/.NET/Python. Today, solve roughly 5 labs from 'Insecure Deserialization' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — Insecure Deserialization",
+              "u": "https://portswigger.net/web-security/deserialization"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 4.5,
+          "kind": "practice",
+          "day": 72
+        },
+        {
+          "title": "GraphQL API Vulnerabilities",
+          "task": "Introspection, batching attacks, and IDOR in GraphQL. Today, solve roughly 5 labs from 'GraphQL API Vulnerabilities' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — GraphQL API Vulnerabilities",
+              "u": "https://portswigger.net/web-security/graphql"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 3.5,
+          "kind": "practice",
+          "day": 73
+        },
+        {
+          "title": "Server-Side Template Injection (SSTI)",
+          "task": "Injection into template engines (Jinja2, Twig, FreeMarker) that often escalates to RCE. Today, solve roughly 7 labs from 'Server-Side Template Injection (SSTI)' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — Server-Side Template Injection (SSTI)",
+              "u": "https://portswigger.net/web-security/server-side-template-injection"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 4.5,
+          "kind": "practice",
+          "day": 74
+        },
+        {
+          "title": "Web Cache Poisoning — part 1 of 2",
+          "task": "Poisoning a cache to deliver malicious content to other users. Today, solve roughly 6 labs from 'Web Cache Poisoning' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — Web Cache Poisoning",
+              "u": "https://portswigger.net/web-security/web-cache-poisoning"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 4.5,
+          "kind": "practice",
+          "day": 75
+        },
+        {
+          "title": "Web Cache Poisoning — part 2 of 2",
+          "task": "Poisoning a cache to deliver malicious content to other users. Today, solve roughly 6 labs from 'Web Cache Poisoning' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — Web Cache Poisoning",
+              "u": "https://portswigger.net/web-security/web-cache-poisoning"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 4.5,
+          "kind": "practice",
+          "day": 76
+        },
+        {
+          "title": "HTTP Host Header Attacks",
+          "task": "Manipulating the Host header for cache poisoning, malicious password resets, and routing bugs. Today, solve roughly 7 labs from 'HTTP Host Header Attacks' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — HTTP Host Header Attacks",
+              "u": "https://portswigger.net/web-security/host-header"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 4.0,
+          "kind": "practice",
+          "day": 77
+        },
+        {
+          "title": "HTTP Request Smuggling — part 1 of 3",
+          "task": "One of the hardest and most valuable classes today; a parsing mismatch between proxy and server. Today, solve roughly 7 labs from 'HTTP Request Smuggling' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — HTTP Request Smuggling",
+              "u": "https://portswigger.net/web-security/request-smuggling"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 5.5,
+          "kind": "practice",
+          "day": 78
+        },
+        {
+          "title": "HTTP Request Smuggling — part 2 of 3",
+          "task": "One of the hardest and most valuable classes today; a parsing mismatch between proxy and server. Today, solve roughly 7 labs from 'HTTP Request Smuggling' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — HTTP Request Smuggling",
+              "u": "https://portswigger.net/web-security/request-smuggling"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 5.5,
+          "kind": "practice",
+          "day": 79
+        },
+        {
+          "title": "HTTP Request Smuggling — part 3 of 3",
+          "task": "One of the hardest and most valuable classes today; a parsing mismatch between proxy and server. Today, solve roughly 7 labs from 'HTTP Request Smuggling' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — HTTP Request Smuggling",
+              "u": "https://portswigger.net/web-security/request-smuggling"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 5.5,
+          "kind": "practice",
+          "day": 80
+        },
+        {
+          "title": "OAuth Authentication",
+          "task": "Common flaws in OAuth 2.0 implementations and account takeover. Today, solve roughly 6 labs from 'OAuth Authentication' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — OAuth Authentication",
+              "u": "https://portswigger.net/web-security/oauth"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 4.0,
+          "kind": "practice",
+          "day": 81
+        },
+        {
+          "title": "JWT Attacks",
+          "task": "Algorithm manipulation, weak keys, and JSON Web Token signature bypasses. Today, solve roughly 8 labs from 'JWT Attacks' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — JWT Attacks",
+              "u": "https://portswigger.net/web-security/jwt"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 5.0,
+          "kind": "practice",
+          "day": 82
+        },
+        {
+          "title": "Prototype Pollution — part 1 of 2",
+          "task": "Polluting JavaScript prototypes, both client-side and server-side (Node.js). Today, solve roughly 5 labs from 'Prototype Pollution' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — Prototype Pollution",
+              "u": "https://portswigger.net/web-security/prototype-pollution"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 4.0,
+          "kind": "practice",
+          "day": 83
+        },
+        {
+          "title": "Prototype Pollution — part 2 of 2",
+          "task": "Polluting JavaScript prototypes, both client-side and server-side (Node.js). Today, solve roughly 5 labs from 'Prototype Pollution' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — Prototype Pollution",
+              "u": "https://portswigger.net/web-security/prototype-pollution"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 4.0,
+          "kind": "practice",
+          "day": 84
+        },
+        {
+          "title": "Web LLM Attacks",
+          "task": "An emerging class: prompt injection and vulnerabilities in LLM-based applications. Today, solve roughly 7 labs from 'Web LLM Attacks' on PortSwigger Academy on your own; if you're stuck after 30 minutes, only look at the hint, not the full solution. This is a real, long study session — not a quick drill, so budget the time. Write a short summary (what it was, how it was found, how it's fixed) in Obsidian for each vulnerability you solve.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — Web LLM Attacks",
+              "u": "https://portswigger.net/web-security/llm-attacks"
+            },
+            {
+              "t": "PayloadsAllTheThings — ready-made payloads for this vulnerability class",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 4.0,
+          "kind": "practice",
+          "day": 85
+        },
+        {
+          "title": "Big review: rebuild every vulnerability on DVWA",
+          "task": "On your local DVWA, implement at least one example of every vulnerability class you've learned (SQLi, XSS, CSRF, IDOR, SSRF...) from scratch, without looking at notes.",
+          "resources": [
+            {
+              "t": "DVWA (free)",
+              "u": "https://github.com/digininja/DVWA"
+            }
+          ],
+          "hours": 3,
+          "kind": "review",
+          "day": 86
+        },
+        {
+          "title": "Big checkpoint: full Web Security Academy sweep",
+          "task": "Go back to PortSwigger Academy's 'All Topics' page and finish any lab still unsolved. Goal: your Academy progress bar should be above 80%.",
+          "resources": [
+            {
+              "t": "PortSwigger — All Topics",
+              "u": "https://portswigger.net/web-security/all-topics"
+            }
+          ],
+          "hours": 3,
+          "kind": "milestone",
+          "day": 87
+        }
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Focused Practice: Voorivex & Hacker101 CTF",
+      "subtitle": "Time to put the theory to the test with focused Persian-community content and a real CTF",
+      "icon": "🕹️",
+      "color": "#0891b2",
+      "days": [
+        {
+          "title": "Finish Yashar Shahinzadeh's free course + Go through the Voorivex Team blog and socials",
+          "task": "(1) Complete the 'Free Application Security from Scratch' course on Maktabkhooneh. Anything you've heard repeated but aren't sure about, look up again on PortSwigger. (2) Read every technical post on the Voorivex Team blog and follow Yashar Shahinzadeh on X for new writeups.",
+          "resources": [
+            {
+              "t": "Yashar's free course on Maktabkhooneh",
+              "u": "https://maktabkhooneh.org/search/?q=%D8%A7%D9%85%D9%86%DB%8C%D8%AA+%D8%A7%D9%BE%D9%84%DB%8C%DA%A9%DB%8C%D8%B4%D9%86+%D8%A7%D8%B2+%D8%B5%D9%81%D8%B1"
+            },
+            {
+              "t": "Voorivex Team blog",
+              "u": "https://blog.voorivex.team/"
+            },
+            {
+              "t": "Yashar Shahinzadeh on X",
+              "u": "https://x.com/yshahinzadeh"
+            }
+          ],
+          "hours": 5,
+          "kind": "learn",
+          "day": 88
+        },
+        {
+          "title": "Note: Voorivex Academy courses are paid",
+          "task": "Voorivex Academy's official courses (e.g. OWASP ZeroX) are paid live classes, not free — no need to register or pay. Just glance at the course page to see their curriculum structure for inspiration, and spend your time on the same founders' genuinely free YouTube/blog content instead.",
+          "resources": [
+            {
+              "t": "Voorivex Academy course page (for reference only)",
+              "u": "https://voorivex.academy/"
+            },
+            {
+              "t": "Voorivex YouTube channel (fully free)",
+              "u": "https://www.youtube.com/@Voorivex"
+            }
+          ],
+          "hours": 1,
+          "kind": "learn",
+          "day": 89
+        },
+        {
+          "title": "Hacker101 CTF — sign up and first challenge + Hacker101 CTF — tier 2 challenges",
+          "task": "(1) Sign up for Hacker101 CTF and solve the first (usually easiest) challenge without outside help. (2) Move to the more complex Hacker101 CTF challenges. Document every challenge in detail in Obsidian, solved or not — this is direct practice for writing professional reports.",
+          "resources": [
+            {
+              "t": "Hacker101 CTF (free)",
+              "u": "https://ctf.hacker101.com/"
+            }
+          ],
+          "hours": 6,
+          "kind": "practice",
+          "day": 90
+        },
+        {
+          "title": "Hacker101 CTF — advanced challenges",
+          "task": "Work on the hardest remaining challenges. If you're genuinely stuck after real effort, search for public Hacker101 write-ups — but only read them after trying yourself.",
+          "resources": [
+            {
+              "t": "Hacker101 — Resources section",
+              "u": "https://www.hacker101.com/resources"
+            }
+          ],
+          "hours": 3,
+          "kind": "practice",
+          "day": 91
+        },
+        {
+          "title": "Google XSS Game and Google Gruyere + OverTheWire Natas — levels 0-7 (web-specific wargame)",
+          "task": "(1) Solve Google's two free practice environments; XSS Game focuses specifically on XSS and Gruyere is a full vulnerable app with varied challenges. (2) Unlike Bandit which is Linux-focused, Natas targets web vulnerabilities directly (View Source, PHP, cookies, headers). Solve levels 0-7 using your browser and View-Source.",
+          "resources": [
+            {
+              "t": "Google XSS Game (free)",
+              "u": "https://xss-game.appspot.com/"
+            },
+            {
+              "t": "Google Gruyere (free)",
+              "u": "https://google-gruyere.appspot.com/"
+            },
+            {
+              "t": "OverTheWire Natas (free)",
+              "u": "https://overthewire.org/wargames/natas/"
+            }
+          ],
+          "hours": 6,
+          "kind": "practice",
+          "day": 92
+        },
+        {
+          "title": "OverTheWire Natas — levels 8-15",
+          "task": "Solve the mid-tier Natas levels: PHP type-comparison bypasses, command injection, and simple logic bugs in PHP code.",
+          "resources": [
+            {
+              "t": "OverTheWire Natas (free)",
+              "u": "https://overthewire.org/wargames/natas/"
+            }
+          ],
+          "hours": 3,
+          "kind": "practice",
+          "day": 93
+        },
+        {
+          "title": "HackTheBox — free account and Starting Point Tier 0 + HackTheBox — Starting Point Tier 1",
+          "task": "(1) Create a free HackTheBox account (no VIP needed) and solve the Starting Point Tier 0 machines; each one ships with an official free step-by-step guide. (2) Move to Tier 1 machines; slightly more complex than Tier 0, and they build your service-enumeration skills and ability to chain multiple vulnerabilities.",
+          "resources": [
+            {
+              "t": "Hack The Box — Starting Point (free)",
+              "u": "https://app.hackthebox.com/starting-point"
+            },
+            {
+              "t": "Starting Point intro guide",
+              "u": "https://help.hackthebox.com/en/articles/6007919-introduction-to-starting-point"
+            }
+          ],
+          "hours": 6,
+          "kind": "practice",
+          "day": 94
+        },
+        {
+          "title": "Bugcrowd University — videos and labs",
+          "task": "Watch any Bugcrowd University video modules you haven't seen yet, especially XSS, Access Control, and Burp Suite.",
+          "resources": [
+            {
+              "t": "Bugcrowd University (free)",
+              "u": "https://github.com/bugcrowd/bugcrowd_university"
+            }
+          ],
+          "hours": 2,
+          "kind": "learn",
+          "day": 95
+        },
+        {
+          "title": "Rana Khalil's YouTube — Web Security Academy series + NahamSec's YouTube — Live Hacking videos",
+          "task": "(1) Watch Rana Khalil's free playlist solving each PortSwigger lab on video, for whichever labs you personally found hardest — a different way of thinking. (2) Watch a few of NahamSec's free 'Live Hacking' videos to see the real thought process of a professional hunter working a real target.",
+          "resources": [
+            {
+              "t": "Rana Khalil's YouTube channel",
+              "u": "https://www.youtube.com/@RanaKhalil101"
+            },
+            {
+              "t": "NahamSec's YouTube channel",
+              "u": "https://www.youtube.com/@NahamSec"
+            }
+          ],
+          "hours": 4,
+          "kind": "learn",
+          "day": 96
+        },
+        {
+          "title": "Phase wrap-up: a portfolio of what you've solved",
+          "task": "Compile every challenge/lab you've solved so far (Bandit, PortSwigger, Hacker101, DVWA, Natas, HackTheBox, Gruyere) into a 'Portfolio' page in Obsidian — the seed of your future resume.",
+          "resources": [
+            {
+              "t": "NahamSec's resource list (free, GitHub)",
+              "u": "https://github.com/nahamsec/Resources-for-Beginner-Bug-Bounty-Hunters"
+            }
+          ],
+          "hours": 2,
+          "kind": "review",
+          "day": 97
+        }
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Recon & Professional Hunting Methodology",
+      "subtitle": "Before testing any vulnerability, map the full attack surface",
+      "icon": "🔭",
+      "color": "#4d7c0f",
+      "days": [
+        {
+          "title": "Jason Haddix — Bug Hunter's Methodology (full talk) + Bug Hunter's Methodology v4 — Recon Edition",
+          "task": "(1) Watch Jason Haddix's full 2-hour training with complete notes; one of the most respected free methodologies in bug bounty. (2) Watch the recon-focused edition of this methodology and list every tool it introduces in Obsidian.",
+          "resources": [
+            {
+              "t": "The Bug Hunter's Methodology — full 2-hour talk (free)",
+              "u": "https://www.youtube.com/watch?v=uKWu6yhnhbQ"
+            },
+            {
+              "t": "Bug Hunter's Methodology v4.0 — Recon Edition (free)",
+              "u": "https://www.youtube.com/watch?v=p4JgIu1mceI"
+            }
+          ],
+          "hours": 5,
+          "kind": "learn",
+          "day": 98
+        },
+        {
+          "title": "Subdomain enumeration tools",
+          "task": "Install subfinder and amass and run them against a domain with a public bug bounty program (within program rules); compare their output.",
+          "resources": [
+            {
+              "t": "subfinder (free, ProjectDiscovery)",
+              "u": "https://github.com/projectdiscovery/subfinder"
+            },
+            {
+              "t": "OWASP Amass (free)",
+              "u": "https://github.com/owasp-amass/amass"
+            }
+          ],
+          "hours": 3,
+          "kind": "practice",
+          "day": 99
+        },
+        {
+          "title": "Probing live hosts: httpx",
+          "task": "Install httpx and pipe your subdomain list into it to see which hosts are alive, their status codes, and their tech stack.",
+          "resources": [
+            {
+              "t": "httpx (free, ProjectDiscovery)",
+              "u": "https://github.com/projectdiscovery/httpx"
+            }
+          ],
+          "hours": 2,
+          "kind": "practice",
+          "day": 100
+        },
+        {
+          "title": "Automated vulnerability scanning: nuclei + Content/path discovery: ffuf and wordlists",
+          "task": "(1) Install nuclei, update its free community templates, and run it against authorized targets (within program scope); learn to spot false positives. (2) Practice ffuf for directory/content discovery with SecLists wordlists; see the practical difference between parameter, path, and subdomain fuzzing.",
+          "resources": [
+            {
+              "t": "nuclei (free, ProjectDiscovery)",
+              "u": "https://github.com/projectdiscovery/nuclei"
+            },
+            {
+              "t": "ffuf (free)",
+              "u": "https://github.com/ffuf/ffuf"
+            },
+            {
+              "t": "SecLists — ready-made wordlists (free)",
+              "u": "https://github.com/danielmiessler/SecLists"
+            }
+          ],
+          "hours": 6,
+          "kind": "practice",
+          "day": 101
+        },
+        {
+          "title": "Tomnomnom's tools and a combined recon pipeline",
+          "task": "Install tomnomnom's lightweight, powerful tools (waybackurls, gf, httprobe) and build a combined pipeline: subfinder | httpx | nuclei.",
+          "resources": [
+            {
+              "t": "tomnomnom's tools (free)",
+              "u": "https://github.com/tomnomnom"
+            },
+            {
+              "t": "waybackurls — URL discovery via web archive (free)",
+              "u": "https://github.com/tomnomnom/waybackurls"
+            }
+          ],
+          "hours": 3,
+          "kind": "practice",
+          "day": 102
+        },
+        {
+          "title": "Google Dorking and advanced OSINT",
+          "task": "Learn Google Dork techniques (site:, inurl:, filetype:) and OSINT for finding exposed sensitive files, admin panels, and forgotten subdomains.",
+          "resources": [
+            {
+              "t": "Google Hacking Database — GHDB (free)",
+              "u": "https://www.exploit-db.com/google-hacking-database"
+            }
+          ],
+          "hours": 2,
+          "kind": "practice",
+          "day": 103
+        },
+        {
+          "title": "Technology fingerprinting + Build your personal recon pipeline, final version",
+          "task": "(1) Practice Wappalyzer and whatweb for identifying a target's framework, CMS, and libraries — knowing the exact tech version is a direct path to known CVEs. (2) Combine your Python tool from Phase 3 with your new tools (subfinder, httpx, nuclei) into a single Bash/Python script that runs your entire initial recon flow on one input domain.",
+          "resources": [
+            {
+              "t": "Wappalyzer (free browser extension)",
+              "u": "https://www.wappalyzer.com/"
+            },
+            {
+              "t": "whatweb (free)",
+              "u": "https://github.com/urbanadventurer/WhatWeb"
+            },
+            {
+              "t": "Reference automated recon pipeline (free, GitHub)",
+              "u": "https://github.com/six2dez/reconftw"
+            }
+          ],
+          "hours": 5,
+          "kind": "milestone",
+          "day": 104
+        },
+        {
+          "title": "Pick your first real bug bounty target",
+          "task": "Based on scope, competition level, and app type, choose a real bug bounty program (HackerOne/Bugcrowd) or VDP you'll focus on in the coming phases. Read its scope and rules of engagement in full.",
+          "resources": [
+            {
+              "t": "HackerOne — Program Directory",
+              "u": "https://hackerone.com/directory/programs"
+            },
+            {
+              "t": "Bugcrowd — Programs",
+              "u": "https://bugcrowd.com/programs"
+            }
+          ],
+          "hours": 2,
+          "kind": "review",
+          "day": 105
+        },
+        {
+          "title": "First full recon pass on a real target",
+          "task": "Run your recon pipeline against your chosen target (strictly within authorized scope). Categorize the results in Obsidian: subdomains, tech stack, API endpoints, and suspicious entry points.",
+          "resources": [
+            {
+              "t": "Recon checklist — Voorivex Bug Bounty Roadmap",
+              "u": "https://blog.voorivex.team/bug-bounty-roadmap-from-scratch"
+            }
+          ],
+          "hours": 3,
+          "kind": "practice",
+          "day": 106
+        }
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Mobile & Advanced API Security",
+      "subtitle": "Many bug bounty programs today include mobile apps and APIs — less competition, often higher payouts",
+      "icon": "📱",
+      "color": "#9333ea",
+      "days": [
+        {
+          "title": "Intro to OWASP MASVS/MASTG + Set up an Android testing environment",
+          "task": "(1) Review the OWASP Mobile Application Security standard (MASVS) and its testing guide (MASTG) as your mobile security roadmap. (2) Install Android Studio and an AVD (Android emulator, free), learn ADB, and install a practice vulnerable app (AndroGoat) on the emulator.",
+          "resources": [
+            {
+              "t": "OWASP MASTG (free)",
+              "u": "https://mas.owasp.org/MASTG/"
+            },
+            {
+              "t": "AndroGoat — free practice app (GitHub)",
+              "u": "https://github.com/satishpatnayak/AndroGoat"
+            },
+            {
+              "t": "Android Studio (free)",
+              "u": "https://developer.android.com/studio"
+            }
+          ],
+          "hours": 5,
+          "kind": "practice",
+          "day": 107
+        },
+        {
+          "title": "Intercepting mobile app traffic with Burp",
+          "task": "Set Burp Suite as the emulator's proxy, install the CA certificate, and intercept AndroGoat's traffic — the exact technique for testing any real mobile app.",
+          "resources": [
+            {
+              "t": "PortSwigger — configuring Burp for mobile",
+              "u": "https://portswigger.net/burp/documentation/desktop/mobile"
+            }
+          ],
+          "hours": 3,
+          "kind": "practice",
+          "day": 108
+        },
+        {
+          "title": "Decompiling and static analysis of an Android app",
+          "task": "Decompile an APK with jadx and look for hardcoded secrets (API keys, server addresses, passwords) in the code.",
+          "resources": [
+            {
+              "t": "jadx — free Android decompiler",
+              "u": "https://github.com/skylot/jadx"
+            }
+          ],
+          "hours": 3,
+          "kind": "practice",
+          "day": 109
+        },
+        {
+          "title": "Insecure data storage and SSL pinning bypass",
+          "task": "Check what data an app stores insecurely (SharedPreferences, local DB), and learn SSL pinning and free bypass techniques (Frida/Objection).",
+          "resources": [
+            {
+              "t": "OWASP MASTG — Testing Network Communication",
+              "u": "https://github.com/OWASP/mastg/blob/master/Document/0x05g-Testing-Network-Communication.md"
+            },
+            {
+              "t": "Objection (free)",
+              "u": "https://github.com/sensepost/objection"
+            }
+          ],
+          "hours": 3,
+          "kind": "practice",
+          "day": 110
+        },
+        {
+          "title": "OWASP API Security Top 10 + BOLA/IDOR in APIs",
+          "task": "(1) Read the 2023 OWASP API Security Top 10 in full — the dedicated roadmap for API vulnerabilities, extremely valuable in bug bounty today. (2) Practice Broken Object Level Authorization (BOLA) — the most common real-world API bug — with PortSwigger's practical labs.",
+          "resources": [
+            {
+              "t": "OWASP API Security Project (free)",
+              "u": "https://owasp.org/www-project-api-security/"
+            },
+            {
+              "t": "PortSwigger — API Testing Labs",
+              "u": "https://portswigger.net/web-security/api-testing"
+            }
+          ],
+          "hours": 5,
+          "kind": "practice",
+          "day": 111
+        },
+        {
+          "title": "Deep-dive GraphQL security",
+          "task": "Go deeper on introspection queries, batching attacks, and IDOR in GraphQL with PortSwigger's free labs.",
+          "resources": [
+            {
+              "t": "PortSwigger — GraphQL API vulnerabilities",
+              "u": "https://portswigger.net/web-security/graphql"
+            }
+          ],
+          "hours": 3,
+          "kind": "practice",
+          "day": 112
+        },
+        {
+          "title": "APIsec University — free API security courses",
+          "task": "Work through APIsec University's free courses, especially the introductory API Penetration Testing course.",
+          "resources": [
+            {
+              "t": "APIsec University (free, sign-up required)",
+              "u": "https://www.apisecuniversity.com/"
+            }
+          ],
+          "hours": 2,
+          "kind": "learn",
+          "day": 113
+        },
+        {
+          "title": "Phase capstone: full test of a free public API",
+          "task": "Using Postman or Burp, fully assess a public practice API (e.g. OWASP Juice Shop): enumerate every endpoint, break auth, and hunt for BOLA.",
+          "resources": [
+            {
+              "t": "OWASP Juice Shop — fully vulnerable practice app (free)",
+              "u": "https://owasp.org/www-project-juice-shop/"
+            }
+          ],
+          "hours": 3,
+          "kind": "milestone",
+          "day": 114
+        }
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Real Hunting & Professional Reporting",
+      "subtitle": "From here on you work real programs; report quality matters as much as the bug itself",
+      "icon": "🏹",
+      "color": "#b45309",
+      "days": [
+        {
+          "title": "Anatomy of a professional bug bounty report + Deep-read 10 top disclosed reports",
+          "task": "(1) Learn the standard structure of a good report (Title, Summary, Steps to Reproduce, Impact, Remediation, PoC) from HackerOne's guide and build your own template in Obsidian. (2) Read 10 top-rated disclosed reports on HackerOne Hacktivity and analyze each: how was the bug found, why was impact high, how was the report written?",
+          "resources": [
+            {
+              "t": "HackerOne — writing a quality report (free)",
+              "u": "https://docs.hackerone.com/en/articles/8475116-quality-reports"
+            },
+            {
+              "t": "Bugcrowd Vulnerability Rating Taxonomy",
+              "u": "https://bugcrowd.com/vulnerability-rating-taxonomy"
+            },
+            {
+              "t": "HackerOne Hacktivity",
+              "u": "https://hackerone.com/hacktivity"
+            },
+            {
+              "t": "Awesome Bugbounty Writeups (free)",
+              "u": "https://github.com/devanshbatham/Awesome-Bugbounty-Writeups"
+            }
+          ],
+          "hours": 4,
+          "kind": "learn",
+          "day": 115
+        },
+        {
+          "title": "Hunt day 1: authentication and access control",
+          "task": "On your chosen target, focus fully on authentication, session management and IDOR. Log every suspicious path in Obsidian even if you're not sure it's a bug.",
+          "resources": [
+            {
+              "t": "Authentication testing checklist — PortSwigger",
+              "u": "https://portswigger.net/web-security/authentication"
+            }
+          ],
+          "hours": 3,
+          "kind": "practice",
+          "day": 116
+        },
+        {
+          "title": "Hunt day 2: input testing for XSS and injection",
+          "task": "Fuzz every input field, URL parameter, and controllable header of the target for XSS and injection types with Burp Intruder.",
+          "resources": [
+            {
+              "t": "PayloadsAllTheThings — XSS",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XSS%20Injection"
+            }
+          ],
+          "hours": 3,
+          "kind": "practice",
+          "day": 117
+        },
+        {
+          "title": "Hunt day 3: business logic testing + Hunt day 4: API and mobile-related endpoints",
+          "task": "(1) Test the target's multi-step flows (checkout, discounts, referrals, plan upgrades) for logic bugs — no scanner finds these, and they often pay well. (2) If the target has a mobile app or public API, apply your Phase 8 skills to it; otherwise go deeper on the attack surface you mapped in Phase 7's recon.",
+          "resources": [
+            {
+              "t": "PortSwigger — Business logic vulnerabilities",
+              "u": "https://portswigger.net/web-security/logic-flaws"
+            },
+            {
+              "t": "API testing checklist — PortSwigger",
+              "u": "https://portswigger.net/web-security/api-testing"
+            }
+          ],
+          "hours": 6,
+          "kind": "practice",
+          "day": 118
+        },
+        {
+          "title": "Write your first full report (even a low-severity VDP find)",
+          "task": "Report anything you've found so far — even a low-risk bug — using the professional format you built on day one of this phase. Add a clear PoC (screenshot or short screen recording).",
+          "resources": [
+            {
+              "t": "Free screen-recording tools — OBS Studio",
+              "u": "https://obsproject.com/"
+            }
+          ],
+          "hours": 3,
+          "kind": "milestone",
+          "day": 119
+        },
+        {
+          "title": "Learning from rejected reports (Duplicate/N-A)",
+          "task": "Read HackerOne's docs on common rejection reasons (Duplicate, Informative, Not Applicable, Out of Scope) so you approach triage with the right mindset and don't get discouraged.",
+          "resources": [
+            {
+              "t": "HackerOne — Report States",
+              "u": "https://docs.hackerone.com/en/articles/8475030-report-states"
+            }
+          ],
+          "hours": 1,
+          "kind": "learn",
+          "day": 120
+        },
+        {
+          "title": "Hunt day 5: focus on one specialized vulnerability class + Expand your hunting scope: pick targets 2 and 3",
+          "task": "(1) Pick one of the lower-competition classes you learned in Phase 5 (race conditions, SSRF, or request smuggling) and test the target specifically for it. (2) Choose two more bug bounty programs (ideally with a different tech stack than your first target) to increase your recon/testing speed and gain variety.",
+          "resources": [
+            {
+              "t": "PortSwigger — Race Conditions",
+              "u": "https://portswigger.net/web-security/race-conditions"
+            },
+            {
+              "t": "HackerOne Directory",
+              "u": "https://hackerone.com/directory/programs"
+            }
+          ],
+          "hours": 5,
+          "kind": "practice",
+          "day": 121
+        },
+        {
+          "title": "Sustained hunting and building a daily habit",
+          "task": "Set a fixed daily or weekly time block for ongoing hunting. Log every finding (bug or not) in Obsidian tagged (Confirmed/Duplicate/Triaged/Rejected) to track your real progress.",
+          "resources": [
+            {
+              "t": "Example bug bounty tracker template",
+              "u": "https://www.notion.so/templates/bug-bounty-tracker"
+            }
+          ],
+          "hours": 3,
+          "kind": "practice",
+          "day": 122
+        },
+        {
+          "title": "Build a resume and public hunter profile",
+          "task": "Write a short security resume and make your GitHub profile (with the recon tools you built along the way) public — this portfolio directly affects future job opportunities.",
+          "resources": [
+            {
+              "t": "Resume inspiration — NahamSec Resources",
+              "u": "https://github.com/nahamsec/Resources-for-Beginner-Bug-Bounty-Hunters"
+            }
+          ],
+          "hours": 2,
+          "kind": "review",
+          "day": 123
+        }
+      ]
+    },
+    {
+      "id": "p10",
+      "title": "Advanced Topics & Continuous Growth",
+      "subtitle": "The road doesn't 'end' here — this phase is your framework for lifelong learning",
+      "icon": "♾️",
+      "color": "#1e293b",
+      "days": [
+        {
+          "title": "HTTP/2 and HTTP/3 from a security angle + HTTP Desync Attacks and Web Cache Poisoning — the original research",
+          "task": "(1) Read James Kettle's research on the differences between HTTP/2 and HTTP/1.1 and their security implications, especially for request smuggling. (2) Read James Kettle's two foundational papers on request smuggling and cache poisoning — the industry's primary references in this area.",
+          "resources": [
+            {
+              "t": "James Kettle — HTTP/2: The Sequel is Always Worse (free, PortSwigger Research)",
+              "u": "https://portswigger.net/research/http2"
+            },
+            {
+              "t": "HTTP Desync Attacks (free)",
+              "u": "https://portswigger.net/research/http-desync-attacks-request-smuggling-reborn"
+            },
+            {
+              "t": "Practical Web Cache Poisoning (free)",
+              "u": "https://portswigger.net/research/practical-web-cache-poisoning"
+            }
+          ],
+          "hours": 6,
+          "kind": "learn",
+          "day": 124
+        },
+        {
+          "title": "Differential parsing: Orange Tsai's research",
+          "task": "Watch/read Orange Tsai's famous 'Breaking Parser Logic' talk and the Nginx off-by-slash example — a masterclass in creative bug-finding.",
+          "resources": [
+            {
+              "t": "Orange Tsai — Breaking Parser Logic slides (free, GitHub)",
+              "u": "https://github.com/orangetw/My-Presentation-Slides/blob/main/data/2018-Breaking-Parser-Logic-Take-Your-Path-Normalization-Off-And-Pop-0days-Out.pdf"
+            },
+            {
+              "t": "Full DEF CON 26 talk video (free)",
+              "u": "https://www.youtube.com/watch?v=28xWcRegncw"
+            }
+          ],
+          "hours": 2,
+          "kind": "learn",
+          "day": 125
+        },
+        {
+          "title": "Reverse proxies and weird proxy behavior + OAuth 2.0 in depth",
+          "task": "(1) Review Aleksei Tiurin's 'weird_proxies' research on unexpected reverse-proxy behavior — inspiration for finding custom bugs in complex architectures. (2) Review deeper OAuth concepts (Authorization Code Flow, PKCE, state parameter) so you can spot more complex OAuth bugs too.",
+          "resources": [
+            {
+              "t": "weird_proxies — GitHub (free)",
+              "u": "https://github.com/GrrrDog/weird_proxies"
+            },
+            {
+              "t": "OAuth 2.0 Simplified — free online guide",
+              "u": "https://www.oauth.com/"
+            }
+          ],
+          "hours": 4,
+          "kind": "learn",
+          "day": 126
+        },
+        {
+          "title": "Build your own vulnerable app with a framework",
+          "task": "Build a small app with Django or Laravel (both free) and deliberately plant a few vulnerabilities — building a bug yourself deepens your understanding of exploiting it.",
+          "resources": [
+            {
+              "t": "Django (free)",
+              "u": "https://www.djangoproject.com/"
+            },
+            {
+              "t": "Laravel (free)",
+              "u": "https://laravel.com/"
+            }
+          ],
+          "hours": 3,
+          "kind": "practice",
+          "day": 127
+        },
+        {
+          "title": "Web LLM Attacks — going deeper",
+          "task": "Revisit PortSwigger's Web LLM Attacks labs and follow new research on prompt injection — this field is evolving fast.",
+          "resources": [
+            {
+              "t": "PortSwigger — Web LLM Attacks",
+              "u": "https://portswigger.net/web-security/llm-attacks"
+            }
+          ],
+          "hours": 2,
+          "kind": "learn",
+          "day": 128
+        },
+        {
+          "title": "Enter a real CTF + Follow daily web security news",
+          "task": "(1) Sign up for a free, public CTF competition (via CTFtime) and spend at least a few hours working web challenges, solo or with a team. (2) Build a daily news-source list (top researchers on X, free newsletters like tl;dr sec) and turn it into a 15-minute daily habit.",
+          "resources": [
+            {
+              "t": "CTFtime — CTF competition calendar (free)",
+              "u": "https://ctftime.org/"
+            },
+            {
+              "t": "picoCTF — always-on free CTF",
+              "u": "https://picoctf.org/"
+            },
+            {
+              "t": "tl;dr sec — free security newsletter",
+              "u": "https://tldrsec.com/"
+            },
+            {
+              "t": "PortSwigger Research Blog (free)",
+              "u": "https://portswigger.net/research"
+            }
+          ],
+          "hours": 5,
+          "kind": "practice",
+          "day": 129
+        },
+        {
+          "title": "Final review and update of your personal methodology",
+          "task": "Revisit and rewrite the Methodology document you started on day one in Obsidian. It should now be a fully personalized hunting methodology you follow on every engagement.",
+          "resources": [
+            {
+              "t": "Voorivex Bug Bounty Roadmap — for final inspiration",
+              "u": "https://blog.voorivex.team/bug-bounty-roadmap-from-scratch"
+            }
+          ],
+          "hours": 2,
+          "kind": "review",
+          "day": 130
+        },
+        {
+          "title": "Final wrap-up and your next 6 months",
+          "task": "Write a final document: what you learned, which vulnerability classes you're strongest in, and your plan for the next 6 months (specializing in one area, joining private programs, or an AppSec career path). This isn't the end — it's the starting point of your professional hunting career.",
+          "resources": [
+            {
+              "t": "NahamSec's full resource list to keep going",
+              "u": "https://github.com/nahamsec/Resources-for-Beginner-Bug-Bounty-Hunters"
+            }
+          ],
+          "hours": 2,
+          "kind": "milestone",
+          "day": 131
+        }
+      ]
+    },
+    {
+      "id": "pai",
+      "title": "AI in Bug Bounty",
+      "subtitle": "AI is both a new attack surface you must understand, and a tool that will wreck your reputation if you misuse it",
+      "icon": "🤖",
+      "color": "#f43f5e",
+      "days": [
+        {
+          "title": "The real state of AI in bug bounty today",
+          "task": "Start with facts, not hype: most professional hunters today use AI to speed up recon, code analysis, and report writing — but low-quality 'AI slop' reports have made programs like curl shut down their bug bounty entirely. Fully understand this tension before you use AI yourself.",
+          "resources": [
+            {
+              "t": "HackerOne — official blog on AI and Hai",
+              "u": "https://www.hackerone.com/blog"
+            },
+            {
+              "t": "Google Project Zero — a real vulnerability found by AI (Big Sleep)",
+              "u": "https://projectzero.google/2024/10/from-naptime-to-big-sleep.html"
+            }
+          ],
+          "hours": 2,
+          "kind": "learn",
+          "day": 132
+        },
+        {
+          "title": "OWASP Top 10 for LLM Applications",
+          "task": "Read OWASP's official, free list of LLM application vulnerabilities (Prompt Injection, Insecure Output Handling, Training Data Poisoning, etc.) in full — the reference framework for this entire phase.",
+          "resources": [
+            {
+              "t": "OWASP Top 10 for LLM Applications (free, official)",
+              "u": "https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/"
+            }
+          ],
+          "hours": 3,
+          "kind": "learn",
+          "day": 133
+        },
+        {
+          "title": "Hands-on prompt injection: the Gandalf game",
+          "task": "Solve Lakera's free, interactive Gandalf game from level zero to the final level (Gandalf the White). The best free way in the world to build a hands-on intuition for prompt injection, not just theory.",
+          "resources": [
+            {
+              "t": "Gandalf — free prompt injection game",
+              "u": "https://gandalf.lakera.ai/"
+            }
+          ],
+          "hours": 3,
+          "kind": "practice",
+          "day": 134
+        },
+        {
+          "title": "Revisit PortSwigger Web LLM Attacks with an attacker mindset",
+          "task": "Return to the Web LLM Attacks labs you solved in the core vulnerabilities phase, but this time focus on indirect prompt injection (when the payload is injected from a third-party source like an email or web page) and chaining it with SSRF/exfiltration.",
+          "resources": [
+            {
+              "t": "PortSwigger — Web LLM attacks",
+              "u": "https://portswigger.net/web-security/llm-attacks"
+            },
+            {
+              "t": "Embrace The Red — independent prompt injection research (free)",
+              "u": "https://embracethered.com/blog/"
+            }
+          ],
+          "hours": 4,
+          "kind": "practice",
+          "day": 135
+        },
+        {
+          "title": "Specialized free resource: Simon Willison's blog",
+          "task": "Simon Willison is one of the most respected independent voices in LLM security. Read his full free prompt-injection tag archive — he was the first to precisely formalize this attack class.",
+          "resources": [
+            {
+              "t": "Simon Willison — prompt injection archive (free)",
+              "u": "https://simonwillison.net/tags/prompt-injection/"
+            }
+          ],
+          "hours": 3,
+          "kind": "learn",
+          "day": 136
+        },
+        {
+          "title": "MCP (Model Context Protocol) security — the 2026 emerging attack surface",
+          "task": "MCP is the standard protocol connecting tools to AI models and is fast becoming a serious attack surface (command injection, tool poisoning, over-permissioned access). Read the official security docs and understand why dozens of CVEs have hit MCP servers in the past few months.",
+          "resources": [
+            {
+              "t": "Model Context Protocol — official docs (free)",
+              "u": "https://modelcontextprotocol.io/"
+            },
+            {
+              "t": "OWASP GenAI Security Project (free)",
+              "u": "https://genai.owasp.org/"
+            }
+          ],
+          "hours": 3,
+          "kind": "learn",
+          "day": 137
+        },
+        {
+          "title": "AI as a recon assistant: summarizing and prioritizing targets",
+          "task": "Feed the raw output of one of your earlier scans (subfinder/httpx/nuclei) to a language model (Claude or similar, free tier) and ask it to summarize, categorize, and risk-prioritize the output. This saves hours of manual log analysis — but always verify the model's output with your own eyes.",
+          "resources": [
+            {
+              "t": "Anthropic — official Claude docs (free to start)",
+              "u": "https://docs.claude.com/"
+            }
+          ],
+          "hours": 3,
+          "kind": "practice",
+          "day": 138
+        },
+        {
+          "title": "AI as a code review assistant",
+          "task": "Review a small open-source project (or your own vulnerable app from Phase 10) with AI help, looking for unsafe patterns (SQL string concatenation, eval on user input, uncontrolled file paths); then re-check the findings with the free open-source tool Semgrep to see what the model got right or wrong.",
+          "resources": [
+            {
+              "t": "Semgrep — free open-source static analysis tool",
+              "u": "https://semgrep.dev/"
+            }
+          ],
+          "hours": 3,
+          "kind": "practice",
+          "day": 139
+        },
+        {
+          "title": "Writing reports with AI — correctly, not as slop",
+          "task": "Learn to use AI to polish the writing, structure, and clarity of reports for bugs you found entirely by hand and manually verified — never to fabricate a finding. Read HackerOne's Good Faith AI Research rules in full to understand where the legal/ethical line is.",
+          "resources": [
+            {
+              "t": "HackerOne — Good Faith AI Research Safe Harbor",
+              "u": "https://www.hackerone.com/policies"
+            }
+          ],
+          "hours": 2,
+          "kind": "learn",
+          "day": 140
+        },
+        {
+          "title": "Phase capstone: an AI helper script for your methodology",
+          "task": "Write a small Python script that takes the output of your Phase 7 recon.py, uses a free/cheap language model API to do a first-pass categorization, and saves a Markdown summary report. Add this tool to your personal GitHub repo.",
+          "resources": [
+            {
+              "t": "Anthropic API — docs (free to start, pay-as-you-go)",
+              "u": "https://docs.claude.com/en/api/overview"
+            }
+          ],
+          "hours": 3,
+          "kind": "milestone",
+          "day": 141
+        }
+      ]
+    }
+  ]
+}
