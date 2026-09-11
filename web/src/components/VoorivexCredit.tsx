@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import type { Lang } from "@/lib/roadmap";
+import { BASE_PATH, type Lang } from "@/lib/roadmap";
 
 const COPY = {
   fa: {
@@ -45,7 +45,7 @@ export default function VoorivexCredit({ lang }: { lang: Lang }) {
           className="bracket block overflow-hidden rounded-sm border border-hairline"
         >
           <Image
-            src="/voorivex-classes.jpg"
+            src={`${BASE_PATH}/voorivex-classes.jpg`}
             alt="Voorivex Academy class listing (OWASP Zero series)"
             width={1506}
             height={812}

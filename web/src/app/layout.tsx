@@ -20,16 +20,18 @@ const vazirmatn = Vazirmatn({
   weight: ["400", "500", "600", "700", "800"],
 });
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 export const metadata: Metadata = {
   title: "Complete Bug Bounty Roadmap | نقشه‌راه کامل باگ‌بانتی",
   description:
     "A precise, 100% free, day-by-day roadmap from zero to professional bug bounty hunter — in Persian and English.",
   icons: {
     icon: [
-      { url: "/logo.svg", type: "image/svg+xml" },
-      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: `${basePath}/logo.svg`, type: "image/svg+xml" },
+      { url: `${basePath}/favicon-32.png`, sizes: "32x32", type: "image/png" },
     ],
-    apple: "/apple-touch-icon.png",
+    apple: `${basePath}/apple-touch-icon.png`,
   },
 };
 

@@ -40,6 +40,10 @@ export type ChangelogItem = {
 
 export type Lang = "fa" | "en";
 
+// Inlined at build time — set NEXT_PUBLIC_BASE_PATH when building for a
+// subpath deployment (e.g. GitHub Pages). Empty for the root-served build.
+export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 export const ROADMAP: Record<Lang, Roadmap> = {
   fa: roadmapFa as Roadmap,
   en: roadmapEn as Roadmap,
