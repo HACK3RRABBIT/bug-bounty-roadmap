@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>نقشه‌راه کامل باگ‌بانتی | از صفر تا حرفه‌ای</title>
+<meta name="description" content="نقشه‌راه روز به روز، رایگان ۱۰۰٪ و فارسی برای یادگیری باگ‌بانتی از صفر تا حرفه‌ای — بر پایهٔ Voorivex، یاشار شاهین‌زاده، PortSwigger Academy، Hacker101 و منابع معتبر جهانی.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐞</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0e14;
+    --bg-elev:#11151f;
+    --bg-elev-2:#161b28;
+    --border:#232a3b;
+    --border-soft:#1a2030;
+    --text:#e7ebf3;
+    --text-dim:#9aa4b8;
+    --text-faint:#5f6a82;
+    --accent:#22d3ee;
+    --accent-2:#a78bfa;
+    --green:#34d399;
+    --amber:#fbbf24;
+    --red:#f87171;
+    --radius:14px;
+    --maxw:1180px;
+    font-size:16px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(1200px 600px at 85% -10%, rgba(34,211,238,.08), transparent 60%),
+      radial-gradient(1000px 500px at -10% 10%, rgba(167,139,250,.08), transparent 60%),
+      var(--bg);
+    color:var(--text);
+    font-family:'Vazirmatn', 'Segoe UI', Tahoma, sans-serif;
+    line-height:1.75;
+    padding-inline:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .wrap{max-width:var(--maxw);margin:0 auto;}
+  code, .mono{font-family:'JetBrains Mono', monospace; direction:ltr; unicode-bidi:embed;}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:56px 0 28px;text-align:center;}
+  .hero .kicker{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:.85rem;color:var(--accent);
+    background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.25);
+    padding:6px 16px;border-radius:999px;margin-bottom:22px;font-weight:600;
+  }
+  .hero h1{
+    font-size:clamp(2rem, 5vw, 3.3rem);
+    font-weight:900;margin:0 0 16px;
+    letter-spacing:-.02em;
+    background:linear-gradient(90deg,#e7ebf3, #22d3ee 60%, #a78bfa);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero p.lead{
+    max-width:760px;margin:0 auto;color:var(--text-dim);
+    font-size:clamp(1rem,2vw,1.2rem);
+  }
+  .hero .badges{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:26px;}
+  .pill{
+    background:var(--bg-elev);border:1px solid var(--border);
+    padding:8px 16px;border-radius:999px;font-size:.85rem;color:var(--text-dim);
+    display:flex;align-items:center;gap:6px;
+  }
+  .pill b{color:var(--text);font-weight:700;}
+
+  .stats{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+    gap:12px;margin:34px 0;
+  }
+  .stat{
+    background:var(--bg-elev);border:1px solid var(--border);border-radius:var(--radius);
+    padding:18px 10px;text-align:center;
+  }
+  .stat .num{font-size:1.8rem;font-weight:800;color:var(--accent);}
+  .stat .lbl{font-size:.8rem;color:var(--text-dim);margin-top:4px;}
+
+  /* ---------- SOURCES STRIP ---------- */
+  .sources{
+    background:var(--bg-elev);border:1px solid var(--border);border-radius:var(--radius);
+    padding:20px 22px;margin-bottom:34px;
+  }
+  .sources h3{margin:0 0 12px;font-size:1rem;color:var(--text);}
+  .sources .grid{display:flex;flex-wrap:wrap;gap:8px;}
+  .sources .grid a{
+    font-size:.82rem;background:var(--bg-elev-2);border:1px solid var(--border-soft);
+    padding:6px 12px;border-radius:999px;color:var(--text-dim);
+  }
+  .sources .grid a:hover{color:var(--accent);border-color:var(--accent);text-decoration:none;}
+
+  /* ---------- CONTROLS ---------- */
+  .controls{
+    position:sticky;top:0;z-index:50;
+    background:rgba(11,14,20,.88);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+    padding:14px 0;margin-bottom:22px;
+  }
+  .controls .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+  .search{
+    flex:1;min-width:220px;
+    background:var(--bg-elev);border:1px solid var(--border);border-radius:10px;
+    padding:11px 16px;color:var(--text);font-family:inherit;font-size:.95rem;
+  }
+  .search:focus{outline:none;border-color:var(--accent);}
+  .filter-btn{
+    background:var(--bg-elev);border:1px solid var(--border);color:var(--text-dim);
+    padding:10px 14px;border-radius:10px;font-size:.85rem;cursor:pointer;font-family:inherit;
+    transition:all .15s;
+  }
+  .filter-btn:hover{border-color:var(--accent);color:var(--text);}
+  .filter-btn.active{background:var(--accent);color:#03181c;border-color:var(--accent);font-weight:700;}
+  .progress-overall{display:flex;align-items:center;gap:10px;min-width:180px;}
+  .progress-bar-track{flex:1;height:8px;background:var(--bg-elev-2);border-radius:99px;overflow:hidden;border:1px solid var(--border-soft);}
+  .progress-bar-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--green));border-radius:99px;transition:width .3s;}
+  .progress-pct{font-size:.8rem;color:var(--text-dim);white-space:nowrap;font-family:'JetBrains Mono',monospace;}
+
+  /* ---------- PHASE NAV ---------- */
+  .phase-nav{display:flex;gap:8px;overflow-x:auto;padding-bottom:2px;margin-top:12px;}
+  .phase-nav a{
+    flex:none;font-size:.78rem;color:var(--text-dim);background:var(--bg-elev);
+    border:1px solid var(--border);padding:7px 12px;border-radius:999px;white-space:nowrap;
+  }
+  .phase-nav a:hover{color:var(--text);text-decoration:none;border-color:var(--accent);}
+
+  /* ---------- PHASE SECTIONS ---------- */
+  .phase{margin:44px 0;scroll-margin-top:150px;}
+  .phase-head{
+    display:flex;align-items:center;gap:14px;margin-bottom:6px;
+    padding-inline-start:16px;border-inline-start:4px solid var(--phase-color, var(--accent));
+  }
+  .phase-icon{font-size:1.8rem;}
+  .phase-head h2{margin:0;font-size:1.4rem;font-weight:800;}
+  .phase-head .sub{color:var(--text-dim);font-size:.88rem;margin-top:2px;}
+  .phase-meta{
+    padding-inline-start:16px;display:flex;gap:14px;align-items:center;margin:10px 0 20px;flex-wrap:wrap;
+  }
+  .phase-progress{display:flex;align-items:center;gap:8px;flex:1;min-width:150px;max-width:280px;}
+  .phase-progress .track{flex:1;height:6px;background:var(--bg-elev-2);border-radius:99px;overflow:hidden;}
+  .phase-progress .fill{height:100%;background:var(--phase-color,var(--accent));border-radius:99px;}
+  .phase-count{font-size:.78rem;color:var(--text-faint);font-family:'JetBrains Mono',monospace;}
+
+  .days{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:14px;}
+
+  /* ---------- DAY CARD ---------- */
+  .day{
+    background:var(--bg-elev);border:1px solid var(--border);border-radius:var(--radius);
+    padding:18px 18px 16px;position:relative;transition:border-color .15s, transform .15s;
+    display:flex;flex-direction:column;gap:10px;
+  }
+  .day:hover{border-color:var(--phase-color,var(--accent));}
+  .day.done{opacity:.55;}
+  .day.done .day-title{text-decoration:line-through;text-decoration-color:var(--green);}
+  .day-top{display:flex;align-items:center;justify-content:space-between;gap:8px;}
+  .day-num{
+    font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--phase-color,var(--accent));
+    font-weight:700;background:color-mix(in srgb, var(--phase-color, var(--accent)) 15%, transparent);
+    padding:3px 9px;border-radius:6px;
+  }
+  .kind-tag{font-size:.68rem;padding:3px 9px;border-radius:6px;font-weight:700;letter-spacing:.02em;}
+  .kind-learn{background:rgba(167,139,250,.15);color:#c4b5fd;}
+  .kind-practice{background:rgba(34,211,238,.15);color:#67e8f9;}
+  .kind-review{background:rgba(251,191,36,.15);color:#fcd34d;}
+  .kind-milestone{background:rgba(52,211,153,.18);color:#6ee7b7;}
+  .day-title{font-size:1rem;font-weight:700;margin:0;color:var(--text);}
+  .day-task{font-size:.87rem;color:var(--text-dim);flex:1;}
+  .day-res{display:flex;flex-direction:column;gap:5px;margin-top:2px;}
+  .day-res a{
+    font-size:.79rem;color:var(--text-dim);background:var(--bg-elev-2);
+    border:1px solid var(--border-soft);border-radius:8px;padding:7px 10px;
+    display:flex;align-items:center;gap:6px;
+  }
+  .day-res a:hover{color:var(--accent);border-color:var(--accent);text-decoration:none;}
+  .day-res a::before{content:'↗';font-size:.75rem;opacity:.6;}
+  .day-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:4px;}
+  .hours{font-size:.75rem;color:var(--text-faint);font-family:'JetBrains Mono',monospace;}
+  .check{
+    display:flex;align-items:center;gap:6px;cursor:pointer;font-size:.78rem;color:var(--text-dim);
+    user-select:none;
+  }
+  .check input{width:16px;height:16px;accent-color:var(--green);cursor:pointer;}
+
+  .hidden{display:none !important;}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    margin-top:70px;padding:36px 0 50px;border-top:1px solid var(--border);
+    color:var(--text-dim);font-size:.85rem;text-align:center;
+  }
+  footer a{color:var(--text-dim);}
+  footer a:hover{color:var(--accent);}
+  footer .credit-row{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-bottom:14px;}
+  .reset-btn{
+    background:transparent;border:1px solid var(--border);color:var(--text-faint);
+    padding:6px 14px;border-radius:8px;font-size:.75rem;cursor:pointer;font-family:inherit;
+  }
+  .reset-btn:hover{border-color:var(--red);color:var(--red);}
+
+  .top-btn{
+    position:fixed;bottom:22px;left:22px;background:var(--bg-elev);border:1px solid var(--border);
+    color:var(--text-dim);width:44px;height:44px;border-radius:50%;display:flex;align-items:center;
+    justify-content:center;cursor:pointer;font-size:1.1rem;box-shadow:0 6px 18px rgba(0,0,0,.35);
+    opacity:0;pointer-events:none;transition:opacity .2s;z-index:60;
+  }
+  .top-btn.show{opacity:1;pointer-events:auto;}
+
+  .empty-state{text-align:center;padding:60px 20px;color:var(--text-faint);}
+
+  @media (max-width:640px){
+    .hero{padding:40px 0 20px;}
+    .controls .row{flex-direction:column;align-items:stretch;}
+    .progress-overall{order:3;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <section class="hero">
+    <span class="kicker">🐞 نقشه‌راه غیررسمی و متن‌باز جامعهٔ فارسی‌زبان</span>
+    <h1>نقشه‌راه کامل باگ‌بانتی<br>از صفر تا حرفه‌ای</h1>
+    <p class="lead">
+      یک برنامهٔ روز‌به‌روز، دقیق و کاملاً رایگان برای کسی که هیچ پیش‌زمینه‌ای ندارد و می‌خواهد
+      به یک باگ‌بانتی‌هانتر حرفه‌ای تبدیل شود — برگرفته از آموزش‌های
+      <b>یاشار شاهین‌زاده</b> و <b>Voorivex</b>، آکادمی <b>PortSwigger</b>،
+      <b>Hacker101</b> و بهترین منابع رایگان جهانی. هیچ‌جای این نقشه‌راه پولی نیست.
+    </p>
+    <div class="badges">
+      <span class="pill">💯 <b>۱۰۰٪ رایگان</b></span>
+      <span class="pill">🇮🇷 <b>محتوای فارسی + جهانی</b></span>
+      <span class="pill">📅 <b id="stat-days-badge">—</b> روز برنامه‌ریزی‌شده</span>
+      <span class="pill">✅ ردیابی پیشرفت در همین صفحه</span>
+    </div>
+  </section>
+
+  <div class="stats" id="stats"></div>
+
+  <div class="sources">
+    <h3>🔗 منابع اصلی این نقشه‌راه</h3>
+    <div class="grid">
+      <a href="https://www.youtube.com/@Voorivex" target="_blank" rel="noopener">کانال یوتیوب Voorivex</a>
+      <a href="https://www.youtube.com/watch?v=_UxO2qKvCEQ" target="_blank" rel="noopener">ویدیوی نقشه‌راه یاشار شاهین‌زاده</a>
+      <a href="https://memoryleaks.ir/how-to-become-a-hacker/" target="_blank" rel="noopener">وبلاگ memoryleaks.ir</a>
+      <a href="https://x.com/yshahinzadeh" target="_blank" rel="noopener">ایکس یاشار شاهین‌زاده</a>
+      <a href="https://blog.voorivex.team/bug-bounty-roadmap-from-scratch" target="_blank" rel="noopener">بلاگ Voorivex Team</a>
+      <a href="https://voorivex.academy/" target="_blank" rel="noopener">آکادمی Voorivex</a>
+      <a href="https://portswigger.net/web-security/all-topics" target="_blank" rel="noopener">PortSwigger Web Security Academy</a>
+      <a href="https://www.hacker101.com/" target="_blank" rel="noopener">Hacker101 (HackerOne)</a>
+      <a href="https://overthewire.org/wargames/bandit/" target="_blank" rel="noopener">OverTheWire Bandit</a>
+      <a href="https://github.com/nahamsec/Resources-for-Beginner-Bug-Bounty-Hunters" target="_blank" rel="noopener">NahamSec Resources</a>
+      <a href="https://www.youtube.com/@RanaKhalil101" target="_blank" rel="noopener">Rana Khalil</a>
+      <a href="https://tryhackme.com/" target="_blank" rel="noopener">TryHackMe</a>
+    </div>
+  </div>
+
+  <div class="controls">
+    <div class="row">
+      <input class="search" id="search" type="text" placeholder="🔍 جست‌وجو در عنوان، توضیح یا منابع روزها...">
+      <button class="filter-btn active" data-filter="all">همه</button>
+      <button class="filter-btn" data-filter="todo">باقی‌مانده</button>
+      <button class="filter-btn" data-filter="done">انجام‌شده</button>
+      <div class="progress-overall">
+        <div class="progress-bar-track"><div class="progress-bar-fill" id="overall-fill" style="width:0%"></div></div>
+        <span class="progress-pct" id="overall-pct">۰٪</span>
+      </div>
+    </div>
+    <div class="phase-nav" id="phase-nav"></div>
+  </div>
+
+  <main id="content"></main>
+
+  <footer>
+    <div class="credit-row">
+      <span>ساخته‌شده با هوش مصنوعی <a href="https://claude.com/claude-code" target="_blank" rel="noopener">Claude Code</a> بر پایهٔ تحقیق روی منابع معتبر آموزش امنیت</span>
+    </div>
+    <div class="credit-row">
+      <a href="https://github.com/hack3rrabbit/bug-bounty-roadmap" target="_blank" rel="noopener">کد منبع در گیت‌هاب</a>
+      <span>·</span>
+      <span>پیشرفت شما فقط در مرورگر همین دستگاه (localStorage) ذخیره می‌شود</span>
+      <span>·</span>
+      <button class="reset-btn" id="reset-progress">پاک کردن پیشرفت</button>
+    </div>
+    <div>این یک پروژهٔ غیررسمی و جامعه‌محور است؛ هیچ‌گونه ارتباط رسمی با Voorivex یا یاشار شاهین‌زاده ندارد — صرفاً برای گردآوری بهترین منابع رایگان ساخته شده است.</div>
+  </footer>
+
+</div>
+
+<button class="top-btn" id="top-btn" title="برو بالا">↑</button>
+
+<script>
+const KIND_LABEL = { learn:'آموزش', practice:'تمرین عملی', review:'مرور', milestone:'نقطهٔ عطف' };
+const STORAGE_KEY = 'bbr_progress_v1';
+
+let ROADMAP = null;
+let progress = {};
+
+function loadProgress(){
+  try{ progress = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); }catch(e){ progress = {}; }
+}
+function saveProgress(){
+  try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(progress)); }catch(e){}
+}
+
+function allDays(){
+  return ROADMAP.phases.flatMap(p => p.days.map(d => ({...d, phaseId:p.id, phaseColor:p.color, phaseTitle:p.title})));
+}
+
+function renderStats(){
+  const totalDays = ROADMAP.generated_days;
+  const totalHours = allDays().reduce((s,d)=>s+d.hours,0);
+  const totalResources = new Set(allDays().flatMap(d=>d.resources.map(r=>r.u))).size;
+  document.getElementById('stat-days-badge').textContent = totalDays.toLocaleString('fa-IR');
+  const statsEl = document.getElementById('stats');
+  const items = [
+    [totalDays, 'روز آموزشی'],
+    [ROADMAP.phases.length, 'فاز اصلی'],
+    [totalResources, 'منبع رایگان یکتا'],
+    [Math.round(totalHours), 'ساعت محتوا'],
+    [Math.round(totalDays/30*10)/10, 'ماه (با ۶ روز/هفته)'],
+  ];
+  statsEl.innerHTML = items.map(([n,l])=>`<div class="stat"><div class="num">${(''+n).replace(/[0-9]/g,x=>'۰۱۲۳۴۵۶۷۸۹'[x])}</div><div class="lbl">${l}</div></div>`).join('');
+}
+
+function faNum(n){ return String(n).replace(/[0-9]/g, x=>'۰۱۲۳۴۵۶۷۸۹'[x]); }
+
+function renderPhaseNav(){
+  const nav = document.getElementById('phase-nav');
+  nav.innerHTML = ROADMAP.phases.map(p=>`<a href="#${p.id}">${p.icon} ${p.title}</a>`).join('');
+}
+
+function dayCard(day){
+  const isDone = !!progress[day.day];
+  const resHtml = day.resources.map(r=>`<a href="${r.u}" target="_blank" rel="noopener">${r.t}</a>`).join('');
+  return `
+  <div class="day ${isDone?'done':''}" data-day="${day.day}" data-kind="${day.kind}" data-phase="${day.phaseId}"
+       style="--phase-color:${day.phaseColor}"
+       data-search="${(day.title+' '+day.task+' '+day.resources.map(r=>r.t).join(' ')).toLowerCase()}">
+    <div class="day-top">
+      <span class="day-num">روز ${faNum(day.day)}</span>
+      <span class="kind-tag kind-${day.kind}">${KIND_LABEL[day.kind]}</span>
+    </div>
+    <h3 class="day-title">${day.title}</h3>
+    <p class="day-task">${day.task}</p>
+    <div class="day-res">${resHtml}</div>
+    <div class="day-bottom">
+      <span class="hours">⏱ ${faNum(day.hours)} ساعت</span>
+      <label class="check">
+        <input type="checkbox" ${isDone?'checked':''} onchange="toggleDay(${day.day}, this.checked)">
+        انجام شد
+      </label>
+    </div>
+  </div>`;
+}
+
+function renderContent(){
+  const content = document.getElementById('content');
+  content.innerHTML = ROADMAP.phases.map(p=>{
+    const doneCount = p.days.filter(d=>progress[d.day]).length;
+    const pct = Math.round(doneCount/p.days.length*100);
+    return `
+    <section class="phase" id="${p.id}" style="--phase-color:${p.color}">
+      <div class="phase-head">
+        <span class="phase-icon">${p.icon}</span>
+        <div>
+          <h2>${p.title}</h2>
+          <div class="sub">${p.subtitle}</div>
+        </div>
+      </div>
+      <div class="phase-meta">
+        <div class="phase-progress"><div class="track"><div class="fill" style="width:${pct}%"></div></div></div>
+        <span class="phase-count">${faNum(doneCount)}/${faNum(p.days.length)} روز</span>
+      </div>
+      <div class="days">${p.days.map(dayCard).join('')}</div>
+    </section>`;
+  }).join('') + `<div class="empty-state hidden" id="empty-state">چیزی با این فیلتر/جست‌وجو پیدا نشد 🕵️</div>`;
+}
+
+function updateOverallProgress(){
+  const days = allDays();
+  const done = days.filter(d=>progress[d.day]).length;
+  const pct = days.length ? Math.round(done/days.length*100) : 0;
+  document.getElementById('overall-fill').style.width = pct+'%';
+  document.getElementById('overall-pct').textContent = faNum(pct)+'٪ ('+faNum(done)+'/'+faNum(days.length)+')';
+}
+
+window.toggleDay = function(dayNum, checked){
+  if(checked) progress[dayNum] = true; else delete progress[dayNum];
+  saveProgress();
+  const card = document.querySelector(`.day[data-day="${dayNum}"]`);
+  if(card) card.classList.toggle('done', checked);
+  updateOverallProgress();
+  // update phase progress bar for that card's phase
+  renderPhaseProgressBars();
+}
+
+function renderPhaseProgressBars(){
+  ROADMAP.phases.forEach(p=>{
+    const doneCount = p.days.filter(d=>progress[d.day]).length;
+    const pct = Math.round(doneCount/p.days.length*100);
+    const section = document.getElementById(p.id);
+    if(!section) return;
+    section.querySelector('.phase-progress .fill').style.width = pct+'%';
+    section.querySelector('.phase-count').textContent = `${faNum(doneCount)}/${faNum(p.days.length)} روز`;
+  });
+}
+
+let currentFilter = 'all';
+function applyFilters(){
+  const q = document.getElementById('search').value.trim().toLowerCase();
+  const cards = document.querySelectorAll('.day');
+  let visibleCount = 0;
+  cards.forEach(c=>{
+    const isDone = !!progress[c.dataset.day];
+    let show = true;
+    if(currentFilter==='done' && !isDone) show = false;
+    if(currentFilter==='todo' && isDone) show = false;
+    if(q && !c.dataset.search.includes(q)) show = false;
+    c.classList.toggle('hidden', !show);
+    if(show) visibleCount++;
+  });
+  // hide empty phase sections
+  document.querySelectorAll('.phase').forEach(sec=>{
+    const anyVisible = [...sec.querySelectorAll('.day')].some(c=>!c.classList.contains('hidden'));
+    sec.classList.toggle('hidden', !anyVisible);
+  });
+  document.getElementById('empty-state').classList.toggle('hidden', visibleCount>0);
+}
+
+function initControls(){
+  document.getElementById('search').addEventListener('input', applyFilters);
+  document.querySelectorAll('.filter-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      currentFilter = btn.dataset.filter;
+      applyFilters();
+    });
+  });
+  document.getElementById('reset-progress').addEventListener('click', ()=>{
+    if(confirm('مطمئنی می‌خوای کل پیشرفتت پاک بشه؟ این کار قابل بازگشت نیست.')){
+      progress = {};
+      saveProgress();
+      renderContent();
+      updateOverallProgress();
+    }
+  });
+  const topBtn = document.getElementById('top-btn');
+  window.addEventListener('scroll', ()=>{
+    topBtn.classList.toggle('show', window.scrollY > 600);
+  });
+  topBtn.addEventListener('click', ()=>window.scrollTo({top:0, behavior:'smooth'}));
+}
+
+fetch('data/roadmap.json')
+  .then(r=>r.json())
+  .then(data=>{
+    ROADMAP = data;
+    loadProgress();
+    renderStats();
+    renderPhaseNav();
+    renderContent();
+    updateOverallProgress();
+    initControls();
+  })
+  .catch(err=>{
+    document.getElementById('content').innerHTML = '<p style="text-align:center;color:var(--red)">خطا در بارگذاری داده‌های نقشه‌راه. لطفاً صفحه را رفرش کنید.</p>';
+    console.error(err);
+  });
+</script>
+
+</body>
+</html>
