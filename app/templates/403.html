@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}403{% endblock %}
+{% block content %}
+<div class="center-page">
+  <div class="glitch-code">403</div>
+  <h1 style="font-size:1.3rem;">{{ 'دسترسی نداری 🔒' if lang=='fa' else 'Access denied 🔒' }}</h1>
+  <p class="text-dim">{{ 'این بخش فقط برای مدیران است.' if lang=='fa' else 'This section is admin-only.' }}</p>
+  <a class="btn" href="{{ url_for('index') }}">{{ 'بازگشت به داشبورد' if lang=='fa' else 'Back to dashboard' }}</a>
+</div>
+{% endblock %}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}" dir="{{ dir }}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}{% if lang == 'fa' %}نقشه‌راه باگ‌بانتی{% else %}Bug Bounty Roadmap{% endif %}{% endblock %}</title>
+<link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='logo.svg') }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body dir="{{ dir }}">
+<div class="wrap">
+  <div class="topbar">
+    <a href="{{ url_for('index') }}" class="brand">
+      <img src="{{ url_for('static', filename='logo.svg') }}" class="brand-logo" alt="logo">
+      <span>{% if lang == 'fa' %}نقشه‌راه باگ‌بانتی{% else %}Bug Bounty Roadmap{% endif %}</span>
+    </a>
+    <div class="topbar-actions">
+      <a class="icon-btn" href="{{ url_for('set_lang', lang='en' if lang=='fa' else 'fa') }}">{{ 'EN' if lang=='fa' else 'FA' }}</a>
+      {% if cur_user %}
+        <button class="icon-btn" id="notif-btn" type="button">🔔<span id="notif-dot" class="dot" style="display:none;"></span></button>
+        <div class="notif-panel" id="notif-panel"></div>
+        <a class="icon-btn" href="{{ url_for('activity') }}">📊</a>
+        {% if cur_user['role'] == 'admin' %}<a class="icon-btn" href="{{ url_for('admin_home') }}">⚙️</a>{% endif %}
+        <span class="icon-btn" style="cursor:default;">{{ cur_user['username'] }}</span>
+        <a class="icon-btn" href="{{ url_for('logout') }}">{{ 'خروج' if lang=='fa' else 'Logout' }}</a>
+      {% else %}
+        <a class="icon-btn" href="{{ url_for('login') }}">{{ 'ورود' if lang=='fa' else 'Login' }}</a>
+        <a class="btn small" href="{{ url_for('register') }}">{{ 'ثبت‌نام' if lang=='fa' else 'Sign up' }}</a>
+      {% endif %}
+    </div>
+  </div>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% for cat, msg in messages %}<div class="flash {{ cat }}">{{ msg }}</div>{% endfor %}
+  {% endwith %}
+
+  {% block content %}{% endblock %}
+
+  <footer>
+    <div>{% if lang == 'fa' %}این یک نمونهٔ محلی کاربردی برای نقشه‌راه باگ‌بانتی است — ثبت‌نام، پیشرفت و نقش‌ها واقعی‌اند اما فقط روی همین دستگاه/شبکهٔ محلی اجرا می‌شود.{% else %}This is a functional local prototype of the Bug Bounty Roadmap — registration, progress and roles are real, but it only runs on this machine/local network.{% endif %}</div>
+    <div style="margin-top:8px;"><a href="https://github.com/hack3rrabbit/bug-bounty-roadmap" target="_blank" rel="noopener">GitHub</a> · <a href="https://hack3rrabbit.github.io/bug-bounty-roadmap/" target="_blank" rel="noopener">{{ 'سایت عمومی' if lang=='fa' else 'Public site' }}</a></div>
+  </footer>
+</div>
+
+{% if cur_user %}
+<script>
+async function loadNotifs(){
+  try{
+    const r = await fetch('/api/notifications');
+    const data = await r.json();
+    const dot = document.getElementById('notif-dot');
+    const panel = document.getElementById('notif-panel');
+    if(!dot || !panel) return;
+    dot.style.display = data.unread > 0 ? 'block' : 'none';
+    panel.innerHTML = data.items.map(it => `
+      <div class="notif-item">
+        <div class="nt-date">${it.created_at.slice(0,10)}</div>
+        <div class="nt-title">${it.title}</div>
+        <div class="nt-body">${it.body}</div>
+      </div>`).join('') || '<div class="notif-item">{{ "چیزی نیست" if lang=="fa" else "Nothing yet" }}</div>';
+    document.getElementById('notif-btn').addEventListener('click', ()=>{
+      panel.classList.toggle('open');
+      if(panel.classList.contains('open') && data.unread>0){
+        fetch('/notifications/seen', {method:'POST'}).then(()=>{ dot.style.display='none'; });
+      }
+    });
+    document.addEventListener('click', (e)=>{
+      if(!panel.contains(e.target) && e.target.id!=='notif-btn'){ panel.classList.remove('open'); }
+    });
+  }catch(e){}
+}
+loadNotifs();
+</script>
+{% endif %}
+</body>
+</html>

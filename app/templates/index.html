@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+<section style="padding:24px 0;">
+  <h1 class="hero-h1" style="font-size:clamp(1.6rem,4vw,2.4rem); font-weight:800; margin-bottom:10px;">
+    {% if lang == 'fa' %}داشبورد نقشه‌راه باگ‌بانتی{% else %}Bug Bounty Roadmap — Dashboard{% endif %}
+  </h1>
+  <p class="text-dim">
+    {% if lang == 'fa' %}۱۲ فاز، {{ total_days }} روز — روی هر فاز کلیک کن تا در یک صفحهٔ جداگانه باز شود.{% else %}12 phases, {{ total_days }} days — click any phase to open it on its own page.{% endif %}
+  </p>
+
+  {% if not cur_user %}
+  <div class="card" style="margin-top:18px;">
+    <b>{{ 'برای ردیابی پیشرفت وارد شو' if lang=='fa' else 'Sign up to track your progress' }}</b>
+    <p class="text-dim small" style="margin:8px 0 14px;">{{ 'ثبت‌نام و ورود رایگان است؛ اولین کسی که ثبت‌نام کند مدیر (admin) می‌شود.' if lang=='fa' else 'Registration is free; the first person to sign up becomes admin.' }}</p>
+    <a class="btn" href="{{ url_for('register') }}">{{ 'ثبت‌نام رایگان' if lang=='fa' else 'Sign up free' }}</a>
+    <a class="btn secondary" href="{{ url_for('login') }}">{{ 'ورود' if lang=='fa' else 'Login' }}</a>
+  </div>
+  {% else %}
+  <div class="stats">
+    <div class="stat"><div class="num">{{ done_count }}</div><div class="lbl">{{ 'روز انجام‌شده' if lang=='fa' else 'days done' }}</div></div>
+    <div class="stat"><div class="num">{{ overall_pct }}%</div><div class="lbl">{{ 'پیشرفت کلی' if lang=='fa' else 'overall progress' }}</div></div>
+    <div class="stat"><div class="num">{{ total_hours_logged }}</div><div class="lbl">{{ 'ساعت ثبت‌شده' if lang=='fa' else 'hours logged' }}</div></div>
+  </div>
+  {% endif %}
+
+  <div class="phase-grid">
+    {% for p in phases %}
+    <a class="phase-card" href="{{ url_for('phase_page', pid=p['id']) }}" style="--phase-color:{{ p['color'] }}">
+      <div class="pc-top"><span class="pc-icon">{{ p['icon'] }}</span><h3>{{ p['title'] }}</h3></div>
+      <div class="pc-sub">{{ p['subtitle'] }}</div>
+      {% if cur_user %}
+      <div class="track"><div class="fill" style="width:{{ p['_pct'] }}%"></div></div>
+      <div class="pc-count">{{ p['_done'] }}/{{ p['days']|length }} {{ 'روز' if lang=='fa' else 'days' }}</div>
+      {% else %}
+      <div class="pc-count">{{ p['days']|length }} {{ 'روز' if lang=='fa' else 'days' }}</div>
+      {% endif %}
+    </a>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

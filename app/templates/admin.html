@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %}Admin{% endblock %}
+{% block content %}
+<section style="padding:20px 0;">
+  <h1 style="font-size:1.4rem;">⚙️ {{ 'پنل مدیریت' if lang=='fa' else 'Admin panel' }}</h1>
+
+  <div class="stats">
+    <div class="stat"><div class="num">{{ stats.users }}</div><div class="lbl">{{ 'کاربران' if lang=='fa' else 'users' }}</div></div>
+    <div class="stat"><div class="num">{{ stats.completions }}</div><div class="lbl">{{ 'روزهای تکمیل‌شده (کل)' if lang=='fa' else 'total day completions' }}</div></div>
+    <div class="stat"><div class="num">{{ (stats.minutes_logged/60)|round(1) }}</div><div class="lbl">{{ 'ساعت ثبت‌شده (کل)' if lang=='fa' else 'total hours logged' }}</div></div>
+  </div>
+
+  <div class="card flex-between">
+    <div>
+      <b>{{ 'حالت در حال به‌روزرسانی' if lang=='fa' else 'Maintenance mode' }}</b>
+      <p class="small text-dim" style="margin-top:4px;">{{ 'وقتی روشن باشد، همهٔ کاربران غیرادمین صفحهٔ نگهداری می‌بینند.' if lang=='fa' else 'When on, all non-admin users see the maintenance page.' }}</p>
+    </div>
+    <form method="post" action="{{ url_for('admin_toggle_maintenance') }}">
+      <label class="switch"><input type="checkbox" onchange="this.form.submit()" {{ 'checked' if maintenance_on }}><span class="slider"></span></label>
+    </form>
+  </div>
+
+  <div class="card">
+    <b>{{ 'ارسال اعلان/به‌روزرسانی جدید' if lang=='fa' else 'Post a new update / notification' }}</b>
+    <form method="post" action="{{ url_for('admin_post_update') }}" style="margin-top:12px;">
+      <div class="field"><label>{{ 'عنوان' if lang=='fa' else 'Title' }}</label><input type="text" name="title" required></div>
+      <div class="field"><label>{{ 'متن' if lang=='fa' else 'Body' }}</label><textarea name="body" rows="3" required></textarea></div>
+      <button class="btn" type="submit">{{ 'ارسال به همهٔ کاربران' if lang=='fa' else 'Send to all users' }}</button>
+    </form>
+  </div>
+
+  <div class="card">
+    <b>{{ 'کاربران' if lang=='fa' else 'Users' }}</b>
+    <table style="margin-top:12px;">
+      <tr><th>{{ 'کاربر' if lang=='fa' else 'User' }}</th><th>Email</th><th>{{ 'نقش' if lang=='fa' else 'Role' }}</th><th>{{ 'عملیات' if lang=='fa' else 'Action' }}</th></tr>
+      {% for u in users %}
+      <tr>
+        <td>{{ u['username'] }}</td>
+        <td>{{ u['email'] }}</td>
+        <td><span class="badge {{ u['role'] }}">{{ u['role'] }}</span></td>
+        <td>
+          {% if u['role'] == 'admin' %}
+          <form method="post" action="{{ url_for('admin_set_role', user_id=u['id'], role='user') }}" style="display:inline;"><button class="btn small secondary" type="submit">{{ 'حذف ادمین' if lang=='fa' else 'Demote' }}</button></form>
+          {% else %}
+          <form method="post" action="{{ url_for('admin_set_role', user_id=u['id'], role='admin') }}" style="display:inline;"><button class="btn small secondary" type="submit">{{ 'ارتقا به ادمین' if lang=='fa' else 'Make admin' }}</button></form>
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+
+  <div class="card">
+    <b>{{ 'تاریخچهٔ اعلان‌ها' if lang=='fa' else 'Update history' }}</b>
+    {% for u in updates %}
+    <div class="notif-item" style="padding:10px 0;">
+      <div class="nt-date">{{ u['created_at'][:10] }}</div>
+      <div class="nt-title">{{ u['title'] }}</div>
+      <div class="nt-body">{{ u['body'] }}</div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

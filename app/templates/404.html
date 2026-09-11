@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}404{% endblock %}
+{% block content %}
+<div class="center-page">
+  <div class="glitch-code">404</div>
+  <h1 style="font-size:1.3rem;">{{ 'این مسیر پیدا نشد 🐞' if lang=='fa' else 'Page not found 🐞' }}</h1>
+  <div class="term">GET {{ request.path }}<br>HTTP/1.1 404 Not Found</div>
+  <a class="btn" href="{{ url_for('index') }}">{{ 'بازگشت به داشبورد' if lang=='fa' else 'Back to dashboard' }}</a>
+</div>
+{% endblock %}

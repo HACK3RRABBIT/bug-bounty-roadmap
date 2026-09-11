@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}{{ 'فعالیت من' if lang=='fa' else 'My Activity' }}{% endblock %}
+{% block content %}
+<section style="padding:20px 0;">
+  <h1 style="font-size:1.4rem;">📊 {{ 'نمودار فعالیت من' if lang=='fa' else 'My Activity Graph' }}</h1>
+  <div class="card" style="margin-top:14px;">
+    <div class="flex-between" style="margin-bottom:12px;">
+      <b>{{ active_days }} {{ 'روز فعال' if lang=='fa' else 'active days' }} · {{ total_hours }}h {{ 'در ' + weeks|string + ' هفتهٔ اخیر' if lang=='fa' else 'in the last ' + weeks|string + ' weeks' }}</b>
+    </div>
+    <div class="heatmap-scroll">
+      <div class="heatmap-grid">
+        {% for c in cells %}
+          {% if c.future %}
+            <span class="hm-cell" style="visibility:hidden;"></span>
+          {% else %}
+            <span class="hm-cell" data-level="{{ c.level }}" title="{{ c.date }} — {{ c.hours }}h"></span>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <b>{{ 'آخرین زمان‌های ثبت‌شده' if lang=='fa' else 'Recent time logs' }}</b>
+    <table style="margin-top:10px;">
+      <tr><th>{{ 'تاریخ' if lang=='fa' else 'Date' }}</th><th>{{ 'روز' if lang=='fa' else 'Day' }}</th><th>{{ 'فاز' if lang=='fa' else 'Phase' }}</th><th>{{ 'دقیقه' if lang=='fa' else 'Minutes' }}</th></tr>
+      {% for r in recent %}
+      <tr><td>{{ r.date }}</td><td>{{ r.title }}</td><td>{{ r.phase }}</td><td>{{ r.minutes }}</td></tr>
+      {% endfor %}
+    </table>
+  </div>
+</section>
+{% endblock %}

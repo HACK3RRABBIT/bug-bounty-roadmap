@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}" dir="{{ dir }}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ 'در حال به‌روزرسانی' if lang=='fa' else 'Under Maintenance' }}</title>
+<link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='logo.svg') }}">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body dir="{{ dir }}">
+<div class="wrap">
+  <div class="center-page">
+    <div class="spinner"></div>
+    <h1>🔧 {{ 'در حال به‌روزرسانی' if lang=='fa' else 'Under maintenance' }}</h1>
+    <div class="term">status: maintenance_mode = true</div>
+    <p class="text-dim">{{ 'مدیر سایت در حال انجام تغییرات است. کمی بعد دوباره سر بزن.' if lang=='fa' else 'The site admin is making changes. Please check back shortly.' }}</p>
+  </div>
+</div>
+</body>
+</html>

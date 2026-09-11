@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}{{ 'ورود' if lang=='fa' else 'Login' }}{% endblock %}
+{% block content %}
+<div class="auth-box card">
+  <h2 style="margin-bottom:16px;">{{ 'ورود به حساب' if lang=='fa' else 'Log in' }}</h2>
+  <form method="post">
+    <div class="field"><label>{{ 'نام کاربری یا ایمیل' if lang=='fa' else 'Username or email' }}</label><input type="text" name="username" required autofocus></div>
+    <div class="field"><label>{{ 'رمز عبور' if lang=='fa' else 'Password' }}</label><input type="password" name="password" required></div>
+    <button class="btn" type="submit" style="width:100%;">{{ 'ورود' if lang=='fa' else 'Log in' }}</button>
+  </form>
+  <p class="small text-dim" style="margin-top:14px;">
+    {{ 'حساب نداری؟' if lang=='fa' else "No account?" }} <a href="{{ url_for('register') }}">{{ 'ثبت‌نام کن' if lang=='fa' else 'Sign up' }}</a>
+  </p>
+</div>
+{% endblock %}

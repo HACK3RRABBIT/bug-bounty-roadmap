@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}{{ phase['title'] }}{% endblock %}
+{% block content %}
+<section style="padding:20px 0;">
+  <a href="{{ url_for('index') }}" class="small text-dim">← {{ 'بازگشت به داشبورد' if lang=='fa' else 'Back to dashboard' }}</a>
+  <div style="border-inline-start:4px solid {{ phase['color'] }}; padding-inline-start:14px; margin-top:12px;">
+    <h1 style="font-size:1.5rem; display:flex; align-items:center; gap:10px;"><span>{{ phase['icon'] }}</span>{{ phase['title'] }}</h1>
+    <p class="text-dim">{{ phase['subtitle'] }}</p>
+  </div>
+
+  <div class="days">
+    {% for d in phase['days'] %}
+    {% set is_done = d['day'] in done_ids %}
+    {% set logged = day_minutes.get(d['day'], 0) %}
+    <div class="day {{ 'done' if is_done }}" style="--phase-color:{{ phase['color'] }}">
+      <div class="day-top">
+        <span class="day-num">{{ 'روز' if lang=='fa' else 'Day' }} {{ d['day'] }}</span>
+        <span class="kind-tag kind-{{ d['kind'] }}">{{ d['kind'] }}</span>
+      </div>
+      <div class="day-title">{{ d['title'] }}</div>
+      <div class="day-task">{{ d['task'] }}</div>
+      <div class="day-res">
+        {% for r in d['resources'] %}<a href="{{ r['u'] }}" target="_blank" rel="noopener">↗ {{ r['t'] }}</a>{% endfor %}
+      </div>
+      <div class="day-bottom">
+        <span>⏱ {{ d['hours'] }}h{{ ' ساعت تخمینی' if lang=='fa' else ' estimated' }}{% if logged %} · {{ (logged/60)|round(1) }}h {{ 'ثبت‌شده' if lang=='fa' else 'logged' }}{% endif %}</span>
+      </div>
+      <div class="day-actions">
+        {% if cur_user %}
+        <form method="post" action="{{ url_for('toggle_day', day_id=d['day']) }}" class="check-form">
+          <label><input type="checkbox" onchange="this.form.submit()" {{ 'checked' if is_done }}> {{ 'انجام شد' if lang=='fa' else 'Done' }}</label>
+        </form>
+        <form method="post" action="{{ url_for('log_time', day_id=d['day']) }}" class="timeform">
+          <input type="number" name="minutes" min="1" max="600" placeholder="{{ 'دقیقه' if lang=='fa' else 'min' }}">
+          <button class="btn small secondary" type="submit">{{ 'ثبت زمان' if lang=='fa' else 'Log time' }}</button>
+        </form>
+        {% else %}
+        <span class="small text-dim">{{ 'برای ردیابی پیشرفت وارد شو' if lang=='fa' else 'Log in to track progress' }}</span>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}
