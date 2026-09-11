@@ -10,12 +10,14 @@ export default function PhaseSection({
   progress,
   onToggleDay,
   matchesFilter,
+  telegramLinks,
 }: {
   phase: Phase;
   lang: Lang;
   progress: Set<number>;
   onToggleDay: (day: number) => void;
   matchesFilter: (dayId: number, searchable: string) => boolean;
+  telegramLinks?: Record<string, { fa?: string; en?: string }>;
 }) {
   const doneCount = phase.days.filter((d) => progress.has(d.day)).length;
   const pct = phase.days.length ? Math.round((doneCount / phase.days.length) * 100) : 0;
@@ -53,6 +55,7 @@ export default function PhaseSection({
             lang={lang}
             done={progress.has(d.day)}
             onToggle={() => onToggleDay(d.day)}
+            telegramUrl={telegramLinks?.[String(d.day)]?.[lang]}
           />
         ))}
       </div>

@@ -172,11 +172,16 @@
   .day{
     border-bottom:1px solid var(--border-soft);
     padding:20px 0;display:flex;flex-direction:column;gap:10px;
+    scroll-margin-top:150px;
   }
   .day:first-child{padding-top:0;}
   .day:last-child{border-bottom:none;}
   .day.done{opacity:.5;}
   .day.done .day-title{text-decoration:line-through;}
+  .day.hl{outline:2px solid var(--accent);outline-offset:8px;border-radius:var(--radius);transition:outline-color 1.6s ease;}
+  .day.hl.fade{outline-color:transparent;}
+  .day-permalink{color:var(--text-faint);font-weight:400;margin-inline-start:2px;}
+  .day-permalink:hover{color:var(--accent);text-decoration:none;}
   .day-top{display:flex;align-items:center;flex-wrap:wrap;gap:9px;font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--text-faint);}
   .day-top .sep{width:3px;height:3px;border-radius:50%;background:var(--border);}
   .day-num{font-weight:600;}
@@ -430,10 +435,11 @@ function dayCard(day){
   const loggedMin = dayTime[day.day] || 0;
   const resHtml = day.resources.map(r=>`<a href="${r.u}" target="_blank" rel="noopener">${r.t} ↗</a>`).join('');
   return `
-  <div class="day ${isDone?'done':''}" data-day="${day.day}" data-kind="${day.kind}" data-phase="${day.phaseId}"
+  <div class="day ${isDone?'done':''}" id="day-${day.day}" data-day="${day.day}" data-kind="${day.kind}" data-phase="${day.phaseId}"
        data-search="${(day.title+' '+day.task+' '+day.resources.map(r=>r.t).join(' ')).toLowerCase()}">
     <div class="day-top">
       <span class="day-num">Day ${faNum(day.day)}</span>
+      <a class="day-permalink" href="#day-${day.day}" title="Direct link to this day" onclick="event.stopPropagation();setTimeout(()=>goToHashDay(),0);">#</a>
       <span class="sep"></span>
       <span class="kind-tag">${KIND_LABEL[day.kind]}</span>
       <span class="sep"></span>
@@ -609,6 +615,28 @@ function applyFilters(){
   document.getElementById('empty-state').classList.toggle('hidden', visibleCount>0);
 }
 
+/* ---------------- Stable per-day deep links (#day-N) ---------------- */
+function goToHashDay(){
+  const m = location.hash.match(/^#day-(\d+)$/);
+  if(!m) return;
+  const dayNum = m[1];
+  const card = document.getElementById('day-'+dayNum);
+  if(!card) return;
+  // a day hidden behind an active search/filter must still be reachable via direct link
+  const search = document.getElementById('search');
+  if(search && search.value){ search.value=''; }
+  currentFilter = 'all';
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active', b.dataset.filter==='all'));
+  applyFilters();
+  card.scrollIntoView({behavior:'smooth', block:'center'});
+  card.classList.remove('fade');
+  card.classList.add('hl');
+  setTimeout(()=>card.classList.add('fade'), 50);
+  setTimeout(()=>card.classList.remove('hl','fade'), 2000);
+}
+window.goToHashDay = goToHashDay;
+window.addEventListener('hashchange', goToHashDay);
+
 function initControls(){
   document.getElementById('search').addEventListener('input', applyFilters);
   document.querySelectorAll('.filter-btn').forEach(btn=>{
@@ -676,6 +704,7 @@ fetch('../data/roadmap.en.json')
     renderHeatmap();
     initControls();
     initNotifications();
+    goToHashDay();
   })
   .catch(err=>{
     document.getElementById('content').innerHTML = '<p style="text-align:center;color:var(--red)">Failed to load roadmap data. Please refresh the page.</p>';

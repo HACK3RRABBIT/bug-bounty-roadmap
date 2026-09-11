@@ -8,14 +8,16 @@ export default function DayCard({
   lang,
   done,
   onToggle,
+  telegramUrl,
 }: {
   day: Day;
   lang: Lang;
   done: boolean;
   onToggle: () => void;
+  telegramUrl?: string;
 }) {
   return (
-    <div className="flex flex-col gap-2.5 border-b border-hairline-soft py-5 first:pt-0 last:border-b-0">
+    <div id={`day-${day.day}`} className="flex scroll-mt-24 flex-col gap-2.5 border-b border-hairline-soft py-5 first:pt-0 last:border-b-0">
       <div className="flex flex-wrap items-center gap-3 font-mono-display text-[11px] text-dimmer">
         <span>{lang === "fa" ? "روز" : "Day"} {faNum(day.day, lang)}</span>
         <span className="h-1 w-1 rounded-full bg-hairline" />
@@ -45,6 +47,16 @@ export default function DayCard({
             {r.t} ↗
           </a>
         ))}
+        {telegramUrl && (
+          <a
+            href={telegramUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[0.8rem] text-signal underline decoration-signal/30 underline-offset-4 hover:decoration-signal"
+          >
+            {lang === "fa" ? "پست کانال تلگرام" : "Telegram channel post"} ↗
+          </a>
+        )}
       </div>
     </div>
   );

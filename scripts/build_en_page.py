@@ -33,6 +33,7 @@ REPLACEMENTS = [
     ('<a href="v2/" class="icon-btn" title="نسخهٔ جدید با انیمیشن">✨ جدید</a>',
      '<a href="../v2/" class="icon-btn" title="New animated design">✨ New</a>'),
     ('title="تازه‌ها"', 'title="Updates"'),
+    ('title="لینک مستقیم به این روز"', 'title="Direct link to this day"'),
     # hero
     ('<span class="kicker">🐞 نقشه‌راه غیررسمی و متن‌باز جامعهٔ فارسی‌زبان</span>',
      '<span class="kicker">🐞 an unofficial, open-source community roadmap</span>'),

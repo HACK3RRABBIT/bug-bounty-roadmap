@@ -29,9 +29,15 @@ npm run build                     # root-basePath build -> web/out (matches loca
 NEXT_PUBLIC_BASE_PATH=/bug-bounty-roadmap/v2 npm run build   # subpath build for GitHub Pages /v2/
 npm run lint
 # root-basePath build is served on this machine as `bug-bounty-roadmap.service` (port 3000)
+
+# telegram/ — Telegram learning-companion sync (read-only scan+match+preview only; see telegram/README.md)
+python3 -m telegram.sync scan --fixture telegram/fixtures/sample_source_messages.json
+python3 -m telegram.sync preview --days 1,10,19,46
+python3 -m unittest discover -s telegram/tests -t . -v
 ```
 
-There is no test suite in this repo.
+The only test suite in this repo is `telegram/tests/` (plain `unittest`, no pytest). Everything
+else has no tests.
 
 ## Architecture: one dataset, three independent front-ends
 
@@ -67,6 +73,23 @@ From that dataset, three separate presentations are built and must each be kept 
 
 `assets/` holds the canonical logo/favicon; `app/static/` and `web/public/` each have their own
 copies that need to be refreshed by hand if the logo changes.
+
+Both `index.html` and `en/index.html` render each day with a stable `id="day-N"` anchor and a
+`#day-N` deep link (with hash-based scroll-on-load/hashchange handling, see `goToHashDay()` in
+`index.html`). Any change to the day-card markup must be mirrored the same way in both files (via
+`scripts/build_en_page.py` for the EN copy) — this anchor is a load-bearing integration point for
+`telegram/` (below), not just a UI nicety.
+
+## `telegram/` — Telegram learning-companion sync (separate component, own README)
+
+A read-only pipeline (scan the 3 configured source channels → match against roadmap days →
+preview) that will eventually publish to two personal Persian/English Telegram channels
+structured after the roadmap. **Publishing is not implemented; nothing in this codebase sends,
+forwards, or edits anything on Telegram.** No real Telegram credentials exist anywhere in this
+repo — `telegram/config.py` fails loudly (`ConfigError`) if live scanning is attempted without
+them, and the CLI defaults to a `--fixture` (synthetic, clearly-labeled sample data) path instead.
+Full architecture, current weaknesses, and the pre-full-scan checklist are in `telegram/README.md`
+— read that before extending this component, not just this summary.
 
 ## Deployment topology
 

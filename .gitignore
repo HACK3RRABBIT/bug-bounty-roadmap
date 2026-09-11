@@ -6,3 +6,12 @@ app/.venv/
 app/bugbounty.db
 app/__pycache__/
 web/.wrangler/
+telegram/.venv/
+telegram/.env
+telegram/sync_state.db
+telegram/reports/*.txt
+telegram/reports/*.json
+telegram/__pycache__/
+telegram/tests/__pycache__/
+telegram/.reset_dry_run_state.json
+.pytest_cache/

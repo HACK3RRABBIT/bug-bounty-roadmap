@@ -38,6 +38,7 @@ export default function RoadmapApp() {
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState<FilterMode>("all");
   const [mounted, setMounted] = useState(false);
+  const [telegramLinks, setTelegramLinks] = useState<Record<string, { fa?: string; en?: string }>>({});
 
   useEffect(() => {
     setMounted(true);
@@ -47,7 +48,35 @@ export default function RoadmapApp() {
     } catch {
       /* ignore */
     }
+    // basePath-aware fetch: this file is unversioned and lives in public/,
+    // so it can be refreshed independently of a full site rebuild whenever
+    // the Telegram channels are re-published.
+    const base = (process.env.NEXT_PUBLIC_BASE_PATH || "").replace(/\/$/, "");
+    fetch(`${base}/telegram_links.json`)
+      .then((r) => (r.ok ? r.json() : {}))
+      .then(setTelegramLinks)
+      .catch(() => {});
   }, []);
+
+  // Stable per-day deep links (#day-N): scroll to the card once the
+  // roadmap has actually rendered (after boot + filters clear it).
+  useEffect(() => {
+    if (!booted) return;
+    const goToHashDay = () => {
+      const m = window.location.hash.match(/^#day-(\d+)$/);
+      if (!m) return;
+      setFilter("all");
+      setSearch("");
+      // wait a tick for the filter-driven re-render to finish before scrolling
+      requestAnimationFrame(() => {
+        const el = document.getElementById(`day-${m[1]}`);
+        el?.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
+    };
+    goToHashDay();
+    window.addEventListener("hashchange", goToHashDay);
+    return () => window.removeEventListener("hashchange", goToHashDay);
+  }, [booted]);
 
   function toggleDay(day: number) {
     setProgress((prev) => {
@@ -116,6 +145,7 @@ export default function RoadmapApp() {
               progress={progress}
               onToggleDay={toggleDay}
               matchesFilter={matchesFilter}
+              telegramLinks={telegramLinks}
             />
           ))}
         </main>
