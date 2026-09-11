@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>در حال به‌روزرسانی | نقشه‌راه باگ‌بانتی</title>
+<link rel="icon" type="image/svg+xml" href="/bug-bounty-roadmap/assets/logo.svg">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0b0e14;--text:#e7ebf3;--dim:#9aa4b8;--accent:#22d3ee;--accent2:#a78bfa;}
+  *{box-sizing:border-box;}
+  body{
+    margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
+    background:radial-gradient(1000px 500px at 50% -10%, rgba(167,139,250,.1), transparent 60%), var(--bg);
+    color:var(--text);font-family:'Vazirmatn',sans-serif;text-align:center;padding:24px;
+  }
+  .box{max-width:540px;}
+  .spinner{
+    width:54px;height:54px;border-radius:50%;margin:0 auto 22px;
+    border:3px solid #232a3b;border-top-color:var(--accent);animation:spin 1s linear infinite;
+  }
+  @keyframes spin{to{transform:rotate(360deg)}}
+  h1{font-size:1.5rem;margin:0 0 12px;}
+  p{color:var(--dim);font-size:.95rem;line-height:1.8;margin:0 0 20px;}
+  .term{
+    font-family:'JetBrains Mono',monospace;direction:ltr;text-align:left;font-size:.8rem;color:#67e8f9;
+    background:#11151f;border:1px solid #232a3b;border-radius:10px;padding:14px 16px;margin:0 auto 26px;max-width:380px;
+  }
+  .dots::after{content:'';animation:dots 1.4s steps(4,end) infinite;}
+  @keyframes dots{0%{content:''}25%{content:'.'}50%{content:'..'}75%{content:'...'}100%{content:''}}
+</style>
+</head>
+<body>
+  <div class="box">
+    <div class="spinner"></div>
+    <h1>🔧 در حال به‌روزرسانی نقشه‌راه</h1>
+    <div class="term">deploying new content<span class="dots"></span></div>
+    <p>داریم محتوای جدید (روزهای تازه، منابع به‌روز، یا رفع باگ) را منتشر می‌کنیم. این صفحه معمولاً چند دقیقه بیشتر طول نمی‌کشد — کمی بعد دوباره سر بزن.</p>
+  </div>
+</body>
+</html>

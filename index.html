@@ -5,10 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>نقشه‌راه کامل باگ‌بانتی | از صفر تا حرفه‌ای</title>
 <meta name="description" content="نقشه‌راه روز به روز، رایگان ۱۰۰٪ و فارسی برای یادگیری باگ‌بانتی از صفر تا حرفه‌ای — بر پایهٔ Voorivex، یاشار شاهین‌زاده، PortSwigger Academy، Hacker101 و منابع معتبر جهانی.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐞</text></svg>">
+<link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#0b0e14;
@@ -47,8 +49,41 @@
   .wrap{max-width:var(--maxw);margin:0 auto;}
   code, .mono{font-family:'JetBrains Mono', monospace; direction:ltr; unicode-bidi:embed;}
 
+  /* ---------- TOPBAR ---------- */
+  .topbar{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-top:18px;
+  }
+  .brand{display:flex;align-items:center;gap:9px;color:var(--text);font-weight:700;font-size:.95rem;}
+  .brand:hover{text-decoration:none;}
+  .brand-logo{width:28px;height:28px;filter:drop-shadow(0 0 6px rgba(34,211,238,.35));}
+  .topbar-actions{display:flex;align-items:center;gap:8px;position:relative;}
+  .icon-btn{
+    background:var(--bg-elev);border:1px solid var(--border);color:var(--text-dim);
+    width:38px;height:38px;border-radius:10px;cursor:pointer;font-size:.95rem;position:relative;
+    display:flex;align-items:center;justify-content:center;font-family:inherit;font-weight:700;
+  }
+  .icon-btn:hover{border-color:var(--accent);color:var(--text);}
+  .dot{position:absolute;top:6px;left:6px;width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 2px var(--bg-elev);}
+  .notif-panel{
+    position:absolute;top:46px;left:0;width:320px;max-width:80vw;max-height:420px;overflow-y:auto;
+    background:var(--bg-elev-2);border:1px solid var(--border);border-radius:12px;padding:6px;
+    box-shadow:0 12px 32px rgba(0,0,0,.5);z-index:80;
+  }
+  .notif-item{padding:12px 12px;border-radius:8px;border-bottom:1px solid var(--border-soft);}
+  .notif-item:last-child{border-bottom:none;}
+  .notif-item .nt-date{font-size:.7rem;color:var(--text-faint);font-family:'JetBrains Mono',monospace;}
+  .notif-item .nt-title{font-size:.85rem;font-weight:700;color:var(--text);margin:3px 0 4px;}
+  .notif-item .nt-body{font-size:.78rem;color:var(--text-dim);line-height:1.7;}
+
+  /* typing / glow accents */
+  .type-cursor::after{
+    content:'▌';color:var(--accent);animation:blink 1s step-end infinite;font-weight:400;
+  }
+  @keyframes blink{50%{opacity:0;}}
+
   /* ---------- HERO ---------- */
-  .hero{padding:56px 0 28px;text-align:center;}
+  .hero{padding:36px 0 28px;text-align:center;}
   .hero .kicker{
     display:inline-flex;align-items:center;gap:8px;
     font-size:.85rem;color:var(--accent);
@@ -189,6 +224,42 @@
   }
   .check input{width:16px;height:16px;accent-color:var(--green);cursor:pointer;}
 
+  /* ---------- HEATMAP ---------- */
+  .heatmap-scroll{overflow-x:auto; padding-bottom:4px;}
+  .heatmap-grid{
+    display:grid; grid-auto-flow:column; grid-template-rows:repeat(7, 12px);
+    gap:3px; direction:rtl; width:max-content;
+  }
+  .hm-cell{
+    width:12px; height:12px; border-radius:3px; background:var(--bg-elev-2); border:1px solid var(--border-soft);
+    display:inline-block;
+  }
+  .hm-cell[data-level="1"]{background:#0e4b52; border-color:#116470;}
+  .hm-cell[data-level="2"]{background:#0c7086; border-color:#0891a8;}
+  .hm-cell[data-level="3"]{background:#0ea5c4; border-color:#22d3ee;}
+  .hm-cell[data-level="4"]{background:#22d3ee; border-color:#67e8f9; box-shadow:0 0 6px rgba(34,211,238,.6);}
+  .heatmap-legend{display:flex; align-items:center; gap:5px; margin-top:10px; font-size:.72rem; color:var(--text-faint);}
+  .heatmap-legend .hm-cell{width:11px;height:11px;}
+
+  /* ---------- TIME TRACK on day card ---------- */
+  .timetrack{display:flex; align-items:center; gap:6px; margin-top:2px;}
+  .timetrack button{
+    background:var(--bg-elev-2); border:1px solid var(--border-soft); color:var(--text-faint);
+    font-size:.72rem; border-radius:7px; padding:5px 9px; cursor:pointer; font-family:inherit;
+  }
+  .timetrack button:hover{color:var(--accent); border-color:var(--accent);}
+  .timetrack .logged{font-size:.72rem; color:var(--text-faint); font-family:'JetBrains Mono',monospace;}
+  .timetrack-form{display:none; align-items:center; gap:6px; margin-top:6px;}
+  .timetrack-form.open{display:flex;}
+  .timetrack-form input{
+    width:64px; background:var(--bg); border:1px solid var(--border); color:var(--text);
+    border-radius:7px; padding:5px 8px; font-family:'JetBrains Mono',monospace; font-size:.78rem;
+  }
+  .timetrack-form button{
+    background:var(--accent); color:#03181c; border:none; font-weight:700; border-radius:7px;
+    padding:5px 12px; font-size:.75rem; cursor:pointer;
+  }
+
   .hidden{display:none !important;}
 
   /* ---------- FOOTER ---------- */
@@ -226,9 +297,18 @@
 
 <div class="wrap">
 
+  <div class="topbar">
+    <a href="./" class="brand"><img src="assets/logo.svg" alt="logo" class="brand-logo"><span>Bug Bounty Roadmap</span></a>
+    <div class="topbar-actions">
+      <button id="lang-toggle" class="icon-btn" title="English version">EN</button>
+      <button id="notif-btn" class="icon-btn" title="تازه‌ها">🔔<span id="notif-dot" class="dot hidden"></span></button>
+      <div id="notif-panel" class="notif-panel hidden"></div>
+    </div>
+  </div>
+
   <section class="hero">
     <span class="kicker">🐞 نقشه‌راه غیررسمی و متن‌باز جامعهٔ فارسی‌زبان</span>
-    <h1>نقشه‌راه کامل باگ‌بانتی<br>از صفر تا حرفه‌ای</h1>
+    <h1><span class="type-cursor">نقشه‌راه کامل باگ‌بانتی</span><br>از صفر تا حرفه‌ای</h1>
     <p class="lead">
       یک برنامهٔ روز‌به‌روز، دقیق و کاملاً رایگان برای کسی که هیچ پیش‌زمینه‌ای ندارد و می‌خواهد
       به یک باگ‌بانتی‌هانتر حرفه‌ای تبدیل شود — برگرفته از آموزش‌های
@@ -273,6 +353,24 @@
         <span class="kind-tag kind-milestone">نقطهٔ عطف</span>چک‌پوینت بزرگ برای سنجش پیشرفت واقعی‌ات.</div>
       <div>• <b style="color:var(--text)">مستندسازی مهم‌تر از سرعت است:</b> در تمام مسیر، یک Vault در Obsidian یا Notion کنار خودت نگه دار و هر نکته را یادداشت کن؛ این عادت مهم‌ترین دارایی یک هانتر حرفه‌ای است.</div>
       <div>• <b style="color:var(--text)">همیشه قانونی بمان:</b> فقط در محدودهٔ Scope مجاز برنامه‌های باگ‌بانتی، VDP ها، یا محیط‌های آموزشی طراحی‌شده برای هک (مثل PortSwigger Academy، Hacker101، DVWA) تمرین کن.</div>
+    </div>
+  </div>
+
+  <div class="sources" id="heatmap-section" style="margin-bottom:22px;">
+    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; margin-bottom:14px;">
+      <h3 style="margin:0;">📊 نمودار فعالیت من</h3>
+      <div style="font-size:.78rem; color:var(--text-faint); font-family:'JetBrains Mono',monospace;" id="heatmap-summary">—</div>
+    </div>
+    <div class="heatmap-scroll"><div class="heatmap-grid" id="heatmap-grid"></div></div>
+    <div class="heatmap-legend">
+      <span>کم</span>
+      <span class="hm-cell" data-level="0"></span>
+      <span class="hm-cell" data-level="1"></span>
+      <span class="hm-cell" data-level="2"></span>
+      <span class="hm-cell" data-level="3"></span>
+      <span class="hm-cell" data-level="4"></span>
+      <span>زیاد</span>
+      <span style="margin-inline-start:auto; color:var(--text-faint);">داده فقط در همین مرورگر ذخیره می‌شود</span>
     </div>
   </div>
 
@@ -339,7 +437,7 @@ function renderStats(){
     [ROADMAP.phases.length, 'فاز اصلی'],
     [totalResources, 'منبع رایگان یکتا'],
     [Math.round(totalHours), 'ساعت محتوا'],
-    [Math.round(totalDays/30*10)/10, 'ماه (با ۶ روز/هفته)'],
+    [Math.round(totalDays/6*7/30*10)/10, 'ماه تقویمی (با ۶ روز مطالعه/هفته)'],
   ];
   statsEl.innerHTML = items.map(([n,l])=>`<div class="stat"><div class="num">${(''+n).replace(/[0-9]/g,x=>'۰۱۲۳۴۵۶۷۸۹'[x])}</div><div class="lbl">${l}</div></div>`).join('');
 }
@@ -353,6 +451,7 @@ function renderPhaseNav(){
 
 function dayCard(day){
   const isDone = !!progress[day.day];
+  const loggedMin = dayTime[day.day] || 0;
   const resHtml = day.resources.map(r=>`<a href="${r.u}" target="_blank" rel="noopener">${r.t}</a>`).join('');
   return `
   <div class="day ${isDone?'done':''}" data-day="${day.day}" data-kind="${day.kind}" data-phase="${day.phaseId}"
@@ -366,11 +465,19 @@ function dayCard(day){
     <p class="day-task">${day.task}</p>
     <div class="day-res">${resHtml}</div>
     <div class="day-bottom">
-      <span class="hours">⏱ ${faNum(day.hours)} ساعت</span>
+      <span class="hours">⏱ ${faNum(day.hours)} ساعت تخمینی</span>
       <label class="check">
         <input type="checkbox" ${isDone?'checked':''} onchange="toggleDay(${day.day}, this.checked)">
         انجام شد
       </label>
+    </div>
+    <div class="timetrack">
+      <button type="button" onclick="toggleTimeForm(${day.day})">⏱ ثبت زمان مطالعه</button>
+      <span class="logged" id="logged-${day.day}">${loggedMin>0 ? '('+faNum(Math.round(loggedMin/60*10)/10)+' ساعت ثبت‌شده)' : ''}</span>
+    </div>
+    <div class="timetrack-form" id="tf-${day.day}">
+      <input type="number" min="1" max="600" placeholder="دقیقه" id="tf-input-${day.day}">
+      <button type="button" onclick="submitTimeLog(${day.day})">ثبت</button>
     </div>
   </div>`;
 }
@@ -412,8 +519,86 @@ window.toggleDay = function(dayNum, checked){
   const card = document.querySelector(`.day[data-day="${dayNum}"]`);
   if(card) card.classList.toggle('done', checked);
   updateOverallProgress();
-  // update phase progress bar for that card's phase
   renderPhaseProgressBars();
+  // اولین‌بار که یک روز تیک می‌خورد، ساعت تخمینی‌اش خودکار به لاگ زمان امروز اضافه می‌شود
+  if(checked && !dayTime[dayNum]){
+    const day = allDays().find(x=>x.day===dayNum);
+    if(day) addTimeLog(dayNum, Math.round(day.hours*60));
+  }
+}
+
+/* ---------------- Time tracking + activity heatmap ---------------- */
+const TIMELOG_KEY = 'bbr_timelog_v1';   // { 'YYYY-MM-DD': minutes }
+const DAYTIME_KEY = 'bbr_daytime_v1';   // { dayNum: minutes }
+let timelog = {}, dayTime = {};
+
+function loadTimeData(){
+  try{ timelog = JSON.parse(localStorage.getItem(TIMELOG_KEY) || '{}'); }catch(e){ timelog = {}; }
+  try{ dayTime = JSON.parse(localStorage.getItem(DAYTIME_KEY) || '{}'); }catch(e){ dayTime = {}; }
+}
+function saveTimeData(){
+  try{
+    localStorage.setItem(TIMELOG_KEY, JSON.stringify(timelog));
+    localStorage.setItem(DAYTIME_KEY, JSON.stringify(dayTime));
+  }catch(e){}
+}
+function todayStr(){
+  const d = new Date();
+  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+}
+function addTimeLog(dayNum, minutes){
+  if(!minutes || minutes<=0) return;
+  const t = todayStr();
+  timelog[t] = (timelog[t]||0) + minutes;
+  dayTime[dayNum] = (dayTime[dayNum]||0) + minutes;
+  saveTimeData();
+  renderHeatmap();
+  const badge = document.getElementById('logged-'+dayNum);
+  if(badge) badge.textContent = '('+faNum(Math.round(dayTime[dayNum]/60*10)/10)+' ساعت ثبت‌شده)';
+}
+window.toggleTimeForm = function(dayNum){
+  const f = document.getElementById('tf-'+dayNum);
+  if(f) f.classList.toggle('open');
+}
+window.submitTimeLog = function(dayNum){
+  const input = document.getElementById('tf-input-'+dayNum);
+  const minutes = parseInt(input.value, 10);
+  if(minutes>0){
+    addTimeLog(dayNum, minutes);
+    input.value='';
+    document.getElementById('tf-'+dayNum).classList.remove('open');
+  }
+}
+
+function renderHeatmap(){
+  const grid = document.getElementById('heatmap-grid');
+  if(!grid) return;
+  const WEEKS = 20, DAYS = WEEKS*7;
+  const today = new Date();
+  today.setHours(0,0,0,0);
+  const start = new Date(today);
+  start.setDate(start.getDate() - (DAYS-1) - today.getDay());
+  let cells = '';
+  let totalMinutes = 0, activeDays = 0;
+  const cursor = new Date(start);
+  for(let i=0;i<WEEKS*7+7;i++){
+    const key = cursor.getFullYear()+'-'+String(cursor.getMonth()+1).padStart(2,'0')+'-'+String(cursor.getDate()).padStart(2,'0');
+    const mins = timelog[key] || 0;
+    let level = 0;
+    if(mins>0) level=1;
+    if(mins>=30) level=2;
+    if(mins>=90) level=3;
+    if(mins>=180) level=4;
+    const future = cursor > today;
+    if(mins>0){ totalMinutes += mins; activeDays++; }
+    cells += `<span class="hm-cell" data-level="${future?'':level}" title="${key} — ${mins>0? Math.round(mins/60*10)/10+' ساعت':'بدون فعالیت'}" style="${future?'visibility:hidden':''}"></span>`;
+    cursor.setDate(cursor.getDate()+1);
+  }
+  grid.innerHTML = cells;
+  const summary = document.getElementById('heatmap-summary');
+  if(summary){
+    summary.textContent = `${faNum(activeDays)} روز فعال · ${faNum(Math.round(totalMinutes/60*10)/10)} ساعت ثبت‌شده در ${faNum(WEEKS)} هفتهٔ اخیر`;
+  }
 }
 
 function renderPhaseProgressBars(){
@@ -472,6 +657,35 @@ function initControls(){
     topBtn.classList.toggle('show', window.scrollY > 600);
   });
   topBtn.addEventListener('click', ()=>window.scrollTo({top:0, behavior:'smooth'}));
+  document.getElementById('lang-toggle').addEventListener('click', ()=>{ window.location.href = 'en/'; });
+}
+
+/* ---------------- Notifications / changelog ---------------- */
+const SEEN_KEY = 'bbr_last_seen_update_v1';
+function initNotifications(){
+  fetch('data/changelog.json').then(r=>r.json()).then(items=>{
+    const lastSeen = parseInt(localStorage.getItem(SEEN_KEY) || '0', 10);
+    const unread = items.filter(it=>it.id > lastSeen).length;
+    document.getElementById('notif-dot').classList.toggle('hidden', unread===0);
+    const panel = document.getElementById('notif-panel');
+    panel.innerHTML = items.map(it=>`
+      <div class="notif-item">
+        <div class="nt-date">${it.date}</div>
+        <div class="nt-title">${it.title_fa}</div>
+        <div class="nt-body">${it.body_fa}</div>
+      </div>`).join('');
+    const btn = document.getElementById('notif-btn');
+    btn.addEventListener('click', ()=>{
+      panel.classList.toggle('hidden');
+      if(!panel.classList.contains('hidden') && items.length){
+        localStorage.setItem(SEEN_KEY, String(Math.max(...items.map(i=>i.id))));
+        document.getElementById('notif-dot').classList.add('hidden');
+      }
+    });
+    document.addEventListener('click', (e)=>{
+      if(!panel.contains(e.target) && e.target!==btn){ panel.classList.add('hidden'); }
+    });
+  }).catch(()=>{});
 }
 
 fetch('data/roadmap.json')
@@ -479,11 +693,14 @@ fetch('data/roadmap.json')
   .then(data=>{
     ROADMAP = data;
     loadProgress();
+    loadTimeData();
     renderStats();
     renderPhaseNav();
     renderContent();
     updateOverallProgress();
+    renderHeatmap();
     initControls();
+    initNotifications();
   })
   .catch(err=>{
     document.getElementById('content').innerHTML = '<p style="text-align:center;color:var(--red)">خطا در بارگذاری داده‌های نقشه‌راه. لطفاً صفحه را رفرش کنید.</p>';

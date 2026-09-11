@@ -1,0 +1,42 @@
+[
+  {
+    "id": 5,
+    "date": "2026-09-11",
+    "title_fa": "فاز هوش مصنوعی + زمان‌بندی واقعی + نمودار فعالیت",
+    "body_fa": "یک فاز کامل جدید دربارهٔ نقش AI در باگ‌بانتی اضافه شد (Prompt Injection، MCP Security، Recon و گزارش‌نویسی با AI). ساعت‌های تخمینی دیگر سقف مصنوعی ۳ ساعته ندارند و بر اساس محتوای واقعی هر روز محاسبه می‌شوند. کل دوره برای واقع‌بین‌تر بودن به ۱۲۰ تا ۱۵۰ روز فشرده شد. نمودار فعالیت (شبیه گیت‌هاب) و ابزار ثبت زمان مطالعه هم اضافه شد.",
+    "title_en": "AI phase + realistic time estimates + activity heatmap",
+    "body_en": "Added a full new phase on AI's role in bug bounty (Prompt Injection, MCP security, AI-assisted recon & reporting). Hour estimates no longer cap artificially at 3h — they now reflect real content volume. The whole program was compressed to a realistic 120-150 days. Added a GitHub-style activity heatmap and a study time-logging tool."
+  },
+  {
+    "id": 4,
+    "date": "2026-09-11",
+    "title_fa": "بازبینی دقت منابع",
+    "body_fa": "حدود ۲۰ لینک شکسته یا نادرست پیدا و اصلاح شد (اسلاگ‌های پورت‌سویگر، مستندات HackerOne، APIsec University). یک ادعای نادرست دربارهٔ رایگان‌بودن دوره‌های آکادمی Voorivex اصلاح شد.",
+    "title_en": "Resource accuracy audit",
+    "body_en": "Found and fixed ~20 broken or incorrect links (PortSwigger slugs, HackerOne docs, APIsec University). Corrected an inaccurate claim about Voorivex Academy courses being free."
+  },
+  {
+    "id": 3,
+    "date": "2026-09-11",
+    "title_fa": "OverTheWire Natas و HackTheBox Starting Point اضافه شد",
+    "body_fa": "دو منبع مهم که در نسخهٔ اول جا افتاده بودند اضافه شدند.",
+    "title_en": "Added OverTheWire Natas and HackTheBox Starting Point",
+    "body_en": "Two important resources missing from v1 were added."
+  },
+  {
+    "id": 2,
+    "date": "2026-09-11",
+    "title_fa": "راهنمای استفاده از نقشه‌راه",
+    "body_fa": "بخش «چطور از این نقشه‌راه استفاده کنم» به صفحه اضافه شد.",
+    "title_en": "How-to-use guidance",
+    "body_en": "Added a 'how to use this roadmap' section to the page."
+  },
+  {
+    "id": 1,
+    "date": "2026-09-11",
+    "title_fa": "انتشار اولیه",
+    "body_fa": "نسخهٔ اول نقشه‌راه با ۱۷۰ روز و ۱۱ فاز منتشر شد.",
+    "title_en": "Initial release",
+    "body_en": "First version of the roadmap published with 170 days across 11 phases."
+  }
+]
