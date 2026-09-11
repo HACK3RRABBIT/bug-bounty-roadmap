@@ -13,7 +13,6 @@ import json, os
 # ---------------------------------------------------------------------------
 
 phases = []
-day_counter = 0
 
 def phase(pid, title, subtitle, icon, color):
     p = {"id": pid, "title": title, "subtitle": subtitle, "icon": icon, "color": color, "days": []}
@@ -21,17 +20,42 @@ def phase(pid, title, subtitle, icon, color):
     return p
 
 def d(p, title, task, resources, hours=2, kind="learn"):
-    """kind: learn | practice | review | milestone"""
-    global day_counter
-    day_counter += 1
+    """kind: learn | practice | review | milestone. Day numbers assigned later (after compaction)."""
     p["days"].append({
-        "day": day_counter,
         "title": title,
         "task": task,
         "resources": resources,
         "hours": hours,
         "kind": kind,
     })
+
+KIND_PRIORITY = ["milestone", "practice", "learn", "review"]
+
+def compact(days, target):
+    """فشرده‌سازی: چند روزِ پیاپی را در یک «روزِ واقعی طولانی‌تر» با ساعت واقعی ادغام می‌کند،
+    به‌جای این‌که محتوا حذف شود یا ساعت‌ها مصنوعاً سقف بخورند."""
+    n = len(days)
+    if n <= target:
+        return days
+    groups = [[] for _ in range(target)]
+    for idx, day in enumerate(days):
+        groups[idx * target // n].append(day)
+    merged = []
+    for g in groups:
+        if len(g) == 1:
+            merged.append(g[0])
+            continue
+        title = "؛ ".join(x["title"] for x in g)
+        task = " ".join(f"({i+1}) {x['task']}" for i, x in enumerate(g))
+        resources, seen = [], set()
+        for x in g:
+            for r in x["resources"]:
+                if r["u"] not in seen:
+                    resources.append(r); seen.add(r["u"])
+        hours = round(sum(x["hours"] for x in g), 1)
+        kind = next((k for k in KIND_PRIORITY if any(x["kind"] == k for x in g)), g[0]["kind"])
+        merged.append({"title": title, "task": task, "resources": resources, "hours": hours, "kind": kind})
+    return merged
 
 def R(t, u):
     return {"t": t, "u": u}
@@ -369,47 +393,49 @@ d(p4, "مرور: نقشهٔ ذهنی کامل مسیر تا اینجا",
 p5 = phase("p5", "هستهٔ آسیب‌پذیری‌های وب (PortSwigger Academy)", "قلب این نقشه‌راه؛ هر آسیب‌پذیری را تئوری + لب عملی رایگان پورت‌سویگر یاد می‌گیری", "🎯", "#be123c")
 
 # ساختار: هر تاپیک پورت‌سویگر با ۱ تا ۳ روز، به ترتیب منطقی آموزشی (نه لزوماً ترتیب سایت)
+# (name, slug, labs, ndays, hours_per_day, desc) — ndays/hours تنظیم‌شده بر اساس تعداد واقعی لب‌ها و
+# سختی هرکلاس، نه یک عدد ثابت. روزهای متراکم‌تر با ساعتِ واقعی بیشتر (نه سقفِ مصنوعیِ ۳ ساعت).
 swigger_topics = [
-    ("SQL Injection", "sql-injection", 3, "پادشاه آسیب‌پذیری‌های سمت سرور؛ تمام ۱۸ لب را با دقت حل کن، از UNION-based تا Blind با تاخیر زمانی."),
-    ("Cross-Site Scripting (XSS)", "cross-site-scripting", 5, "پرتکرارترین باگ در برنامه‌های باگ‌بانتی؛ Reflected، Stored و DOM-based را با تمام ۳۰ لب کار کن."),
-    ("Cross-Site Request Forgery (CSRF)", "csrf", 2, "درک کامل CSRF token، SameSite cookie، و بای‌پس‌های رایج آن."),
-    ("Cross-Origin Resource Sharing (CORS)", "cors", 1, "پیکربندی نادرست CORS و سرقت داده از طریق origin مخرب."),
-    ("Clickjacking", "clickjacking", 1, "حملات لایه‌بندی UI و بای‌پس‌های X-Frame-Options/CSP."),
-    ("Authentication", "authentication", 3, "باگ‌های لاگین، ریست پسورد، 2FA bypass، و رمزهای قابل حدس‌زدن."),
-    ("Access Control (IDOR/Privilege Escalation)", "access-control", 3, "یکی از پرسودترین کلاس‌ها در باگ‌بانتی؛ IDOR و Broken Access Control را عمیق کار کن."),
-    ("Path Traversal", "file-path-traversal", 1, "دسترسی به فایل‌های خارج از دایرکتوری وب‌روت."),
-    ("Command Injection", "os-command-injection", 1, "اجرای دستور سیستم‌عامل از طریق ورودی کاربر."),
-    ("Business Logic Vulnerabilities", "logic-flaws", 3, "باگ‌هایی که هیچ اسکنری پیدا نمی‌کند؛ فقط با فکر انسانی کشف می‌شوند."),
-    ("Information Disclosure", "information-disclosure", 1, "افشای اطلاعات حساس از طریق پیام خطا، کامنت کد، یا فایل پشتیبان."),
-    ("File Upload Vulnerabilities", "file-upload", 2, "آپلود وب‌شل، بای‌پس فیلتر پسوند/MIME-type."),
-    ("Race Conditions", "race-conditions", 3, "بهره‌برداری از تایمینگ همزمان درخواست‌ها؛ مبحثی داغ و کم‌رقابت در باگ‌بانتی امروز."),
-    ("Server-Side Request Forgery (SSRF)", "ssrf", 2, "واداشتن سرور به ارسال درخواست به مقصد دلخواه تو؛ اغلب مسیر ورود به شبکهٔ داخلی/کلاود."),
-    ("XXE Injection", "xxe", 2, "آسیب‌پذیری XML External Entity و خواندن فایل سیستم از طریقش."),
-    ("NoSQL Injection", "nosql-injection", 1, "تزریق در دیتابیس‌های NoSQL مثل MongoDB."),
-    ("API Testing", "api-testing", 2, "متدولوژی تست API های REST؛ کشف اندپوینت‌های پنهان."),
-    ("Web Cache Deception", "web-cache-deception", 1, "فریب کش برای ذخیرهٔ صفحات خصوصی به‌صورت عمومی."),
-    ("WebSockets", "websockets", 1, "امنیت ارتباطات WebSocket و CSRF مشابه در WS."),
-    ("DOM-based vulnerabilities", "dom-based", 2, "منابع (source) و مقصدهای (sink) خطرناک در جاوااسکریپت سمت کلاینت."),
-    ("Insecure Deserialization", "deserialization", 2, "بهره‌برداری از deserialize کردن دادهٔ غیرقابل‌اعتماد در PHP/Java/.NET/Python."),
-    ("GraphQL API Vulnerabilities", "graphql", 2, "Introspection، Batching attacks و IDOR در GraphQL."),
-    ("Server-Side Template Injection (SSTI)", "server-side-template-injection", 2, "تزریق در موتورهای قالب (Jinja2, Twig, FreeMarker) که اغلب به RCE می‌رسد."),
-    ("Web Cache Poisoning", "web-cache-poisoning", 3, "مسموم‌سازی کش برای تحویل محتوای مخرب به کاربران دیگر."),
-    ("HTTP Host Header Attacks", "host-header", 1, "دستکاری هدر Host برای پویزنینگ کش، ریست پسورد مخرب، و روتینگ اشتباه."),
-    ("HTTP Request Smuggling", "request-smuggling", 4, "یکی از پیچیده‌ترین و باارزش‌ترین کلاس‌های امروز؛ اختلاف تفسیر HTTP بین پروکسی و سرور."),
-    ("OAuth Authentication", "oauth", 2, "باگ‌های رایج در پیاده‌سازی OAuth 2.0 و سرقت اکانت."),
-    ("JWT Attacks", "jwt", 2, "دستکاری الگوریتم، کلید ضعیف، و بای‌پس امضای JSON Web Token."),
-    ("Prototype Pollution", "prototype-pollution", 3, "آلوده‌سازی پروتوتایپ در جاوااسکریپت، سمت کلاینت و سمت سرور (Node.js)."),
-    ("Web LLM Attacks", "llm-attacks", 1, "کلاس نوظهور: Prompt Injection و آسیب‌پذیری اپلیکیشن‌های مبتنی بر LLM."),
+    ("SQL Injection", "sql-injection", 18, 2, 6.0, "پادشاه آسیب‌پذیری‌های سمت سرور؛ تمام ۱۸ لب را با دقت حل کن، از UNION-based تا Blind با تاخیر زمانی."),
+    ("Cross-Site Scripting (XSS)", "cross-site-scripting", 30, 3, 6.5, "پرتکرارترین باگ در برنامه‌های باگ‌بانتی؛ Reflected، Stored و DOM-based را با تمام ۳۰ لب کار کن."),
+    ("Cross-Site Request Forgery (CSRF)", "csrf", 12, 1, 5.0, "درک کامل CSRF token، SameSite cookie، و بای‌پس‌های رایج آن."),
+    ("Cross-Origin Resource Sharing (CORS)", "cors", 3, 1, 2.5, "پیکربندی نادرست CORS و سرقت داده از طریق origin مخرب."),
+    ("Clickjacking", "clickjacking", 5, 1, 3.0, "حملات لایه‌بندی UI و بای‌پس‌های X-Frame-Options/CSP."),
+    ("Authentication", "authentication", 14, 2, 5.5, "باگ‌های لاگین، ریست پسورد، 2FA bypass، و رمزهای قابل حدس‌زدن."),
+    ("Access Control (IDOR/Privilege Escalation)", "access-control", 13, 2, 5.0, "یکی از پرسودترین کلاس‌ها در باگ‌بانتی؛ IDOR و Broken Access Control را عمیق کار کن."),
+    ("Path Traversal", "file-path-traversal", 6, 1, 4.0, "دسترسی به فایل‌های خارج از دایرکتوری وب‌روت."),
+    ("Command Injection", "os-command-injection", 5, 1, 3.5, "اجرای دستور سیستم‌عامل از طریق ورودی کاربر."),
+    ("Business Logic Vulnerabilities", "logic-flaws", 11, 2, 4.5, "باگ‌هایی که هیچ اسکنری پیدا نمی‌کند؛ فقط با فکر انسانی و آهسته کشف می‌شوند."),
+    ("Information Disclosure", "information-disclosure", 5, 1, 3.0, "افشای اطلاعات حساس از طریق پیام خطا، کامنت کد، یا فایل پشتیبان."),
+    ("File Upload Vulnerabilities", "file-upload", 7, 1, 4.5, "آپلود وب‌شل، بای‌پس فیلتر پسوند/MIME-type."),
+    ("Race Conditions", "race-conditions", 6, 2, 3.5, "بهره‌برداری از تایمینگ همزمان درخواست‌ها؛ مبحثی داغ، کم‌رقابت و کندْیادگیر."),
+    ("Server-Side Request Forgery (SSRF)", "ssrf", 7, 1, 4.5, "واداشتن سرور به ارسال درخواست به مقصد دلخواه تو؛ اغلب مسیر ورود به شبکهٔ داخلی/کلاود."),
+    ("XXE Injection", "xxe", 9, 1, 5.5, "آسیب‌پذیری XML External Entity و خواندن فایل سیستم از طریقش."),
+    ("NoSQL Injection", "nosql-injection", 4, 1, 3.0, "تزریق در دیتابیس‌های NoSQL مثل MongoDB."),
+    ("API Testing", "api-testing", 5, 1, 3.5, "متدولوژی تست API های REST؛ کشف اندپوینت‌های پنهان."),
+    ("Web Cache Deception", "web-cache-deception", 5, 1, 3.5, "فریب کش برای ذخیرهٔ صفحات خصوصی به‌صورت عمومی."),
+    ("WebSockets", "websockets", 3, 1, 2.5, "امنیت ارتباطات WebSocket و CSRF مشابه در WS."),
+    ("DOM-based vulnerabilities", "dom-based", 7, 1, 4.5, "منابع (source) و مقصدهای (sink) خطرناک در جاوااسکریپت سمت کلاینت."),
+    ("Insecure Deserialization", "deserialization", 10, 2, 4.5, "بهره‌برداری از deserialize کردن دادهٔ غیرقابل‌اعتماد در PHP/Java/.NET/Python."),
+    ("GraphQL API Vulnerabilities", "graphql", 5, 1, 3.5, "Introspection، Batching attacks و IDOR در GraphQL."),
+    ("Server-Side Template Injection (SSTI)", "server-side-template-injection", 7, 1, 4.5, "تزریق در موتورهای قالب (Jinja2, Twig, FreeMarker) که اغلب به RCE می‌رسد."),
+    ("Web Cache Poisoning", "web-cache-poisoning", 13, 2, 4.5, "مسموم‌سازی کش برای تحویل محتوای مخرب به کاربران دیگر."),
+    ("HTTP Host Header Attacks", "host-header", 7, 1, 4.0, "دستکاری هدر Host برای پویزنینگ کش، ریست پسورد مخرب، و روتینگ اشتباه."),
+    ("HTTP Request Smuggling", "request-smuggling", 22, 3, 5.5, "یکی از پیچیده‌ترین و باارزش‌ترین کلاس‌های امروز؛ اختلاف تفسیر HTTP بین پروکسی و سرور."),
+    ("OAuth Authentication", "oauth", 6, 1, 4.0, "باگ‌های رایج در پیاده‌سازی OAuth 2.0 و سرقت اکانت."),
+    ("JWT Attacks", "jwt", 8, 1, 5.0, "دستکاری الگوریتم، کلید ضعیف، و بای‌پس امضای JSON Web Token."),
+    ("Prototype Pollution", "prototype-pollution", 10, 2, 4.0, "آلوده‌سازی پروتوتایپ در جاوااسکریپت، سمت کلاینت و سمت سرور (Node.js)."),
+    ("Web LLM Attacks", "llm-attacks", 7, 1, 4.0, "کلاس نوظهور: Prompt Injection و آسیب‌پذیری اپلیکیشن‌های مبتنی بر LLM."),
 ]
 
-for name_fa, slug, ndays, desc in swigger_topics:
+for name_fa, slug, labs, ndays, hpd, desc in swigger_topics:
     for i in range(ndays):
         part = f" — بخش {i+1} از {ndays}" if ndays > 1 else ""
         d(p5, f"{name_fa}{part}",
-          f"{desc} تمام لب‌های عملی «{name_fa}» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
+          f"{desc} امروز حدود {round(labs/ndays)} لب از «{name_fa}» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. این یک نشست مطالعهٔ واقعی و طولانی است، نه یک تمرین سریع — وقت کافی بگذار. برای هر آسیب‌پذیری یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           [R(f"PortSwigger Academy — {name_fa}", f"https://portswigger.net/web-security/{slug}"),
            R("PayloadsAllTheThings — پیلود آماده برای این کلاس آسیب‌پذیری", "https://github.com/swisskyrepo/PayloadsAllTheThings")],
-          hours=3, kind="practice")
+          hours=hpd, kind="practice")
 
 d(p5, "مرور بزرگ: بازسازی تمام آسیب‌پذیری‌ها روی DVWA",
   "روی DVWA محلی خودت، حداقل یک نمونه از هر کلاس آسیب‌پذیری که یاد گرفتی (SQLi, XSS, CSRF, IDOR, SSRF...) را از صفر و بدون نگاه به یادداشت پیاده کن.",
@@ -770,8 +796,84 @@ d(p10, "جمع‌بندی نهایی نقشه‌راه و برنامهٔ ۶ ما
   hours=2, kind="milestone")
 
 # ===========================================================================
+# فاز ویژه — هوش مصنوعی و باگ‌بانتی (هم به‌عنوان هدف حمله، هم به‌عنوان ابزار شکارچی)
+# ===========================================================================
+pAI = phase("pai", "هوش مصنوعی در باگ‌بانتی", "AI هم سطح حملهٔ جدیدی‌ست که باید بشناسیش، هم ابزاری که اگر درست ازش استفاده نکنی، اعتبارت را نابود می‌کند", "🤖", "#f43f5e")
+
+d(pAI, "چشم‌انداز واقعی AI در صنعت باگ‌بانتی امروز",
+  "با آمار و واقعیت شروع کن، نه هایپ: اکثر هانترهای حرفه‌ای امروز از AI برای تسریع Recon، تحلیل کد و نوشتن گزارش استفاده می‌کنند — اما گزارش‌های بی‌کیفیت و «AI Slop» (تولید انبوه گزارش جعلی توسط AI) باعث شده برنامه‌هایی مثل curl کلاً برنامهٔ باگ‌بانتی‌شان را ببندند. این تناقض را کامل بفهم قبل از این‌که از AI استفاده کنی.",
+  [R("HackerOne — Hai و سیاست‌های AI در باگ‌بانتی (بلاگ رسمی)", "https://www.hackerone.com/blog"),
+   R("Google Project Zero — کشف یک آسیب‌پذیری واقعی توسط AI (Big Sleep)", "https://projectzero.google/2024/10/from-naptime-to-big-sleep.html")],
+  hours=2, kind="learn")
+
+d(pAI, "OWASP Top 10 برای اپلیکیشن‌های LLM",
+  "لیست رسمی و رایگان OWASP برای آسیب‌پذیری‌های اپلیکیشن‌های مبتنی بر LLM (Prompt Injection، Insecure Output Handling، Training Data Poisoning و...) را کامل بخوان — این چارچوب مرجع کل این فاز است.",
+  [R("OWASP Top 10 for LLM Applications (رایگان، رسمی)", "https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/")],
+  hours=3, kind="learn")
+
+d(pAI, "Prompt Injection عملی: بازی Gandalf",
+  "بازی رایگان و تعاملی Gandalf ساختهٔ Lakera را از صفر تا آخرین سطح (Gandalf the White) حل کن. این بهترین راه رایگان دنیا برای درک شهودی Prompt Injection با دست خودت است، نه فقط خواندن تئوری.",
+  [R("Gandalf — بازی رایگان Prompt Injection", "https://gandalf.lakera.ai/")],
+  hours=3, kind="practice")
+
+d(pAI, "مرور عمیق‌تر PortSwigger Web LLM Attacks با ذهنیت مهاجم",
+  "به لب‌های Web LLM Attacks که در فاز هستهٔ آسیب‌پذیری‌ها حل کردی برگرد، ولی این‌بار روی Indirect Prompt Injection (وقتی payload از یک منبع ثالث مثل ایمیل یا صفحهٔ وب به مدل تزریق می‌شود) و ترکیب آن با SSRF/exfiltration تمرکز کن.",
+  [R("PortSwigger — Web LLM attacks", "https://portswigger.net/web-security/llm-attacks"),
+   R("Embrace The Red — تحقیقات آزاد روی Prompt Injection واقعی (رایگان)", "https://embracethered.com/blog/")],
+  hours=4, kind="practice")
+
+d(pAI, "منابع تخصصی رایگان: بلاگ Simon Willison",
+  "سایمون ویلیسون یکی از معتبرترین صداهای مستقل در امنیت LLM است. آرشیو کامل رایگان تگ prompt-injection وبلاگش را بخوان — او اولین کسی بود که این کلاس حمله را دقیق فرمول‌بندی کرد.",
+  [R("Simon Willison — آرشیو Prompt Injection (رایگان)", "https://simonwillison.net/tags/prompt-injection/")],
+  hours=3, kind="learn")
+
+d(pAI, "امنیت MCP (Model Context Protocol) — سطح حملهٔ نوظهور ۲۰۲۶",
+  "MCP پروتکل استانداردی است که ابزارها را به مدل‌های AI وصل می‌کند و به‌سرعت در حال تبدیل‌شدن به یک سطح حملهٔ جدی (Command Injection، Tool Poisoning، دسترسی بیش‌ازحد) است. مستندات امنیتی رسمی را بخوان و بفهم چرا در چند ماه اخیر ده‌ها CVE روی سرورهای MCP ثبت شده.",
+  [R("Model Context Protocol — مستندات رسمی (رایگان)", "https://modelcontextprotocol.io/"),
+   R("OWASP GenAI Security Project (رایگان)", "https://genai.owasp.org/")],
+  hours=3, kind="learn")
+
+d(pAI, "AI به‌عنوان دستیار Recon: خلاصه‌سازی و اولویت‌بندی هدف",
+  "خروجی خام یکی از اسکن‌های قبلی‌ات (subfinder/httpx/nuclei) را به یک مدل زبانی (Claude یا مشابه، با حساب رایگان) بده و از آن بخواه خروجی را خلاصه، دسته‌بندی و بر اساس ریسک اولویت‌بندی کند. این کار ساعت‌ها زمان دستی تحلیل لاگ را کوتاه می‌کند — ولی همیشه خروجی مدل را با چشم خودت راستی‌آزمایی کن.",
+  [R("Anthropic — مستندات رسمی Claude (رایگان برای شروع)", "https://docs.claude.com/")],
+  hours=3, kind="practice")
+
+d(pAI, "AI به‌عنوان دستیار بازبینی کد (Code Review)",
+  "یک پروژهٔ متن‌باز کوچک (یا اپ آسیب‌پذیر خودت از فاز ۱۰) را با کمک یک مدل AI برای یافتن الگوهای ناامن (SQL string concatenation، eval روی ورودی کاربر، مسیرهای فایل کنترل‌نشده) بررسی کن؛ سپس یافته‌ها را با ابزار متن‌باز Semgrep دوباره چک کن تا ببینی مدل چه چیزی را درست/غلط تشخیص داد.",
+  [R("Semgrep — ابزار متن‌باز آنالیز استاتیک (رایگان)", "https://semgrep.dev/")],
+  hours=3, kind="practice")
+
+d(pAI, "نوشتن گزارش با کمک AI — درست، نه Slop",
+  "یاد بگیر AI را برای صیقل‌دادن نگارش، ساختاردهی، و چک کردن وضوح گزارش‌هایی که خودت کاملاً دستی و واقعی پیدا کرده‌ای استفاده کنی — نه برای تولید یافتهٔ جعلی. قوانین «Good Faith AI Research» هکروان را کامل بخوان تا بفهمی مرز قانونی/اخلاقی کجاست.",
+  [R("HackerOne — Good Faith AI Research Safe Harbor", "https://www.hackerone.com/policies")],
+  hours=2, kind="learn")
+
+d(pAI, "پروژهٔ فاز: یک اسکریپت کمکی AI برای متدولوژی شخصی‌ات",
+  "یک اسکریپت کوچک پایتون بساز که خروجی recon.py فاز ۷ را می‌گیرد، از API یک مدل زبانی رایگان/ارزان برای دسته‌بندی اولیه استفاده می‌کند، و نتیجه را به‌صورت یک گزارش خلاصهٔ Markdown ذخیره می‌کند. این ابزار را به مخزن GitHub شخصی‌ات اضافه کن.",
+  [R("Anthropic API — مستندات (رایگان برای شروع، Pay-as-you-go)", "https://docs.claude.com/en/api/overview")],
+  hours=3, kind="milestone")
+
+# ===========================================================================
 # خروجی نهایی
 # ===========================================================================
+# فشرده‌سازی هدفمند: روزهای خیلی ریز در فازهای غیرِهسته با هم ادغام می‌شوند تا کل دوره
+# در بازهٔ واقع‌بینانهٔ ۱۲۰ تا ۱۵۰ روز (با ساعتِ واقعیِ هر روز، نه سقفِ مصنوعی) جا بگیرد.
+# فاز هستهٔ آسیب‌پذیری‌ها (p5) از قبل بر اساس تعداد واقعی لب‌ها تنظیم شده و دست‌نخورده می‌ماند.
+COMPACTION_TARGETS = {
+    "p0": 5, "p1": 10, "p2": 10, "p3": 10, "p4": 8,
+    "p5": None,  # دست‌نخورده
+    "p6": 10, "p7": 9, "p8": 8, "p9": 9, "p10": 8, "pai": 11,
+}
+
+day_counter = 0
+for p in phases:
+    target = COMPACTION_TARGETS.get(p["id"])
+    if target is not None:
+        p["days"] = compact(p["days"], target)
+    for day in p["days"]:
+        day_counter += 1
+        day["day"] = day_counter
+
 out = {
     "generated_days": day_counter,
     "phases": phases,
@@ -781,4 +883,7 @@ os.makedirs("data", exist_ok=True)
 with open("data/roadmap.json", "w", encoding="utf-8") as f:
     json.dump(out, f, ensure_ascii=False, indent=2)
 
-print(f"OK: {len(phases)} phases, {day_counter} days written to data/roadmap.json")
+total_hours = sum(day["hours"] for p in phases for day in p["days"])
+print(f"OK: {len(phases)} phases, {day_counter} days, {round(total_hours)}h total written to data/roadmap.json")
+for p in phases:
+    print(f"  {p['id']:5s} {p['title']:45s} {len(p['days']):3d} days")
