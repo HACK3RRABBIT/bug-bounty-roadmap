@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 120" width="560" height="120">
+  <defs>
+    <linearGradient id="g" x1="12%" y1="4%" x2="88%" y2="96%">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#a78bfa"/>
+    </linearGradient>
+  </defs>
+
+  <!-- mark -->
+  <g>
+    <rect x="2" y="2" width="116" height="116" rx="26" fill="#0b0e14" stroke="#1c2433" stroke-width="2"/>
+    <path d="M60 15 L92 31 V63 C92 84 78 98 60 106 C42 98 28 84 28 63 V31 Z"
+          fill="none" stroke="url(#g)" stroke-width="5" stroke-linejoin="round"/>
+    <g stroke="url(#g)" stroke-width="4.5" stroke-linecap="round">
+      <path d="M44 58 L33 58 M44 74 L34 80" fill="none"/>
+      <path d="M76 58 L87 58 M76 74 L86 80" fill="none"/>
+      <path d="M52 40 L47 32 M68 40 L73 32" fill="none"/>
+    </g>
+    <rect x="43" y="44" width="34" height="40" rx="17" fill="url(#g)"/>
+    <circle cx="60" cy="36" r="8" fill="url(#g)"/>
+    <path d="M60 52 V82" stroke="#0b0e14" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- wordmark -->
+  <text x="140" y="56" font-family="'IBM Plex Mono','JetBrains Mono',monospace" font-size="30" font-weight="600" fill="#e9edf4">Bug Bounty</text>
+  <text x="140" y="90" font-family="'IBM Plex Mono','JetBrains Mono',monospace" font-size="30" font-weight="600" fill="url(#g)">Roadmap</text>
+</svg>

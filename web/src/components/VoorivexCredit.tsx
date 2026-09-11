@@ -24,16 +24,13 @@ export default function VoorivexCredit({ lang }: { lang: Lang }) {
     <section className="border-b border-hairline-soft py-12">
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:items-center">
         <div>
-          <span className="font-mono-display text-[11px] uppercase tracking-wide text-dimmer">
-            {t.kicker}
-          </span>
-          <h2 className="font-display mt-2 text-xl font-medium">{t.title}</h2>
+          <h2 className="font-display text-xl font-medium">{t.title}</h2>
           <p className="mt-3 max-w-[46ch] text-sm leading-7 text-dim">{t.body}</p>
           <a
             href="https://voorivex.academy/classes"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-5 inline-block rounded-sm border border-hairline px-5 py-2.5 text-sm text-paper transition hover:border-signal"
+            className="mt-4 inline-block text-sm text-signal underline decoration-signal/30 underline-offset-4 hover:decoration-signal"
           >
             {t.cta} ↗
           </a>

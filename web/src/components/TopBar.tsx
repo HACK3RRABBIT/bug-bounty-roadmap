@@ -16,24 +16,21 @@ export default function TopBar({
         <Image src={`${BASE_PATH}/logo.svg`} alt="" width={26} height={26} priority />
         <span>{lang === "fa" ? "نقشه‌راه باگ‌بانتی" : "Bug Bounty Roadmap"}</span>
       </a>
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-5 text-sm">
         <button
           onClick={() => onLangChange(lang === "fa" ? "en" : "fa")}
-          className="rounded-sm border border-hairline px-3 py-1.5 font-mono-display text-xs text-dim transition hover:border-signal hover:text-paper"
+          className="font-mono-display text-xs text-dim transition hover:text-signal"
         >
           {lang === "fa" ? "EN" : "FA"}
         </button>
-        <a
-          href="../"
-          className="rounded-sm border border-hairline px-3 py-1.5 font-mono-display text-xs text-dim transition hover:border-signal hover:text-paper"
-        >
+        <a href="../" className="text-dim transition hover:text-signal">
           {lang === "fa" ? "نسخهٔ کلاسیک" : "Classic version"}
         </a>
         <a
           href="https://github.com/hack3rrabbit/bug-bounty-roadmap"
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-sm border border-hairline px-3 py-1.5 font-mono-display text-xs text-dim transition hover:border-signal hover:text-paper"
+          className="text-dim transition hover:text-signal"
         >
           GitHub
         </a>

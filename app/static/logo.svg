@@ -1,24 +1,30 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
   <defs>
-    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="g" x1="12%" y1="4%" x2="88%" y2="96%">
       <stop offset="0%" stop-color="#22d3ee"/>
       <stop offset="100%" stop-color="#a78bfa"/>
     </linearGradient>
   </defs>
-  <rect x="2" y="2" width="116" height="116" rx="28" fill="#0b0e14" stroke="#232a3b" stroke-width="2"/>
-  <!-- shield outline -->
-  <path d="M60 18 L90 30 V56 C90 78 77 93 60 102 C43 93 30 78 30 56 V30 Z"
-        fill="none" stroke="url(#g)" stroke-width="4.5" stroke-linejoin="round"/>
-  <!-- bug body -->
-  <ellipse cx="60" cy="60" rx="14" ry="18" fill="none" stroke="url(#g)" stroke-width="3.5"/>
-  <!-- bug head -->
-  <circle cx="60" cy="39" r="6" fill="none" stroke="url(#g)" stroke-width="3.5"/>
-  <!-- antennae -->
-  <path d="M55 35 L50 27 M65 35 L70 27" stroke="url(#g)" stroke-width="3" stroke-linecap="round"/>
-  <!-- legs -->
-  <path d="M47 52 L36 47 M47 60 L34 60 M47 68 L36 73
-           M73 52 L84 47 M73 60 L86 60 M73 68 L84 73"
-        stroke="url(#g)" stroke-width="3" stroke-linecap="round"/>
-  <!-- spine -->
-  <path d="M60 45 V75" stroke="url(#g)" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- badge -->
+  <rect x="2" y="2" width="116" height="116" rx="26" fill="#0b0e14" stroke="#1c2433" stroke-width="2"/>
+
+  <!-- hexagonal shield: security-coded silhouette, single clean stroke, no inner fill for crisp small-size contrast -->
+  <path d="M60 15
+           L92 31
+           V63
+           C92 84 78 98 60 106
+           C42 98 28 84 28 63
+           V31 Z"
+        fill="none" stroke="url(#g)" stroke-width="5" stroke-linejoin="round"/>
+
+  <!-- bug glyph: bold filled body, minimal legs/antennae for legibility down to 16px -->
+  <g stroke="url(#g)" stroke-width="4.5" stroke-linecap="round">
+    <path d="M44 58 L33 58 M44 74 L34 80" fill="none"/>
+    <path d="M76 58 L87 58 M76 74 L86 80" fill="none"/>
+    <path d="M52 40 L47 32 M68 40 L73 32" fill="none"/>
+  </g>
+  <rect x="43" y="44" width="34" height="40" rx="17" fill="url(#g)"/>
+  <circle cx="60" cy="36" r="8" fill="url(#g)"/>
+  <path d="M60 52 V82" stroke="#0b0e14" stroke-width="3" stroke-linecap="round"/>
 </svg>

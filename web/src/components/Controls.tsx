@@ -43,7 +43,7 @@ export default function Controls({
   const pct = totalDays ? Math.round((doneCount / totalDays) * 100) : 0;
 
   return (
-    <div id="phase-index" className="sticky top-0 z-40 -mx-4 scroll-mt-4 border-b border-hairline-soft bg-void/90 px-4 py-3.5 backdrop-blur">
+    <div id="phase-index" className="sticky top-0 z-40 -mx-4 scroll-mt-4 border-b border-hairline-soft bg-void px-4 py-3.5">
       <div className="flex flex-wrap items-center gap-2.5">
         <input
           value={search}
@@ -65,9 +65,9 @@ export default function Controls({
           </button>
         ))}
         <div className="flex min-w-[150px] items-center gap-2">
-          <div className="h-2 flex-1 overflow-hidden rounded-full bg-void-raised-2">
+          <div className="h-px flex-1 bg-hairline">
             <div
-              className="h-full rounded-full bg-gradient-to-r from-signal to-phosphor transition-all"
+              className="h-full bg-paper transition-all"
               style={{ width: `${pct}%` }}
             />
           </div>
@@ -82,7 +82,7 @@ export default function Controls({
           <a
             key={p.id}
             href={`#${p.id}`}
-            className="flex-none whitespace-nowrap rounded-full border border-hairline px-3 py-1.5 text-xs text-dim transition hover:border-signal hover:text-paper"
+            className="flex-none whitespace-nowrap rounded-sm border border-hairline px-3 py-1.5 text-xs text-dim transition hover:border-signal hover:text-paper"
           >
             {p.icon} {p.title}
           </a>

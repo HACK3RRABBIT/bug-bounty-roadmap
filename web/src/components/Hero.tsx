@@ -92,9 +92,7 @@ export default function Hero({
           </span>
           <h1 className="font-display mt-5 text-[clamp(2.2rem,6vw,4.2rem)] font-medium leading-[1.04] tracking-tight">
             <span className="block text-paper">{t.h1a}</span>
-            <span className="block bg-gradient-to-r from-signal to-ultraviolet bg-clip-text text-transparent">
-              {t.h1b}
-            </span>
+            <span className="block text-signal">{t.h1b}</span>
           </h1>
           <p className="mt-6 max-w-[52ch] text-[1.05rem] leading-8 text-dim">
             {t.lead}
@@ -120,11 +118,8 @@ export default function Hero({
           dir="ltr"
           className="h-fit rounded-sm border border-hairline bg-void-raised font-mono-display text-[12.5px]"
         >
-          <div className="flex items-center gap-2 border-b border-hairline px-4 py-2.5 text-dimmer">
-            <span className="h-2 w-2 rounded-full bg-crimson/70" />
-            <span className="h-2 w-2 rounded-full bg-amber/70" />
-            <span className="h-2 w-2 rounded-full bg-phosphor/70" />
-            <span className="ms-2">{t.statusLabel}</span>
+          <div className="border-b border-hairline px-4 py-2.5 text-dimmer">
+            {t.statusLabel}
           </div>
           <dl className="space-y-2 px-4 py-4">
             <Row show={statRow > 0} label={t.days} value={faNum(stats.totalDays, lang)} accent="signal" />

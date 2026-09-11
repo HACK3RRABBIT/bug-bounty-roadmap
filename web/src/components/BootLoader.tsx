@@ -100,10 +100,9 @@ export default function BootLoader({ onDone }: { onDone: () => void }) {
       }`}
       aria-hidden={exiting}
     >
-      <div className="scanline-fade absolute inset-0" />
       <div
         dir="ltr"
-        className="relative w-[min(92vw,560px)] rounded-sm border border-hairline bg-void-raised p-5 font-mono-display text-[13px] leading-relaxed text-phosphor shadow-[0_0_60px_rgba(57,255,140,0.08)]"
+        className="relative w-[min(92vw,560px)] rounded-sm border border-hairline bg-void-raised p-5 font-mono-display text-[13px] leading-relaxed text-paper"
       >
         {BOOT_LINES.map((_, i) => (
           <div key={i} className="min-h-[1.4em] whitespace-pre">

@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --void: #070a0f;
-  --void-raised: #0d1119;
-  --void-raised-2: #121826;
-  --hairline: #1c2433;
-  --hairline-soft: #151c29;
-  --paper: #e9edf4;
-  --dim: #8b96ab;
-  --dimmer: #56617a;
-  --signal: #22d3ee;
-  --ultraviolet: #a78bfa;
-  --phosphor: #39ff8c;
-  --amber: #fbbf24;
-  --crimson: #fb7185;
+  --void: #050505;
+  --void-raised: #050505;
+  --void-raised-2: #0d0d0d;
+  --hairline: #262626;
+  --hairline-soft: #1a1a1a;
+  --paper: #f2f2f2;
+  --dim: #9c9c9c;
+  --dimmer: #626262;
+  --signal: #4f9cf9;
+  --ultraviolet: #4f9cf9;
+  --phosphor: #f2f2f2;
+  --amber: #d9a441;
+  --crimson: #e5697a;
 }
 
 @theme inline {
@@ -57,51 +57,9 @@ body[dir="ltr"] {
   font-family: var(--font-plex-mono), ui-monospace, monospace;
 }
 
-/* corner-bracket motif: a HUD/reticle mark reserved for the hero and for
-   hover/focus states on day cards — the page's one recurring signature
-   device, not applied everywhere. */
+/* plain hover affordance: a border-color shift, nothing else — no glow, no scale */
 .bracket {
-  position: relative;
-}
-.bracket::before,
-.bracket::after {
-  content: "";
-  position: absolute;
-  width: 14px;
-  height: 14px;
-  border-color: var(--signal);
-  opacity: 0;
-  transition: opacity 0.18s ease, transform 0.18s ease;
-  transform: scale(0.85);
-  pointer-events: none;
-}
-.bracket::before {
-  top: -1px;
-  inset-inline-start: -1px;
-  border-top: 2px solid;
-  border-inline-start: 2px solid;
-}
-.bracket::after {
-  bottom: -1px;
-  inset-inline-end: -1px;
-  border-bottom: 2px solid;
-  border-inline-end: 2px solid;
-}
-.bracket:hover::before,
-.bracket:hover::after,
-.bracket:focus-within::before,
-.bracket:focus-within::after {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.scanline-fade {
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgba(57, 255, 140, 0.06) 50%,
-    transparent 100%
-  );
+  transition: border-color 0.15s ease;
 }
 
 @keyframes blink-cursor {
@@ -116,19 +74,6 @@ body[dir="ltr"] {
 }
 .cursor-blink {
   animation: blink-cursor 1s step-end infinite;
-}
-
-@keyframes rail-pulse {
-  0%,
-  100% {
-    box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.45);
-  }
-  50% {
-    box-shadow: 0 0 0 5px rgba(34, 211, 238, 0);
-  }
-}
-.rail-dot-active {
-  animation: rail-pulse 2.2s ease-out infinite;
 }
 
 ::selection {
