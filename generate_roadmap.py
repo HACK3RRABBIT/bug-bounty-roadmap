@@ -371,7 +371,7 @@ p5 = phase("p5", "هستهٔ آسیب‌پذیری‌های وب (PortSwigger Ac
 # ساختار: هر تاپیک پورت‌سویگر با ۱ تا ۳ روز، به ترتیب منطقی آموزشی (نه لزوماً ترتیب سایت)
 swigger_topics = [
     ("SQL Injection", "sql-injection", 3, "پادشاه آسیب‌پذیری‌های سمت سرور؛ تمام ۱۸ لب را با دقت حل کن، از UNION-based تا Blind با تاخیر زمانی."),
-    ("Cross-Site Scripting (XSS)", "cross-site-scripting", 4, "پرتکرارترین باگ در برنامه‌های باگ‌بانتی؛ Reflected، Stored و DOM-based را با تمام ۳۰ لب کار کن."),
+    ("Cross-Site Scripting (XSS)", "cross-site-scripting", 5, "پرتکرارترین باگ در برنامه‌های باگ‌بانتی؛ Reflected، Stored و DOM-based را با تمام ۳۰ لب کار کن."),
     ("Cross-Site Request Forgery (CSRF)", "csrf", 2, "درک کامل CSRF token، SameSite cookie، و بای‌پس‌های رایج آن."),
     ("Cross-Origin Resource Sharing (CORS)", "cors", 1, "پیکربندی نادرست CORS و سرقت داده از طریق origin مخرب."),
     ("Clickjacking", "clickjacking", 1, "حملات لایه‌بندی UI و بای‌پس‌های X-Frame-Options/CSP."),
@@ -379,10 +379,10 @@ swigger_topics = [
     ("Access Control (IDOR/Privilege Escalation)", "access-control", 3, "یکی از پرسودترین کلاس‌ها در باگ‌بانتی؛ IDOR و Broken Access Control را عمیق کار کن."),
     ("Path Traversal", "file-path-traversal", 1, "دسترسی به فایل‌های خارج از دایرکتوری وب‌روت."),
     ("Command Injection", "os-command-injection", 1, "اجرای دستور سیستم‌عامل از طریق ورودی کاربر."),
-    ("Business Logic Vulnerabilities", "logic-flaws", 2, "باگ‌هایی که هیچ اسکنری پیدا نمی‌کند؛ فقط با فکر انسانی کشف می‌شوند."),
+    ("Business Logic Vulnerabilities", "logic-flaws", 3, "باگ‌هایی که هیچ اسکنری پیدا نمی‌کند؛ فقط با فکر انسانی کشف می‌شوند."),
     ("Information Disclosure", "information-disclosure", 1, "افشای اطلاعات حساس از طریق پیام خطا، کامنت کد، یا فایل پشتیبان."),
     ("File Upload Vulnerabilities", "file-upload", 2, "آپلود وب‌شل، بای‌پس فیلتر پسوند/MIME-type."),
-    ("Race Conditions", "race-conditions", 2, "بهره‌برداری از تایمینگ همزمان درخواست‌ها؛ مبحثی داغ و کم‌رقابت در باگ‌بانتی امروز."),
+    ("Race Conditions", "race-conditions", 3, "بهره‌برداری از تایمینگ همزمان درخواست‌ها؛ مبحثی داغ و کم‌رقابت در باگ‌بانتی امروز."),
     ("Server-Side Request Forgery (SSRF)", "ssrf", 2, "واداشتن سرور به ارسال درخواست به مقصد دلخواه تو؛ اغلب مسیر ورود به شبکهٔ داخلی/کلاود."),
     ("XXE Injection", "xxe", 2, "آسیب‌پذیری XML External Entity و خواندن فایل سیستم از طریقش."),
     ("NoSQL Injection", "nosql-injection", 1, "تزریق در دیتابیس‌های NoSQL مثل MongoDB."),
@@ -393,12 +393,12 @@ swigger_topics = [
     ("Insecure Deserialization", "deserialization", 2, "بهره‌برداری از deserialize کردن دادهٔ غیرقابل‌اعتماد در PHP/Java/.NET/Python."),
     ("GraphQL API Vulnerabilities", "graphql", 2, "Introspection، Batching attacks و IDOR در GraphQL."),
     ("Server-Side Template Injection (SSTI)", "server-side-template-injection", 2, "تزریق در موتورهای قالب (Jinja2, Twig, FreeMarker) که اغلب به RCE می‌رسد."),
-    ("Web Cache Poisoning", "web-cache-poisoning", 2, "مسموم‌سازی کش برای تحویل محتوای مخرب به کاربران دیگر."),
+    ("Web Cache Poisoning", "web-cache-poisoning", 3, "مسموم‌سازی کش برای تحویل محتوای مخرب به کاربران دیگر."),
     ("HTTP Host Header Attacks", "host-header", 1, "دستکاری هدر Host برای پویزنینگ کش، ریست پسورد مخرب، و روتینگ اشتباه."),
-    ("HTTP Request Smuggling", "request-smuggling", 3, "یکی از پیچیده‌ترین و باارزش‌ترین کلاس‌های امروز؛ اختلاف تفسیر HTTP بین پروکسی و سرور."),
+    ("HTTP Request Smuggling", "request-smuggling", 4, "یکی از پیچیده‌ترین و باارزش‌ترین کلاس‌های امروز؛ اختلاف تفسیر HTTP بین پروکسی و سرور."),
     ("OAuth Authentication", "oauth", 2, "باگ‌های رایج در پیاده‌سازی OAuth 2.0 و سرقت اکانت."),
     ("JWT Attacks", "jwt", 2, "دستکاری الگوریتم، کلید ضعیف، و بای‌پس امضای JSON Web Token."),
-    ("Prototype Pollution", "prototype-pollution", 2, "آلوده‌سازی پروتوتایپ در جاوااسکریپت، سمت کلاینت و سمت سرور (Node.js)."),
+    ("Prototype Pollution", "prototype-pollution", 3, "آلوده‌سازی پروتوتایپ در جاوااسکریپت، سمت کلاینت و سمت سرور (Node.js)."),
     ("Web LLM Attacks", "llm-attacks", 1, "کلاس نوظهور: Prompt Injection و آسیب‌پذیری اپلیکیشن‌های مبتنی بر LLM."),
 ]
 

@@ -1,5 +1,5 @@
 {
-  "generated_days": 174,
+  "generated_days": 180,
   "phases": [
     {
       "id": "p0",
@@ -929,7 +929,7 @@
         },
         {
           "day": 59,
-          "title": "Cross-Site Scripting (XSS) — بخش 1 از 4",
+          "title": "Cross-Site Scripting (XSS) — بخش 1 از 5",
           "task": "پرتکرارترین باگ در برنامه‌های باگ‌بانتی؛ Reflected، Stored و DOM-based را با تمام ۳۰ لب کار کن. تمام لب‌های عملی «Cross-Site Scripting (XSS)» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
             {
@@ -946,7 +946,7 @@
         },
         {
           "day": 60,
-          "title": "Cross-Site Scripting (XSS) — بخش 2 از 4",
+          "title": "Cross-Site Scripting (XSS) — بخش 2 از 5",
           "task": "پرتکرارترین باگ در برنامه‌های باگ‌بانتی؛ Reflected، Stored و DOM-based را با تمام ۳۰ لب کار کن. تمام لب‌های عملی «Cross-Site Scripting (XSS)» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
             {
@@ -963,7 +963,7 @@
         },
         {
           "day": 61,
-          "title": "Cross-Site Scripting (XSS) — بخش 3 از 4",
+          "title": "Cross-Site Scripting (XSS) — بخش 3 از 5",
           "task": "پرتکرارترین باگ در برنامه‌های باگ‌بانتی؛ Reflected، Stored و DOM-based را با تمام ۳۰ لب کار کن. تمام لب‌های عملی «Cross-Site Scripting (XSS)» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
             {
@@ -980,7 +980,7 @@
         },
         {
           "day": 62,
-          "title": "Cross-Site Scripting (XSS) — بخش 4 از 4",
+          "title": "Cross-Site Scripting (XSS) — بخش 4 از 5",
           "task": "پرتکرارترین باگ در برنامه‌های باگ‌بانتی؛ Reflected، Stored و DOM-based را با تمام ۳۰ لب کار کن. تمام لب‌های عملی «Cross-Site Scripting (XSS)» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
             {
@@ -997,6 +997,23 @@
         },
         {
           "day": 63,
+          "title": "Cross-Site Scripting (XSS) — بخش 5 از 5",
+          "task": "پرتکرارترین باگ در برنامه‌های باگ‌بانتی؛ Reflected، Stored و DOM-based را با تمام ۳۰ لب کار کن. تمام لب‌های عملی «Cross-Site Scripting (XSS)» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — Cross-Site Scripting (XSS)",
+              "u": "https://portswigger.net/web-security/cross-site-scripting"
+            },
+            {
+              "t": "PayloadsAllTheThings — پیلود آماده برای این کلاس آسیب‌پذیری",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 3,
+          "kind": "practice"
+        },
+        {
+          "day": 64,
           "title": "Cross-Site Request Forgery (CSRF) — بخش 1 از 2",
           "task": "درک کامل CSRF token، SameSite cookie، و بای‌پس‌های رایج آن. تمام لب‌های عملی «Cross-Site Request Forgery (CSRF)» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
@@ -1013,7 +1030,7 @@
           "kind": "practice"
         },
         {
-          "day": 64,
+          "day": 65,
           "title": "Cross-Site Request Forgery (CSRF) — بخش 2 از 2",
           "task": "درک کامل CSRF token، SameSite cookie، و بای‌پس‌های رایج آن. تمام لب‌های عملی «Cross-Site Request Forgery (CSRF)» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
@@ -1030,7 +1047,7 @@
           "kind": "practice"
         },
         {
-          "day": 65,
+          "day": 66,
           "title": "Cross-Origin Resource Sharing (CORS)",
           "task": "پیکربندی نادرست CORS و سرقت داده از طریق origin مخرب. تمام لب‌های عملی «Cross-Origin Resource Sharing (CORS)» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
@@ -1047,7 +1064,7 @@
           "kind": "practice"
         },
         {
-          "day": 66,
+          "day": 67,
           "title": "Clickjacking",
           "task": "حملات لایه‌بندی UI و بای‌پس‌های X-Frame-Options/CSP. تمام لب‌های عملی «Clickjacking» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
@@ -1064,7 +1081,7 @@
           "kind": "practice"
         },
         {
-          "day": 67,
+          "day": 68,
           "title": "Authentication — بخش 1 از 3",
           "task": "باگ‌های لاگین، ریست پسورد، 2FA bypass، و رمزهای قابل حدس‌زدن. تمام لب‌های عملی «Authentication» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
@@ -1081,7 +1098,7 @@
           "kind": "practice"
         },
         {
-          "day": 68,
+          "day": 69,
           "title": "Authentication — بخش 2 از 3",
           "task": "باگ‌های لاگین، ریست پسورد، 2FA bypass، و رمزهای قابل حدس‌زدن. تمام لب‌های عملی «Authentication» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
@@ -1098,7 +1115,7 @@
           "kind": "practice"
         },
         {
-          "day": 69,
+          "day": 70,
           "title": "Authentication — بخش 3 از 3",
           "task": "باگ‌های لاگین، ریست پسورد، 2FA bypass، و رمزهای قابل حدس‌زدن. تمام لب‌های عملی «Authentication» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
@@ -1115,7 +1132,7 @@
           "kind": "practice"
         },
         {
-          "day": 70,
+          "day": 71,
           "title": "Access Control (IDOR/Privilege Escalation) — بخش 1 از 3",
           "task": "یکی از پرسودترین کلاس‌ها در باگ‌بانتی؛ IDOR و Broken Access Control را عمیق کار کن. تمام لب‌های عملی «Access Control (IDOR/Privilege Escalation)» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
@@ -1132,7 +1149,7 @@
           "kind": "practice"
         },
         {
-          "day": 71,
+          "day": 72,
           "title": "Access Control (IDOR/Privilege Escalation) — بخش 2 از 3",
           "task": "یکی از پرسودترین کلاس‌ها در باگ‌بانتی؛ IDOR و Broken Access Control را عمیق کار کن. تمام لب‌های عملی «Access Control (IDOR/Privilege Escalation)» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
@@ -1149,7 +1166,7 @@
           "kind": "practice"
         },
         {
-          "day": 72,
+          "day": 73,
           "title": "Access Control (IDOR/Privilege Escalation) — بخش 3 از 3",
           "task": "یکی از پرسودترین کلاس‌ها در باگ‌بانتی؛ IDOR و Broken Access Control را عمیق کار کن. تمام لب‌های عملی «Access Control (IDOR/Privilege Escalation)» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
@@ -1166,7 +1183,7 @@
           "kind": "practice"
         },
         {
-          "day": 73,
+          "day": 74,
           "title": "Path Traversal",
           "task": "دسترسی به فایل‌های خارج از دایرکتوری وب‌روت. تمام لب‌های عملی «Path Traversal» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
@@ -1183,7 +1200,7 @@
           "kind": "practice"
         },
         {
-          "day": 74,
+          "day": 75,
           "title": "Command Injection",
           "task": "اجرای دستور سیستم‌عامل از طریق ورودی کاربر. تمام لب‌های عملی «Command Injection» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
@@ -1200,25 +1217,8 @@
           "kind": "practice"
         },
         {
-          "day": 75,
-          "title": "Business Logic Vulnerabilities — بخش 1 از 2",
-          "task": "باگ‌هایی که هیچ اسکنری پیدا نمی‌کند؛ فقط با فکر انسانی کشف می‌شوند. تمام لب‌های عملی «Business Logic Vulnerabilities» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
-          "resources": [
-            {
-              "t": "PortSwigger Academy — Business Logic Vulnerabilities",
-              "u": "https://portswigger.net/web-security/logic-flaws"
-            },
-            {
-              "t": "PayloadsAllTheThings — پیلود آماده برای این کلاس آسیب‌پذیری",
-              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
-            }
-          ],
-          "hours": 3,
-          "kind": "practice"
-        },
-        {
           "day": 76,
-          "title": "Business Logic Vulnerabilities — بخش 2 از 2",
+          "title": "Business Logic Vulnerabilities — بخش 1 از 3",
           "task": "باگ‌هایی که هیچ اسکنری پیدا نمی‌کند؛ فقط با فکر انسانی کشف می‌شوند. تمام لب‌های عملی «Business Logic Vulnerabilities» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
             {
@@ -1235,6 +1235,40 @@
         },
         {
           "day": 77,
+          "title": "Business Logic Vulnerabilities — بخش 2 از 3",
+          "task": "باگ‌هایی که هیچ اسکنری پیدا نمی‌کند؛ فقط با فکر انسانی کشف می‌شوند. تمام لب‌های عملی «Business Logic Vulnerabilities» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — Business Logic Vulnerabilities",
+              "u": "https://portswigger.net/web-security/logic-flaws"
+            },
+            {
+              "t": "PayloadsAllTheThings — پیلود آماده برای این کلاس آسیب‌پذیری",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 3,
+          "kind": "practice"
+        },
+        {
+          "day": 78,
+          "title": "Business Logic Vulnerabilities — بخش 3 از 3",
+          "task": "باگ‌هایی که هیچ اسکنری پیدا نمی‌کند؛ فقط با فکر انسانی کشف می‌شوند. تمام لب‌های عملی «Business Logic Vulnerabilities» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — Business Logic Vulnerabilities",
+              "u": "https://portswigger.net/web-security/logic-flaws"
+            },
+            {
+              "t": "PayloadsAllTheThings — پیلود آماده برای این کلاس آسیب‌پذیری",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 3,
+          "kind": "practice"
+        },
+        {
+          "day": 79,
           "title": "Information Disclosure",
           "task": "افشای اطلاعات حساس از طریق پیام خطا، کامنت کد، یا فایل پشتیبان. تمام لب‌های عملی «Information Disclosure» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
@@ -1251,7 +1285,7 @@
           "kind": "practice"
         },
         {
-          "day": 78,
+          "day": 80,
           "title": "File Upload Vulnerabilities — بخش 1 از 2",
           "task": "آپلود وب‌شل، بای‌پس فیلتر پسوند/MIME-type. تمام لب‌های عملی «File Upload Vulnerabilities» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
@@ -1268,7 +1302,7 @@
           "kind": "practice"
         },
         {
-          "day": 79,
+          "day": 81,
           "title": "File Upload Vulnerabilities — بخش 2 از 2",
           "task": "آپلود وب‌شل، بای‌پس فیلتر پسوند/MIME-type. تمام لب‌های عملی «File Upload Vulnerabilities» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
@@ -1285,41 +1319,58 @@
           "kind": "practice"
         },
         {
-          "day": 80,
-          "title": "Race Conditions — بخش 1 از 2",
-          "task": "بهره‌برداری از تایمینگ همزمان درخواست‌ها؛ مبحثی داغ و کم‌رقابت در باگ‌بانتی امروز. تمام لب‌های عملی «Race Conditions» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
-          "resources": [
-            {
-              "t": "PortSwigger Academy — Race Conditions",
-              "u": "https://portswigger.net/web-security/race-conditions"
-            },
-            {
-              "t": "PayloadsAllTheThings — پیلود آماده برای این کلاس آسیب‌پذیری",
-              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
-            }
-          ],
-          "hours": 3,
-          "kind": "practice"
-        },
-        {
-          "day": 81,
-          "title": "Race Conditions — بخش 2 از 2",
-          "task": "بهره‌برداری از تایمینگ همزمان درخواست‌ها؛ مبحثی داغ و کم‌رقابت در باگ‌بانتی امروز. تمام لب‌های عملی «Race Conditions» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
-          "resources": [
-            {
-              "t": "PortSwigger Academy — Race Conditions",
-              "u": "https://portswigger.net/web-security/race-conditions"
-            },
-            {
-              "t": "PayloadsAllTheThings — پیلود آماده برای این کلاس آسیب‌پذیری",
-              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
-            }
-          ],
-          "hours": 3,
-          "kind": "practice"
-        },
-        {
           "day": 82,
+          "title": "Race Conditions — بخش 1 از 3",
+          "task": "بهره‌برداری از تایمینگ همزمان درخواست‌ها؛ مبحثی داغ و کم‌رقابت در باگ‌بانتی امروز. تمام لب‌های عملی «Race Conditions» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — Race Conditions",
+              "u": "https://portswigger.net/web-security/race-conditions"
+            },
+            {
+              "t": "PayloadsAllTheThings — پیلود آماده برای این کلاس آسیب‌پذیری",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 3,
+          "kind": "practice"
+        },
+        {
+          "day": 83,
+          "title": "Race Conditions — بخش 2 از 3",
+          "task": "بهره‌برداری از تایمینگ همزمان درخواست‌ها؛ مبحثی داغ و کم‌رقابت در باگ‌بانتی امروز. تمام لب‌های عملی «Race Conditions» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — Race Conditions",
+              "u": "https://portswigger.net/web-security/race-conditions"
+            },
+            {
+              "t": "PayloadsAllTheThings — پیلود آماده برای این کلاس آسیب‌پذیری",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 3,
+          "kind": "practice"
+        },
+        {
+          "day": 84,
+          "title": "Race Conditions — بخش 3 از 3",
+          "task": "بهره‌برداری از تایمینگ همزمان درخواست‌ها؛ مبحثی داغ و کم‌رقابت در باگ‌بانتی امروز. تمام لب‌های عملی «Race Conditions» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — Race Conditions",
+              "u": "https://portswigger.net/web-security/race-conditions"
+            },
+            {
+              "t": "PayloadsAllTheThings — پیلود آماده برای این کلاس آسیب‌پذیری",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 3,
+          "kind": "practice"
+        },
+        {
+          "day": 85,
           "title": "Server-Side Request Forgery (SSRF) — بخش 1 از 2",
           "task": "واداشتن سرور به ارسال درخواست به مقصد دلخواه تو؛ اغلب مسیر ورود به شبکهٔ داخلی/کلاود. تمام لب‌های عملی «Server-Side Request Forgery (SSRF)» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
@@ -1336,7 +1387,7 @@
           "kind": "practice"
         },
         {
-          "day": 83,
+          "day": 86,
           "title": "Server-Side Request Forgery (SSRF) — بخش 2 از 2",
           "task": "واداشتن سرور به ارسال درخواست به مقصد دلخواه تو؛ اغلب مسیر ورود به شبکهٔ داخلی/کلاود. تمام لب‌های عملی «Server-Side Request Forgery (SSRF)» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
@@ -1353,7 +1404,7 @@
           "kind": "practice"
         },
         {
-          "day": 84,
+          "day": 87,
           "title": "XXE Injection — بخش 1 از 2",
           "task": "آسیب‌پذیری XML External Entity و خواندن فایل سیستم از طریقش. تمام لب‌های عملی «XXE Injection» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
@@ -1370,7 +1421,7 @@
           "kind": "practice"
         },
         {
-          "day": 85,
+          "day": 88,
           "title": "XXE Injection — بخش 2 از 2",
           "task": "آسیب‌پذیری XML External Entity و خواندن فایل سیستم از طریقش. تمام لب‌های عملی «XXE Injection» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
@@ -1387,7 +1438,7 @@
           "kind": "practice"
         },
         {
-          "day": 86,
+          "day": 89,
           "title": "NoSQL Injection",
           "task": "تزریق در دیتابیس‌های NoSQL مثل MongoDB. تمام لب‌های عملی «NoSQL Injection» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
@@ -1404,7 +1455,7 @@
           "kind": "practice"
         },
         {
-          "day": 87,
+          "day": 90,
           "title": "API Testing — بخش 1 از 2",
           "task": "متدولوژی تست API های REST؛ کشف اندپوینت‌های پنهان. تمام لب‌های عملی «API Testing» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
@@ -1421,7 +1472,7 @@
           "kind": "practice"
         },
         {
-          "day": 88,
+          "day": 91,
           "title": "API Testing — بخش 2 از 2",
           "task": "متدولوژی تست API های REST؛ کشف اندپوینت‌های پنهان. تمام لب‌های عملی «API Testing» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
@@ -1438,7 +1489,7 @@
           "kind": "practice"
         },
         {
-          "day": 89,
+          "day": 92,
           "title": "Web Cache Deception",
           "task": "فریب کش برای ذخیرهٔ صفحات خصوصی به‌صورت عمومی. تمام لب‌های عملی «Web Cache Deception» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
@@ -1455,7 +1506,7 @@
           "kind": "practice"
         },
         {
-          "day": 90,
+          "day": 93,
           "title": "WebSockets",
           "task": "امنیت ارتباطات WebSocket و CSRF مشابه در WS. تمام لب‌های عملی «WebSockets» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
@@ -1472,7 +1523,7 @@
           "kind": "practice"
         },
         {
-          "day": 91,
+          "day": 94,
           "title": "DOM-based vulnerabilities — بخش 1 از 2",
           "task": "منابع (source) و مقصدهای (sink) خطرناک در جاوااسکریپت سمت کلاینت. تمام لب‌های عملی «DOM-based vulnerabilities» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
@@ -1489,7 +1540,7 @@
           "kind": "practice"
         },
         {
-          "day": 92,
+          "day": 95,
           "title": "DOM-based vulnerabilities — بخش 2 از 2",
           "task": "منابع (source) و مقصدهای (sink) خطرناک در جاوااسکریپت سمت کلاینت. تمام لب‌های عملی «DOM-based vulnerabilities» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
@@ -1506,7 +1557,7 @@
           "kind": "practice"
         },
         {
-          "day": 93,
+          "day": 96,
           "title": "Insecure Deserialization — بخش 1 از 2",
           "task": "بهره‌برداری از deserialize کردن دادهٔ غیرقابل‌اعتماد در PHP/Java/.NET/Python. تمام لب‌های عملی «Insecure Deserialization» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
@@ -1523,7 +1574,7 @@
           "kind": "practice"
         },
         {
-          "day": 94,
+          "day": 97,
           "title": "Insecure Deserialization — بخش 2 از 2",
           "task": "بهره‌برداری از deserialize کردن دادهٔ غیرقابل‌اعتماد در PHP/Java/.NET/Python. تمام لب‌های عملی «Insecure Deserialization» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
@@ -1540,7 +1591,7 @@
           "kind": "practice"
         },
         {
-          "day": 95,
+          "day": 98,
           "title": "GraphQL API Vulnerabilities — بخش 1 از 2",
           "task": "Introspection، Batching attacks و IDOR در GraphQL. تمام لب‌های عملی «GraphQL API Vulnerabilities» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
@@ -1557,7 +1608,7 @@
           "kind": "practice"
         },
         {
-          "day": 96,
+          "day": 99,
           "title": "GraphQL API Vulnerabilities — بخش 2 از 2",
           "task": "Introspection، Batching attacks و IDOR در GraphQL. تمام لب‌های عملی «GraphQL API Vulnerabilities» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
@@ -1574,7 +1625,7 @@
           "kind": "practice"
         },
         {
-          "day": 97,
+          "day": 100,
           "title": "Server-Side Template Injection (SSTI) — بخش 1 از 2",
           "task": "تزریق در موتورهای قالب (Jinja2, Twig, FreeMarker) که اغلب به RCE می‌رسد. تمام لب‌های عملی «Server-Side Template Injection (SSTI)» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
@@ -1591,7 +1642,7 @@
           "kind": "practice"
         },
         {
-          "day": 98,
+          "day": 101,
           "title": "Server-Side Template Injection (SSTI) — بخش 2 از 2",
           "task": "تزریق در موتورهای قالب (Jinja2, Twig, FreeMarker) که اغلب به RCE می‌رسد. تمام لب‌های عملی «Server-Side Template Injection (SSTI)» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
@@ -1608,8 +1659,8 @@
           "kind": "practice"
         },
         {
-          "day": 99,
-          "title": "Web Cache Poisoning — بخش 1 از 2",
+          "day": 102,
+          "title": "Web Cache Poisoning — بخش 1 از 3",
           "task": "مسموم‌سازی کش برای تحویل محتوای مخرب به کاربران دیگر. تمام لب‌های عملی «Web Cache Poisoning» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
             {
@@ -1625,8 +1676,8 @@
           "kind": "practice"
         },
         {
-          "day": 100,
-          "title": "Web Cache Poisoning — بخش 2 از 2",
+          "day": 103,
+          "title": "Web Cache Poisoning — بخش 2 از 3",
           "task": "مسموم‌سازی کش برای تحویل محتوای مخرب به کاربران دیگر. تمام لب‌های عملی «Web Cache Poisoning» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
             {
@@ -1642,7 +1693,24 @@
           "kind": "practice"
         },
         {
-          "day": 101,
+          "day": 104,
+          "title": "Web Cache Poisoning — بخش 3 از 3",
+          "task": "مسموم‌سازی کش برای تحویل محتوای مخرب به کاربران دیگر. تمام لب‌های عملی «Web Cache Poisoning» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — Web Cache Poisoning",
+              "u": "https://portswigger.net/web-security/web-cache-poisoning"
+            },
+            {
+              "t": "PayloadsAllTheThings — پیلود آماده برای این کلاس آسیب‌پذیری",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 3,
+          "kind": "practice"
+        },
+        {
+          "day": 105,
           "title": "HTTP Host Header Attacks",
           "task": "دستکاری هدر Host برای پویزنینگ کش، ریست پسورد مخرب، و روتینگ اشتباه. تمام لب‌های عملی «HTTP Host Header Attacks» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
@@ -1659,8 +1727,8 @@
           "kind": "practice"
         },
         {
-          "day": 102,
-          "title": "HTTP Request Smuggling — بخش 1 از 3",
+          "day": 106,
+          "title": "HTTP Request Smuggling — بخش 1 از 4",
           "task": "یکی از پیچیده‌ترین و باارزش‌ترین کلاس‌های امروز؛ اختلاف تفسیر HTTP بین پروکسی و سرور. تمام لب‌های عملی «HTTP Request Smuggling» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
             {
@@ -1676,8 +1744,8 @@
           "kind": "practice"
         },
         {
-          "day": 103,
-          "title": "HTTP Request Smuggling — بخش 2 از 3",
+          "day": 107,
+          "title": "HTTP Request Smuggling — بخش 2 از 4",
           "task": "یکی از پیچیده‌ترین و باارزش‌ترین کلاس‌های امروز؛ اختلاف تفسیر HTTP بین پروکسی و سرور. تمام لب‌های عملی «HTTP Request Smuggling» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
             {
@@ -1693,8 +1761,8 @@
           "kind": "practice"
         },
         {
-          "day": 104,
-          "title": "HTTP Request Smuggling — بخش 3 از 3",
+          "day": 108,
+          "title": "HTTP Request Smuggling — بخش 3 از 4",
           "task": "یکی از پیچیده‌ترین و باارزش‌ترین کلاس‌های امروز؛ اختلاف تفسیر HTTP بین پروکسی و سرور. تمام لب‌های عملی «HTTP Request Smuggling» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
             {
@@ -1710,7 +1778,24 @@
           "kind": "practice"
         },
         {
-          "day": 105,
+          "day": 109,
+          "title": "HTTP Request Smuggling — بخش 4 از 4",
+          "task": "یکی از پیچیده‌ترین و باارزش‌ترین کلاس‌های امروز؛ اختلاف تفسیر HTTP بین پروکسی و سرور. تمام لب‌های عملی «HTTP Request Smuggling» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — HTTP Request Smuggling",
+              "u": "https://portswigger.net/web-security/request-smuggling"
+            },
+            {
+              "t": "PayloadsAllTheThings — پیلود آماده برای این کلاس آسیب‌پذیری",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 3,
+          "kind": "practice"
+        },
+        {
+          "day": 110,
           "title": "OAuth Authentication — بخش 1 از 2",
           "task": "باگ‌های رایج در پیاده‌سازی OAuth 2.0 و سرقت اکانت. تمام لب‌های عملی «OAuth Authentication» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
@@ -1727,7 +1812,7 @@
           "kind": "practice"
         },
         {
-          "day": 106,
+          "day": 111,
           "title": "OAuth Authentication — بخش 2 از 2",
           "task": "باگ‌های رایج در پیاده‌سازی OAuth 2.0 و سرقت اکانت. تمام لب‌های عملی «OAuth Authentication» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
@@ -1744,7 +1829,7 @@
           "kind": "practice"
         },
         {
-          "day": 107,
+          "day": 112,
           "title": "JWT Attacks — بخش 1 از 2",
           "task": "دستکاری الگوریتم، کلید ضعیف، و بای‌پس امضای JSON Web Token. تمام لب‌های عملی «JWT Attacks» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
@@ -1761,7 +1846,7 @@
           "kind": "practice"
         },
         {
-          "day": 108,
+          "day": 113,
           "title": "JWT Attacks — بخش 2 از 2",
           "task": "دستکاری الگوریتم، کلید ضعیف، و بای‌پس امضای JSON Web Token. تمام لب‌های عملی «JWT Attacks» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
@@ -1778,8 +1863,8 @@
           "kind": "practice"
         },
         {
-          "day": 109,
-          "title": "Prototype Pollution — بخش 1 از 2",
+          "day": 114,
+          "title": "Prototype Pollution — بخش 1 از 3",
           "task": "آلوده‌سازی پروتوتایپ در جاوااسکریپت، سمت کلاینت و سمت سرور (Node.js). تمام لب‌های عملی «Prototype Pollution» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
             {
@@ -1795,8 +1880,8 @@
           "kind": "practice"
         },
         {
-          "day": 110,
-          "title": "Prototype Pollution — بخش 2 از 2",
+          "day": 115,
+          "title": "Prototype Pollution — بخش 2 از 3",
           "task": "آلوده‌سازی پروتوتایپ در جاوااسکریپت، سمت کلاینت و سمت سرور (Node.js). تمام لب‌های عملی «Prototype Pollution» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
             {
@@ -1812,7 +1897,24 @@
           "kind": "practice"
         },
         {
-          "day": 111,
+          "day": 116,
+          "title": "Prototype Pollution — بخش 3 از 3",
+          "task": "آلوده‌سازی پروتوتایپ در جاوااسکریپت، سمت کلاینت و سمت سرور (Node.js). تمام لب‌های عملی «Prototype Pollution» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
+          "resources": [
+            {
+              "t": "PortSwigger Academy — Prototype Pollution",
+              "u": "https://portswigger.net/web-security/prototype-pollution"
+            },
+            {
+              "t": "PayloadsAllTheThings — پیلود آماده برای این کلاس آسیب‌پذیری",
+              "u": "https://github.com/swisskyrepo/PayloadsAllTheThings"
+            }
+          ],
+          "hours": 3,
+          "kind": "practice"
+        },
+        {
+          "day": 117,
           "title": "Web LLM Attacks",
           "task": "کلاس نوظهور: Prompt Injection و آسیب‌پذیری اپلیکیشن‌های مبتنی بر LLM. تمام لب‌های عملی «Web LLM Attacks» را در آکادمی پورت‌سویگر با تلاش شخصی حل کن؛ اگر بعد از ۳۰ دقیقه گیر کردی، فقط hint را نگاه کن نه جواب کامل را. برای هر آسیب‌پذیری که حل می‌کنی یک خلاصه (چی بود، چطور پیدا شد، چطور fix می‌شود) در Obsidian بنویس.",
           "resources": [
@@ -1829,7 +1931,7 @@
           "kind": "practice"
         },
         {
-          "day": 112,
+          "day": 118,
           "title": "مرور بزرگ: بازسازی تمام آسیب‌پذیری‌ها روی DVWA",
           "task": "روی DVWA محلی خودت، حداقل یک نمونه از هر کلاس آسیب‌پذیری که یاد گرفتی (SQLi, XSS, CSRF, IDOR, SSRF...) را از صفر و بدون نگاه به یادداشت پیاده کن.",
           "resources": [
@@ -1842,7 +1944,7 @@
           "kind": "review"
         },
         {
-          "day": 113,
+          "day": 119,
           "title": "چک‌پوینت بزرگ: امتحان جامع Web Security Academy",
           "task": "به بخش «All Topics» آکادمی پورت‌سویگر برگرد و هر لبی که هنوز حل‌نشده مانده را تمام کن. هدف: نوار پیشرفت Academy تو باید به بالای ۸۰٪ برسد.",
           "resources": [
@@ -1864,7 +1966,7 @@
       "color": "#0891b2",
       "days": [
         {
-          "day": 114,
+          "day": 120,
           "title": "دورهٔ رایگان یاشار شاهین‌زاده — تکمیل",
           "task": "دورهٔ «آموزش رایگان امنیت اپلیکیشن از صفر» در مکتب‌خونه را تمام کن. هر مفهومی که تکرار شنیدی ولی هنوز مطمئن نیستی، دوباره در PortSwigger جست‌وجو کن.",
           "resources": [
@@ -1877,7 +1979,7 @@
           "kind": "learn"
         },
         {
-          "day": 115,
+          "day": 121,
           "title": "بلاگ و شبکه‌های Voorivex Team را زیر و رو کن",
           "task": "تمام پست‌های فنی بلاگ Voorivex Team را بخوان و در توییتر/ایکس یاشار شاهین‌زاده دنبالش کن؛ نکات تازه یا write-up های او را یادداشت کن.",
           "resources": [
@@ -1894,7 +1996,7 @@
           "kind": "learn"
         },
         {
-          "day": 116,
+          "day": 122,
           "title": "آشنایی با ساختار دوره‌های آکادمی Voorivex (بدون نیاز به پرداخت)",
           "task": "دوره‌های رسمی آکادمی Voorivex (مثل OWASP ZeroX) کلاس‌های زنده و پولی هستند، نه رایگان — پس نیازی به ثبت‌نام و پرداخت نیست. فقط صفحهٔ دوره‌ها را ببین تا با سرفصل‌ها و سطح‌بندی‌شان آشنا شوی (برای الهام گرفتن از ساختار)، و به‌جایش وقتت را صرف محتوای کاملاً رایگان همین بنیان‌گذاران در یوتیوب و بلاگ کن که در روزهای دیگر این نقشه‌راه آمده.",
           "resources": [
@@ -1911,7 +2013,7 @@
           "kind": "learn"
         },
         {
-          "day": 117,
+          "day": 123,
           "title": "Hacker101 CTF — ثبت‌نام و اولین چالش",
           "task": "در Hacker101 CTF ثبت‌نام کن و اولین چالش (معمولاً ساده‌ترین levelها) را بدون کمک بیرونی حل کن.",
           "resources": [
@@ -1924,7 +2026,7 @@
           "kind": "practice"
         },
         {
-          "day": 118,
+          "day": 124,
           "title": "Hacker101 CTF — چالش‌های سطح ۲",
           "task": "به چالش‌های پیچیده‌تر Hacker101 CTF برو. هر چالش را حل‌شده یا نشده، در Obsidian با جزئیات کامل مستند کن (این تمرین مستقیم برای نوشتن گزارش حرفه‌ای است).",
           "resources": [
@@ -1937,7 +2039,7 @@
           "kind": "practice"
         },
         {
-          "day": 119,
+          "day": 125,
           "title": "Hacker101 CTF — چالش‌های سطح پیشرفته",
           "task": "روی سخت‌ترین چالش‌های باقی‌مانده کار کن. اگر بعد از تلاش جدی گیر کردی، Hacker101 write-up های عمومی را جست‌وجو کن و فقط بعد از تلاش خودت بخوان.",
           "resources": [
@@ -1950,7 +2052,7 @@
           "kind": "practice"
         },
         {
-          "day": 120,
+          "day": 126,
           "title": "Google XSS Game و Google Gruyere",
           "task": "دو محیط تمرین رایگان گوگل را حل کن؛ XSS Game تمرکز ویژه روی XSS دارد و Gruyere یک اپ کامل آسیب‌پذیر با چالش‌های متنوع است.",
           "resources": [
@@ -1967,7 +2069,7 @@
           "kind": "practice"
         },
         {
-          "day": 121,
+          "day": 127,
           "title": "PentesterLab — Web for Pentester (رایگان)",
           "task": "لب رایگان «Web for Pentester» پنترستر‌لب را دانلود و روی ماشین مجازی اجرا کن؛ مجموعه‌ای متمرکز از آسیب‌پذیری‌های کلاسیک وب.",
           "resources": [
@@ -1980,7 +2082,7 @@
           "kind": "practice"
         },
         {
-          "day": 122,
+          "day": 128,
           "title": "Bugcrowd University — ویدیوها و لب‌ها",
           "task": "ماژول‌های ویدیویی Bugcrowd University را که هنوز ندیده‌ای تماشا کن، خصوصاً بخش‌های XSS، Access Control و Burp Suite.",
           "resources": [
@@ -1993,7 +2095,7 @@
           "kind": "learn"
         },
         {
-          "day": 123,
+          "day": 129,
           "title": "کانال یوتیوب Rana Khalil — سری Web Security Academy",
           "task": "پلی‌لیست رایگان Rana Khalil که هر لب PortSwigger را با ویدیو حل می‌کند را برای لب‌هایی که خودت سخت حل کردی تماشا کن — روش فکری متفاوتی یاد می‌گیری.",
           "resources": [
@@ -2006,7 +2108,7 @@
           "kind": "learn"
         },
         {
-          "day": 124,
+          "day": 130,
           "title": "کانال یوتیوب NahamSec — ویدیوهای شکار زنده (Live Hacking)",
           "task": "چند ویدیوی «Live Hacking» رایگان NahamSec را ببین تا فرایند فکری واقعی یک هانتر حرفه‌ای هنگام شکار روی برنامهٔ واقعی را از نزدیک ببینی.",
           "resources": [
@@ -2019,7 +2121,7 @@
           "kind": "learn"
         },
         {
-          "day": 125,
+          "day": 131,
           "title": "OverTheWire Natas — سطح ۰ تا ۷ (وارگیم اختصاصی وب)",
           "task": "برخلاف Bandit که لینوکس‌محور بود، Natas مستقیماً روی آسیب‌پذیری‌های وب (View Source، PHP، کوکی، هدرها) تمرکز دارد. سطح‌های ۰ تا ۷ را با مرورگر و View-Source حل کن.",
           "resources": [
@@ -2032,7 +2134,7 @@
           "kind": "practice"
         },
         {
-          "day": 126,
+          "day": 132,
           "title": "OverTheWire Natas — سطح ۸ تا ۱۵",
           "task": "سطح‌های میانی Natas را حل کن: بای‌پس مقایسهٔ نوع در PHP، تزریق دستور، و باگ‌های منطقی ساده در کد PHP.",
           "resources": [
@@ -2045,7 +2147,7 @@
           "kind": "practice"
         },
         {
-          "day": 127,
+          "day": 133,
           "title": "HackTheBox — ساخت حساب رایگان و Starting Point Tier 0",
           "task": "در Hack The Box با حساب رایگان (Free tier، بدون نیاز به VIP) ثبت‌نام کن و ماشین‌های Tier 0 مسیر Starting Point را حل کن؛ هر ماشین یک راهنمای رسمی گام‌به‌گام رایگان دارد.",
           "resources": [
@@ -2062,7 +2164,7 @@
           "kind": "practice"
         },
         {
-          "day": 128,
+          "day": 134,
           "title": "HackTheBox — Starting Point Tier 1",
           "task": "به ماشین‌های Tier 1 برو؛ کمی پیچیده‌تر از Tier 0 هستند و مهارت شمارش سرویس (enumeration) و ترکیب چند آسیب‌پذیری را تقویت می‌کنند.",
           "resources": [
@@ -2075,7 +2177,7 @@
           "kind": "practice"
         },
         {
-          "day": 129,
+          "day": 135,
           "title": "مرور و جمع‌بندی فاز: پورتفولیوی حل‌شده‌ها",
           "task": "لیستی از تمام چالش‌ها/لب‌هایی که تا الان حل کردی (Bandit, PortSwigger, Hacker101, DVWA, PentesterLab, Gruyere) را در یک صفحهٔ «Portfolio» در Obsidian جمع کن — این سند پایهٔ رزومهٔ آینده‌ات است.",
           "resources": [
@@ -2097,7 +2199,7 @@
       "color": "#4d7c0f",
       "days": [
         {
-          "day": 130,
+          "day": 136,
           "title": "متدولوژی Jason Haddix — Bug Hunter's Methodology (نسخهٔ کامل)",
           "task": "ویدیوی کامل ۲ ساعتهٔ Jason Haddix را با یادداشت‌برداری کامل ببین؛ این یکی از معتبرترین متدولوژی‌های رایگان موجود در دنیای باگ‌بانتی است.",
           "resources": [
@@ -2110,7 +2212,7 @@
           "kind": "learn"
         },
         {
-          "day": 131,
+          "day": 137,
           "title": "Bug Hunter's Methodology v4 — Recon Edition",
           "task": "نسخهٔ تخصصی Recon این متدولوژی را ببین و لیست کامل ابزارهایی که معرفی می‌کند را در Obsidian یادداشت کن.",
           "resources": [
@@ -2123,7 +2225,7 @@
           "kind": "learn"
         },
         {
-          "day": 132,
+          "day": 138,
           "title": "Subdomain Enumeration — ابزارها",
           "task": "ابزارهای رایگان subfinder و amass را نصب کن و روی یک دامنهٔ دارای برنامهٔ باگ‌بانتی عمومی (طبق قوانین برنامه) اجرا کن؛ خروجی‌ها را مقایسه کن.",
           "resources": [
@@ -2140,7 +2242,7 @@
           "kind": "practice"
         },
         {
-          "day": 133,
+          "day": 139,
           "title": "پروب کردن زنده‌بودن هاست: httpx",
           "task": "httpx را نصب کن و لیست ساب‌دامین‌های قبلی را برایش پایپ کن تا مشخص شود کدام‌ها زنده‌اند، کد وضعیت و تکنولوژی هرکدام چیست.",
           "resources": [
@@ -2153,7 +2255,7 @@
           "kind": "practice"
         },
         {
-          "day": 134,
+          "day": 140,
           "title": "اسکن آسیب‌پذیری خودکار: nuclei",
           "task": "nuclei را نصب کن، template های عمومی رایگانش را آپدیت کن، و روی هدف‌های مجاز (طبق scope برنامه) اجرا کن؛ نتایج false-positive را یاد بگیر تشخیص بدهی.",
           "resources": [
@@ -2166,7 +2268,7 @@
           "kind": "practice"
         },
         {
-          "day": 135,
+          "day": 141,
           "title": "کشف محتوا و مسیر: ffuf و دیکشنری‌ها",
           "task": "ffuf را برای Directory/Content Discovery با wordlist های SecLists تمرین کن؛ فرق fuzzing پارامتر، مسیر، و ساب‌دامین را در عمل ببین.",
           "resources": [
@@ -2183,7 +2285,7 @@
           "kind": "practice"
         },
         {
-          "day": 136,
+          "day": 142,
           "title": "ابزارهای Tomnomnok و ترکیب پایپ‌لاین Recon",
           "task": "ابزارهای سبک و کاربردی tomnomnom (مثل waybackurls, gf, httprobe) را نصب کن و یک پایپ‌لاین ترکیبی بساز: subfinder | httpx | nuclei.",
           "resources": [
@@ -2200,7 +2302,7 @@
           "kind": "practice"
         },
         {
-          "day": 137,
+          "day": 143,
           "title": "Google Dorking و OSINT پیشرفته",
           "task": "تکنیک‌های Google Dork (site:, inurl:, filetype:) و OSINT برای پیدا کردن فایل‌های حساس افشاشده، پنل‌های ادمین، و ساب‌دامین‌های فراموش‌شده را یاد بگیر.",
           "resources": [
@@ -2213,7 +2315,7 @@
           "kind": "practice"
         },
         {
-          "day": 138,
+          "day": 144,
           "title": "شناسایی تکنولوژی و اثرانگشت‌گیری",
           "task": "ابزارهای Wappalyzer و whatweb را برای شناسایی فریم‌ورک، CMS و کتابخانه‌های استفاده‌شده در یک هدف تمرین کن؛ دانستن نسخهٔ دقیق فناوری مسیر مستقیم به CVEهای شناخته‌شده است.",
           "resources": [
@@ -2230,7 +2332,7 @@
           "kind": "practice"
         },
         {
-          "day": 139,
+          "day": 145,
           "title": "ساخت پایپ‌لاین Recon شخصی نسخهٔ نهایی",
           "task": "ابزار پایتون خودت از فاز ۳ را با ابزارهای جدید (subfinder, httpx, nuclei) ترکیب کن و یک اسکریپت Bash یا Python بساز که با یک دستور، کل مراحل Recon اولیه را روی یک دامنهٔ ورودی اجرا کند.",
           "resources": [
@@ -2243,7 +2345,7 @@
           "kind": "milestone"
         },
         {
-          "day": 140,
+          "day": 146,
           "title": "انتخاب اولین برنامهٔ باگ‌بانتی هدف",
           "task": "بر اساس Scope، حجم رقابت و نوع اپلیکیشن، یک برنامهٔ باگ‌بانتی واقعی (روی HackerOne/Bugcrowd) یا یک VDP انتخاب کن که قصد داری در فازهای بعد رویش تمرکز کنی. قوانین Scope و Rules of Engagement را کامل بخوان.",
           "resources": [
@@ -2260,7 +2362,7 @@
           "kind": "review"
         },
         {
-          "day": 141,
+          "day": 147,
           "title": "اولین دور Recon کامل روی هدف واقعی",
           "task": "پایپ‌لاین Recon خودت را روی برنامهٔ هدف انتخابی اجرا کن (فقط در محدودهٔ Scope مجاز). نتایج را در Obsidian دسته‌بندی کن: ساب‌دامین‌ها، تکنولوژی‌ها، اندپوینت‌های API، و نقاط ورودی مشکوک.",
           "resources": [
@@ -2282,7 +2384,7 @@
       "color": "#9333ea",
       "days": [
         {
-          "day": 142,
+          "day": 148,
           "title": "معرفی OWASP MASVS/MASTG",
           "task": "استاندارد OWASP Mobile Application Security (MASVS) و راهنمای تست آن (MASTG) را به‌عنوان نقشهٔ راه امنیت موبایل مرور کن.",
           "resources": [
@@ -2295,7 +2397,7 @@
           "kind": "learn"
         },
         {
-          "day": 143,
+          "day": 149,
           "title": "راه‌اندازی محیط تست اندروید",
           "task": "Android Studio و یک AVD (شبیه‌ساز اندروید) رایگان را نصب کن، ADB را یاد بگیر، و یک اپ آسیب‌پذیر تمرینی (AndroGoat) را روی شبیه‌ساز نصب کن.",
           "resources": [
@@ -2312,7 +2414,7 @@
           "kind": "practice"
         },
         {
-          "day": 144,
+          "day": 150,
           "title": "رهگیری ترافیک اپ موبایل با Burp",
           "task": "Burp Suite را به‌عنوان پروکسی روی شبیه‌ساز اندروید تنظیم کن، گواهی CA را نصب کن، و ترافیک اپ AndroGoat را رهگیری کن — همان تکنیکی که برای تست هر اپ موبایل واقعی به کار می‌بری.",
           "resources": [
@@ -2325,7 +2427,7 @@
           "kind": "practice"
         },
         {
-          "day": 145,
+          "day": 151,
           "title": "دیکامپایل و تحلیل استاتیک اپ اندروید",
           "task": "با jadx یک فایل APK را دیکامپایل کن و به‌دنبال سکرت‌های هاردکد شده (API Key، آدرس سرور، پسورد) در کد بگرد.",
           "resources": [
@@ -2338,7 +2440,7 @@
           "kind": "practice"
         },
         {
-          "day": 146,
+          "day": 152,
           "title": "Insecure Data Storage و SSL Pinning Bypass",
           "task": "بررسی کن اپ چه داده‌ای را ناامن ذخیره می‌کند (SharedPreferences، دیتابیس محلی)، و مفهوم SSL Pinning و روش‌های رایگان bypass آن (Frida/Objection) را یاد بگیر.",
           "resources": [
@@ -2355,7 +2457,7 @@
           "kind": "practice"
         },
         {
-          "day": 147,
+          "day": 153,
           "title": "OWASP API Security Top 10",
           "task": "لیست ۲۰۲۳ OWASP API Security Top 10 را کامل بخوان — نقشهٔ راه اختصاصی آسیب‌پذیری‌های API که امروز در باگ‌بانتی بسیار پرارزش است.",
           "resources": [
@@ -2368,7 +2470,7 @@
           "kind": "learn"
         },
         {
-          "day": 148,
+          "day": 154,
           "title": "BOLA/IDOR در APIها",
           "task": "Broken Object Level Authorization (BOLA) — رایج‌ترین باگ API در دنیای واقعی — را با لب‌های عملی PortSwigger تمرین کن.",
           "resources": [
@@ -2381,7 +2483,7 @@
           "kind": "practice"
         },
         {
-          "day": 149,
+          "day": 155,
           "title": "GraphQL Security عمیق",
           "task": "Introspection query، حملات Batching، و IDOR در GraphQL را با لب‌های رایگان پورت‌سویگر عمیق‌تر تمرین کن.",
           "resources": [
@@ -2394,7 +2496,7 @@
           "kind": "practice"
         },
         {
-          "day": 150,
+          "day": 156,
           "title": "APIsec University — دوره‌های رایگان API Security",
           "task": "دوره‌های رایگان APIsec University را ببین، خصوصاً دورهٔ مقدماتی API Penetration Testing.",
           "resources": [
@@ -2407,7 +2509,7 @@
           "kind": "learn"
         },
         {
-          "day": 151,
+          "day": 157,
           "title": "پروژهٔ فاز: تست کامل یک API عمومی رایگان",
           "task": "با Postman یا Burp یک API عمومی تست (مثل یک اپ نمونهٔ OWASP juice-shop) را کامل بررسی کن: تمام اندپوینت‌ها را کشف کن، احراز هویت را بشکن، و به‌دنبال BOLA بگرد.",
           "resources": [
@@ -2429,7 +2531,7 @@
       "color": "#b45309",
       "days": [
         {
-          "day": 152,
+          "day": 158,
           "title": "آناتومی یک گزارش حرفه‌ای باگ‌بانتی",
           "task": "ساختار استاندارد یک گزارش خوب (Title, Summary, Steps to Reproduce, Impact, Remediation, PoC) را از راهنمای HackerOne یاد بگیر و یک تمپلیت شخصی در Obsidian بساز.",
           "resources": [
@@ -2446,7 +2548,7 @@
           "kind": "learn"
         },
         {
-          "day": 153,
+          "day": 159,
           "title": "مطالعهٔ عمیق ۱۰ گزارش افشاشدهٔ برتر",
           "task": "۱۰ گزارش با بالاترین امتیاز از HackerOne Hacktivity بخوان و برای هرکدام تحلیل کن: چطور باگ پیدا شد؟ چرا impact بالا بود؟ گزارش چطور نوشته شده بود؟",
           "resources": [
@@ -2463,7 +2565,7 @@
           "kind": "learn"
         },
         {
-          "day": 154,
+          "day": 160,
           "title": "شکار روز ۱: تست احراز هویت و کنترل دسترسی روی هدف",
           "task": "روی برنامهٔ هدفی که در فاز ۷ انتخاب کردی، تمرکز کامل روی احراز هویت، مدیریت سشن و IDOR بگذار. هر مسیر مشکوک را در Obsidian ثبت کن حتی اگر مطمئن نیستی باگ است.",
           "resources": [
@@ -2476,7 +2578,7 @@
           "kind": "practice"
         },
         {
-          "day": 155,
+          "day": 161,
           "title": "شکار روز ۲: تست ورودی‌ها برای XSS و Injection",
           "task": "تمام فیلدهای ورودی، پارامترهای URL، و هدرهای قابل‌کنترل هدف را برای XSS و انواع Injection با Burp Intruder فاز کن.",
           "resources": [
@@ -2489,7 +2591,7 @@
           "kind": "practice"
         },
         {
-          "day": 156,
+          "day": 162,
           "title": "شکار روز ۳: تست منطق کسب‌وکار (Business Logic)",
           "task": "فرایندهای چندمرحله‌ای هدف (پرداخت، تخفیف، دعوت دوستان، ارتقای پلن) را برای باگ‌های منطقی تست کن — این‌ها را هیچ اسکنری پیدا نمی‌کند و اغلب پاداش بالایی دارند.",
           "resources": [
@@ -2502,7 +2604,7 @@
           "kind": "practice"
         },
         {
-          "day": 157,
+          "day": 163,
           "title": "شکار روز ۴: بررسی اندپوینت‌های API و موبایل مرتبط",
           "task": "اگر هدف اپ موبایل یا API عمومی دارد، مهارت‌های فاز ۸ را روی آن پیاده کن؛ اگر ندارد، روی سطح حمله‌ای که در Recon فاز ۷ کشف کردی عمیق‌تر شو.",
           "resources": [
@@ -2515,7 +2617,7 @@
           "kind": "practice"
         },
         {
-          "day": 158,
+          "day": 164,
           "title": "نوشتن اولین گزارش کامل (حتی اگر یک VDP ساده باشد)",
           "task": "هرچیزی که تا الان پیدا کردی — حتی یک باگ کم‌ریسک — را با فرمت حرفه‌ای که در روز اول این فاز ساختی گزارش کن. یک PoC واضح (اسکرین‌شات یا ویدیوی کوتاه) اضافه کن.",
           "resources": [
@@ -2528,7 +2630,7 @@
           "kind": "milestone"
         },
         {
-          "day": 159,
+          "day": 165,
           "title": "یادگیری از رد شدن گزارش (Duplicate/Not Applicable)",
           "task": "دلایل رایج رد شدن گزارش‌ها (Duplicate, Informative, N/A, Out of Scope) را از مستندات HackerOne بخوان تا با ذهنیت درست به Triage نگاه کنی و ناامید نشوی.",
           "resources": [
@@ -2541,7 +2643,7 @@
           "kind": "learn"
         },
         {
-          "day": 160,
+          "day": 166,
           "title": "شکار روز ۵: تمرکز روی یک کلاس آسیب‌پذیری تخصصی",
           "task": "یکی از کلاس‌های کم‌رقابت‌تر (Race Condition، SSRF، یا Request Smuggling) را که در فاز ۵ یاد گرفتی، به‌طور اختصاصی روی هدف تست کن.",
           "resources": [
@@ -2554,7 +2656,7 @@
           "kind": "practice"
         },
         {
-          "day": 161,
+          "day": 167,
           "title": "گسترش دامنهٔ شکار: انتخاب هدف دوم و سوم",
           "task": "دو برنامهٔ باگ‌بانتی دیگر (ترجیحاً با تکنولوژی متفاوت از هدف اول) انتخاب کن تا سرعت Recon و تست‌ات را افزایش دهی و تنوع تجربه کسب کنی.",
           "resources": [
@@ -2567,7 +2669,7 @@
           "kind": "practice"
         },
         {
-          "day": 162,
+          "day": 168,
           "title": "شکار مستمر و ساخت عادت روزانه",
           "task": "یک بلوک زمانی ثابت روزانه یا هفتگی برای شکار مستمر تعیین کن. هر یافته (باگ باشد یا نباشد) را در Obsidian با برچسب (Confirmed/Duplicate/Triaged/Rejected) ثبت کن تا آمار پیشرفتت مشخص باشد.",
           "resources": [
@@ -2580,7 +2682,7 @@
           "kind": "practice"
         },
         {
-          "day": 163,
+          "day": 169,
           "title": "ساخت رزومه و پروفایل عمومی هانتر",
           "task": "یک رزومهٔ کوتاه امنیتی و یک پروفایل GitHub با ابزارهای Recon شخصی‌ات که در طول مسیر نوشتی بساز و عمومی کن — این پورتفولیو در آینده مستقیماً روی فرصت‌های شغلی اثر می‌گذارد.",
           "resources": [
@@ -2602,7 +2704,7 @@
       "color": "#1e293b",
       "days": [
         {
-          "day": 164,
+          "day": 170,
           "title": "HTTP/2 و HTTP/3 از دید امنیتی",
           "task": "تفاوت‌های HTTP/2 با HTTP/1.1 و پیامدهای امنیتی‌اش (خصوصاً برای Request Smuggling) را از تحقیق James Kettle بخوان.",
           "resources": [
@@ -2615,7 +2717,7 @@
           "kind": "learn"
         },
         {
-          "day": 165,
+          "day": 171,
           "title": "HTTP Desync Attacks و Web Cache Poisoning — تحقیقات اصلی",
           "task": "دو تحقیق پایه‌ای James Kettle دربارهٔ Request Smuggling و Cache Poisoning را کامل بخوان — این‌ها مرجع اصلی صنعت در این حوزه‌اند.",
           "resources": [
@@ -2632,7 +2734,7 @@
           "kind": "learn"
         },
         {
-          "day": 166,
+          "day": 172,
           "title": "پارسر دیفرنشیال: تحقیق Orange Tsai",
           "task": "ارائهٔ معروف Orange Tsai دربارهٔ «Breaking Parser Logic» و نمونهٔ Nginx off-by-slash را ببین/بخوان — نمونهٔ کامل از تفکر خلاقانه در پیدا کردن باگ‌های نو.",
           "resources": [
@@ -2649,7 +2751,7 @@
           "kind": "learn"
         },
         {
-          "day": 167,
+          "day": 173,
           "title": "Reverse Proxy و Weird Proxies",
           "task": "تحقیق «weird_proxies» Aleksei Tiurin دربارهٔ رفتارهای غیرمنتظرهٔ پروکسی‌های معکوس را مرور کن — منبع الهام برای کشف باگ‌های سفارشی در معماری‌های پیچیده.",
           "resources": [
@@ -2662,7 +2764,7 @@
           "kind": "learn"
         },
         {
-          "day": 168,
+          "day": 174,
           "title": "OAuth 2.0 عمیق: Getting Started with OAuth 2.0",
           "task": "مفاهیم عمیق‌تر OAuth (Authorization Code Flow, PKCE, state parameter) را مرور کن تا باگ‌های پیچیده‌تر OAuth را هم تشخیص بدهی.",
           "resources": [
@@ -2675,7 +2777,7 @@
           "kind": "learn"
         },
         {
-          "day": 169,
+          "day": 175,
           "title": "ساخت اپ آسیب‌پذیر شخصی با یک فریم‌ورک",
           "task": "با Django یا Laravel (هر دو رایگان) یک اپ کوچک بساز و عمداً چند آسیب‌پذیری در آن قرار بده — ساختن یک آسیب‌پذیری، فهم عمیق‌تری از exploit کردنش به تو می‌دهد.",
           "resources": [
@@ -2692,7 +2794,7 @@
           "kind": "practice"
         },
         {
-          "day": 170,
+          "day": 176,
           "title": "Web LLM Attacks — عمیق‌تر",
           "task": "لب‌های Web LLM Attacks پورت‌سویگر را که تازه معرفی شده دوباره مرور کن و مقالات جدید دربارهٔ Prompt Injection را دنبال کن — این حوزه به‌سرعت در حال رشد است.",
           "resources": [
@@ -2705,7 +2807,7 @@
           "kind": "learn"
         },
         {
-          "day": 171,
+          "day": 177,
           "title": "شرکت در یک CTF واقعی",
           "task": "در یک مسابقهٔ CTF رایگان و عمومی (از طریق CTFtime) ثبت‌نام کن و حداقل چند ساعت با یک تیم یا به‌تنهایی روی چالش‌های وب کار کن.",
           "resources": [
@@ -2722,7 +2824,7 @@
           "kind": "practice"
         },
         {
-          "day": 172,
+          "day": 178,
           "title": "دنبال کردن اخبار روز امنیت وب",
           "task": "یک لیست منبع خبری روزانه بساز (توییتر/ایکس محققان برتر، خبرنامه‌های رایگان مثل tl;dr sec) و آن را به یک عادت روزانهٔ ۱۵ دقیقه‌ای تبدیل کن.",
           "resources": [
@@ -2739,7 +2841,7 @@
           "kind": "learn"
         },
         {
-          "day": 173,
+          "day": 179,
           "title": "بازبینی و آپدیت متدولوژی شخصی نهایی",
           "task": "کل سند Methodology در Obsidian که از روز اول ساختی را بازبینی و بازنویسی کن. این سند حالا باید یک متدولوژی شکار کاملاً شخصی‌سازی‌شده باشد که هر بار شکار می‌کنی از آن پیروی می‌کنی.",
           "resources": [
@@ -2752,7 +2854,7 @@
           "kind": "review"
         },
         {
-          "day": 174,
+          "day": 180,
           "title": "جمع‌بندی نهایی نقشه‌راه و برنامهٔ ۶ ماه آینده",
           "task": "یک سند نهایی بنویس: چه چیزهایی یاد گرفتی، در کدام کلاس آسیب‌پذیری قوی‌تری، و برنامهٔ ۶ ماه بعدی‌ات (تخصص در یک حوزه، شرکت در برنامه‌های Private، یا مسیر شغلی AppSec) چیست. این نقطهٔ پایان نیست — این نقطهٔ شروع شکار حرفه‌ای توست.",
           "resources": [
